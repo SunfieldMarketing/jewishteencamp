@@ -195,41 +195,64 @@ export default function HomePage() {
         </BlurFade>
       </section>
 
-      {/* ===== ACTIVITIES SECTION ===== */}
-      <section className="py-24 bg-accent">
-        <BlurFade delay={0.1} className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <p className="section-subheading">What We Do</p>
-            <h2 className="section-heading mb-4">
-              Action-Packed Summer <span className="text-gold">Adventures</span>
+      {/* ===== ACTIONS / WHAT WE DO SECTION ===== */}
+      <section className="py-24 bg-accent relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl -mr-32 -mt-32" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -ml-40 -mb-40" />
+
+        <BlurFade delay={0.1} className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="text-center mb-20">
+            <p className="section-subheading">Our Programs</p>
+            <h2 className="section-heading mb-6">
+              What We <span className="text-gold">Do Best</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Every day is a new adventure at Chicago Jewish Teens. From extreme outdoor activities to meaningful Jewish experiences.
+              Every day at Chicago Jewish Teens is more than just a schedule - it&apos;s a curated journey of discovery, growth, and unapologetic fun.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {activities.map((activity) => (
-              <div key={activity.title} className="card bg-white p-6">
-                <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-5"
-                  style={{ background: activity.bg }}
-                >
-                  <div className="w-7 h-7" style={{ color: activity.color }}>
-                    {activity.icon}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {activities.map((activity, idx) => (
+              <BlurFade key={activity.title} delay={0.1 + idx * 0.05}>
+                <div className="group bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2 relative overflow-hidden h-full flex flex-col">
+                  {/* Subtle hover background accent */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative z-10">
+                    <div
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500"
+                      style={{ background: activity.bg }}
+                    >
+                      <div className="w-8 h-8" style={{ color: activity.color }}>
+                        {activity.icon}
+                      </div>
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold text-primary-dark mb-4 leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
+                      {activity.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 leading-relaxed mb-6 flex-grow">
+                      {activity.desc}
+                    </p>
+
+                    <div className="pt-6 border-t border-gray-100 flex items-center justify-between text-sm font-semibold text-primary/60 group-hover:text-primary transition-colors">
+                      <span>Explore Program</span>
+                      <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-primary-dark mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
-                  {activity.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{activity.desc}</p>
-              </div>
+              </BlurFade>
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Link href="/day-camp" className="btn-secondary">
-              Explore All Activities
+          <div className="text-center mt-20">
+            <Link href="/day-camp" className="inline-flex items-center gap-3 bg-primary-dark text-white font-bold px-10 py-5 rounded-full text-lg hover:shadow-2xl hover:bg-primary transition-all duration-300">
+              <span>Explore All Activities</span>
+              <UsersIcon className="w-5 h-5" />
             </Link>
           </div>
         </BlurFade>
