@@ -35,7 +35,7 @@ export async function POST(request) {
     });
 
     // To send emails in production, integrate with services like:
-    // - Resend (resend.com) — free tier, no credit card needed
+    // - Resend (resend.com) - free tier, no credit card needed
     // - SendGrid
     // - Nodemailer with Gmail
     // Example with Resend (add RESEND_API_KEY to environment variables):
@@ -45,7 +45,7 @@ export async function POST(request) {
     // await resend.emails.send({
     //   from: 'website@chicagojewishteens.com',
     //   to: 'zalman@chicagojewishteens.com',
-    //   subject: `New Inquiry: ${subject} — ${name}`,
+    //   subject: `New Inquiry: ${subject} - ${name}`,
     //   html: `
     //     <h2>New Contact Form Submission</h2>
     //     <p><strong>Name:</strong> ${name}</p>

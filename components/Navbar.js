@@ -172,7 +172,7 @@ export default function Navbar() {
                   href="/contact"
                   className="block text-center bg-gold text-white font-bold py-3 rounded-xl"
                 >
-                  Enroll Now — Free Consultation
+                  Enroll Now - Free Consultation
                 </Link>
               </div>
               <div className="pt-2 flex items-center gap-4 px-4 text-sm text-gray-500">

@@ -6,12 +6,12 @@ import {
   WavesIcon, SportsIcon, TentIcon, LockIcon,
   PersonIcon, UsersIcon, GlobeIcon,
 } from '../../components/Icons';
-import { featuredPhoto, aboutPhoto, adventurePhotos, campLifePhotos, img, thumb } from '../../lib/photos';
+import { featuredPhoto, aboutPhoto, adventurePhotos, campLifePhotos, img, thumb, staffScheiman, staffNotik, staffGoldshmidt } from '../../lib/photos';
 
 export const metadata = {
   title: 'About Our Camp | Chicago Jewish Teens',
   description:
-    'Learn about Chicago Jewish Teens — our history, mission, facilities, staff, and the CGI camp network. A bold new concept in Jewish camping for teens ages 12–17 in Northbrook, IL.',
+    'Learn about Chicago Jewish Teens - our history, mission, facilities, staff, and the CGI camp network. A bold new concept in Jewish camping for teens ages 12–17 in Northbrook, IL.',
 };
 
 export default function AboutPage() {
@@ -28,7 +28,7 @@ export default function AboutPage() {
             Our Story & Mission
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Teen eXtreme: A bold new concept in Jewish camping — combining adventure, athletics, and authentic Jewish spirit.
+            Teen eXtreme: A bold new concept in Jewish camping - combining adventure, athletics, and authentic Jewish spirit.
           </p>
           <nav className="mt-8 flex items-center justify-center gap-2 text-sm text-blue-300">
             <Link href="/" className="hover:text-gold">Home</Link>
@@ -45,14 +45,14 @@ export default function AboutPage() {
             <div>
               <p className="section-subheading">Our Philosophy</p>
               <h2 className="section-heading mb-6">
-                More Than a Summer Camp — <span className="text-gold">A Life Investment</span>
+                More Than a Summer Camp - <span className="text-gold">A Life Investment</span>
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
                   As a child grows so does his ability for self-discovery, adventure, bonding with friends, and appreciation of group dynamics. Under the leadership of a team of senior staff members, Teen Camp combines out-of-state trips, camping excursions, athletics, swimming, and outdoor adventures with authentic Jewish spirit to impart timeless values and appreciation of others.
                 </p>
                 <p>
-                  Teen Camp is a day camp that mimics the overnight camp experience with extended hours and special Shabbaton (weekend) experiences. This summer teen boys ages 12–17 can join the ultimate camping experience.
+                  Teen Camp is a day camp that mimics the overnight camp experience with extended hours and special Shabbaton (weekend) experiences. This summer teen boys ages 12-17 can join the ultimate camping experience.
                 </p>
                 <p>
                   Highlights include paintballing, go-karting, fishing, biking and speed boating. Teen Camp features a sports league complete with professional instructors and competitions.
@@ -62,7 +62,7 @@ export default function AboutPage() {
                 <p className="text-xl italic text-gray-700 leading-relaxed">
                   &ldquo;Every boy and girl is a seed and a sapling, which with the passage of time will bring forth fruit. And their fruit will produce more fruit, and so on for generations.&rdquo;
                 </p>
-                <footer className="text-gold font-semibold mt-2">— The Lubavitcher Rebbe</footer>
+                <footer className="text-gold font-semibold mt-2">- The Lubavitcher Rebbe</footer>
               </blockquote>
             </div>
             {/* Right: real camp photo + mission points */}
@@ -199,29 +199,34 @@ export default function AboutPage() {
                 role: 'CGI Chicago Director',
                 phone: '+1 (847) 485-9770',
                 email: null,
+                image: staffScheiman,
               },
               {
                 name: "R' Zalman Notik",
                 role: 'Chicago Jewish Teens Director',
                 phone: '+1 (847) 452-4609',
                 email: 'zalman@chicagojewishteens.com',
+                image: staffNotik,
               },
               {
                 name: 'Dovid Goldshmidt',
                 role: 'Executive Coordinator',
                 phone: '+1 (312) 972-1816',
                 email: 'info@chicagojewishteens.com',
+                image: staffGoldshmidt,
               },
             ].map((person) => (
-              <div key={person.name} className="bg-white rounded-2xl p-6 text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white mx-auto mb-4 p-3.5">
-                  <PersonIcon className="w-full h-full" />
+              <div key={person.name} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="h-64 overflow-hidden">
+                  <img src={img(person.image, 600)} alt={person.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                 </div>
-                <h4 className="font-bold text-primary-dark">{person.name}</h4>
-                <p className="text-gold text-sm font-medium mb-3">{person.role}</p>
-                <div className="space-y-1 text-sm text-gray-600">
-                  <a href={`tel:${person.phone.replace(/\D/g, '')}`} className="block hover:text-gold">{person.phone}</a>
-                  {person.email && <a href={`mailto:${person.email}`} className="block hover:text-gold break-all">{person.email}</a>}
+                <div className="p-6 text-center">
+                  <h4 className="font-bold text-primary-dark">{person.name}</h4>
+                  <p className="text-gold text-sm font-medium mb-3">{person.role}</p>
+                  <div className="space-y-1 text-sm text-gray-600">
+                    <a href={`tel:${person.phone.replace(/\D/g, '')}`} className="block hover:text-gold">{person.phone}</a>
+                    {person.email && <a href={`mailto:${person.email}`} className="block hover:text-gold break-all">{person.email}</a>}
+                  </div>
                 </div>
               </div>
             ))}
@@ -277,9 +282,9 @@ const missionPoints = [
 ];
 
 const origins = [
-  { icon: <TrophyIcon className="w-full h-full" />, title: 'CGI Camp Network', desc: 'Teen Camp is proudly founded on 50 years of successful camping principles and is affiliated with CGI camping — the largest worldwide network of Jewish camping.' },
+  { icon: <TrophyIcon className="w-full h-full" />, title: 'CGI Camp Network', desc: 'Teen Camp is proudly founded on 50 years of successful camping principles and is affiliated with CGI camping - the largest worldwide network of Jewish camping.' },
   { icon: <StarIcon className="w-full h-full" />, title: 'Trendsetting Programs', desc: "CGI camps enjoy a well-earned reputation as a trendsetter with adventurous trips, creative programs, and sports instruction that teens look forward to all year." },
-  { icon: <CalendarIcon className="w-full h-full" />, title: 'Est. Since 2000', desc: "Chicago Jewish Teens has served as a haven for children and their families since 2000 — building a legacy of transformative summer experiences." },
+  { icon: <CalendarIcon className="w-full h-full" />, title: 'Est. Since 2000', desc: "Chicago Jewish Teens has served as a haven for children and their families since 2000 - building a legacy of transformative summer experiences." },
 ];
 
 const facilities = [

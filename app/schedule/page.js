@@ -23,7 +23,7 @@ export default function SchedulePage() {
             Summer Schedule & <span className="text-gold">Pricing</span>
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Choose the perfect program for your teen. Financial assistance is available — no family should miss out on this incredible experience.
+            Choose the perfect program for your teen. Financial assistance is available - no family should miss out on this incredible experience.
           </p>
           <nav className="mt-8 flex items-center justify-center gap-2 text-sm text-blue-300">
             <Link href="/" className="hover:text-gold">Home</Link>
@@ -110,7 +110,7 @@ export default function SchedulePage() {
               Financial Assistance Available
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto mb-6">
-              We believe every teen deserves the Chicago Jewish Teens experience. Financial aid and payment plans are available. Don&apos;t let budget be a barrier — reach out and we&apos;ll work something out.
+              We believe every teen deserves the Chicago Jewish Teens experience. Financial aid and payment plans are available. Don&apos;t let budget be a barrier - reach out and we&apos;ll work something out.
             </p>
             <a href="tel:+18474524609" className="btn-secondary">
               Call to Discuss Options: (847) 452-4609
@@ -127,7 +127,7 @@ export default function SchedulePage() {
             <h2 className="section-heading mb-4">
               What Your Teen&apos;s <span className="text-gold">Week Looks Like</span>
             </h2>
-            <p className="text-gray-600 text-lg">Sample weekly schedule — actual activities vary week to week for maximum excitement!</p>
+            <p className="text-gray-600 text-lg">Sample weekly schedule - actual activities vary week to week for maximum excitement!</p>
           </div>
 
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
@@ -278,7 +278,7 @@ const weeklySchedule = [
   },
   {
     day: 'Tuesday',
-    morning: 'Sports league — baseball & soccer',
+    morning: 'Sports league - baseball & soccer',
     afternoon: 'Martial arts instruction',
     evening: 'Camp arrives home',
   },

@@ -5,7 +5,7 @@ import { allPhotos, featuredPhoto, img } from '../../lib/photos';
 export const metadata = {
   title: 'Photo Gallery | Chicago Jewish Teens',
   description:
-    'Browse 75+ photos from Chicago Jewish Teens summer camp — adventures, sports, trips, Shabbatons, and life-changing moments at our Northbrook, IL Jewish teen camp.',
+    'Browse 75+ photos from Chicago Jewish Teens summer camp - adventures, sports, trips, Shabbatons, and life-changing moments at our Northbrook, IL Jewish teen camp.',
 };
 
 export default function PhotosPage() {

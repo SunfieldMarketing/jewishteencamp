@@ -1,4 +1,4 @@
-// Professional SVG icon components — no emojis
+// Professional SVG icon components - no emojis
 
 export function WavesIcon({ className = 'w-8 h-8' }) {
   return (

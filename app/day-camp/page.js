@@ -9,7 +9,7 @@ import { featuredPhoto, adventurePhotos, sportsPhotos, tripPhotos, img, thumb } 
 export const metadata = {
   title: 'Day Camp Programs | Chicago Jewish Teens',
   description:
-    'Explore all programs at Chicago Jewish Teens day camp — sports, adventures, trips, Jewish culture, overnight experiences, and more for teens ages 12–17 in Northbrook, IL.',
+    'Explore all programs at Chicago Jewish Teens day camp - sports, adventures, trips, Jewish culture, overnight experiences, and more for teens ages 12–17 in Northbrook, IL.',
 };
 
 export default function DayCampPage() {
@@ -27,7 +27,7 @@ export default function DayCampPage() {
             <span className="text-gold">Teen Camp Experience</span>
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-            Daily adventures, expert coaching, authentic Jewish culture — all designed to challenge, inspire, and transform your teen.
+            Daily adventures, expert coaching, authentic Jewish culture - all designed to challenge, inspire, and transform your teen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-primary">Enroll Now</Link>
@@ -136,7 +136,7 @@ export default function DayCampPage() {
                   Expert Athletic Direction
                 </h3>
                 <p className="text-blue-200 leading-relaxed mb-6">
-                  We have an experienced athletic director to ensure that the finest instruction is given on a daily basis. We stress good sportsmanship above all else while ensuring no teen will be a benchwarmer — full participation is guaranteed.
+                  We have an experienced athletic director to ensure that the finest instruction is given on a daily basis. We stress good sportsmanship above all else while ensuring no teen will be a benchwarmer - full participation is guaranteed.
                 </p>
                 <Link href="/contact" className="btn-primary">Join the Team</Link>
               </div>

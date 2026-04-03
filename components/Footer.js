@@ -176,7 +176,7 @@ export default function Footer() {
               Terms of Service
             </Link>
             <span className="text-gray-600 text-sm">
-              CGI Camp Network — Est. 2000
+              CGI Camp Network - Est. 2000
             </span>
           </div>
         </div>

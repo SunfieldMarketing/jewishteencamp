@@ -12,12 +12,12 @@ import Marquee from '../components/ui/marquee';
 import BlurFade from '../components/ui/blur-fade';
 import BorderBeam from '../components/ui/border-beam';
 import Spotlight from '../components/ui/spotlight';
-import { aboutPhoto, featuredPhoto, homepageGallery, allPhotos, img, thumb } from '../lib/photos';
+import { aboutPhoto, featuredPhoto, homepageGallery, allPhotos, img, thumb, staffScheiman, staffNotik, staffGoldshmidt } from '../lib/photos';
 
 export const metadata = {
-  title: 'Chicago Jewish Teens | Jewish Day Camp Northbrook IL — Ages 12–17',
+  title: 'Chicago Jewish Teens | Jewish Day Camp Northbrook IL - Ages 12-17',
   description:
-    'Chicago Jewish Teens is the premier Jewish day camp for teens ages 12–17 in Northbrook, IL. Adventures, sports, overnight trips, Shabbatons, Bar Mitzvah prep, and authentic Jewish culture. Enroll today!',
+    'Chicago Jewish Teens is the premier Jewish day camp for teens ages 12-17 in Northbrook, IL. Adventures, sports, overnight trips, Shabbatons, Bar Mitzvah prep, and authentic Jewish culture. Enroll today!',
 };
 
 export default function HomePage() {
@@ -34,7 +34,7 @@ export default function HomePage() {
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
         />
-        {/* Decorative geometric star — SVG, not emoji */}
+        {/* Decorative geometric star - SVG, not emoji */}
         <div className="absolute top-16 right-8 opacity-5 hidden lg:block">
           <svg width="280" height="280" viewBox="0 0 24 24" fill="white">
             <polygon points="12,0 14.5,8.5 23,8.5 16.5,13.5 19,22 12,17 5,22 7.5,13.5 1,8.5 9.5,8.5" />
@@ -46,9 +46,9 @@ export default function HomePage() {
           </svg>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Main Text */}
-          <div className="text-center lg:text-left">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 py-20 text-center">
+          {/* Main Text */}
+          <div className="flex flex-col items-center">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white text-sm font-medium mb-6 hero-animate">
               <span className="w-2 h-2 bg-gold rounded-full animate-pulse" />
               Now Enrolling for Summer 2025
@@ -62,26 +62,26 @@ export default function HomePage() {
               <span className="text-gold">Your Teen</span>
             </h1>
 
-            <p className="text-xl text-blue-100 leading-relaxed mb-8 max-w-xl hero-animate-delay-2">
-              Chicago&apos;s premier Jewish day camp for teens ages 12–17. Adventures, sports, friendships, and authentic Jewish identity — all from the heart of Northbrook, IL.
+            <p className="text-xl text-blue-100 leading-relaxed mb-8 max-w-2xl hero-animate-delay-2">
+              Chicago&apos;s premier Jewish day camp for teens ages 12-17. Adventures, sports, friendships, and authentic Jewish identity - all from the heart of Northbrook, IL.
             </p>
 
-            <blockquote className="border-l-4 border-gold pl-5 text-blue-200 italic text-sm mb-10 hero-animate-delay-2">
+            <blockquote className="border-l-4 border-gold pl-5 text-blue-200 italic text-sm mb-10 hero-animate-delay-2 max-w-lg mx-auto">
               &ldquo;Every boy and girl is a seed and a sapling, which with the passage of time will bring forth fruit.&rdquo;
-              <footer className="text-gold text-xs mt-1.5 not-italic font-semibold">— The Lubavitcher Rebbe</footer>
+              <footer className="text-gold text-xs mt-1.5 not-italic font-semibold">- The Lubavitcher Rebbe</footer>
             </blockquote>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-animate-delay-3">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center hero-animate-delay-3">
               <ShimmerButton href="/contact">
-                Enroll Now — Free Consultation
+                Enroll Now - Free Consultation
               </ShimmerButton>
-              <Link href="/about" className="btn-outline text-center">
+              <Link href="/about" className="btn-outline">
                 Learn More
               </Link>
             </div>
 
-            {/* Trust signals — SVG icons */}
-            <div className="mt-10 flex flex-wrap gap-5 justify-center lg:justify-start hero-animate-delay-3">
+            {/* Trust signals - SVG icons */}
+            <div className="mt-10 flex flex-wrap gap-5 justify-center hero-animate-delay-3">
               {heroTrust.map((item) => (
                 <div key={item.text} className="flex items-center gap-2 text-white/80 text-sm">
                   <div className="text-gold w-4 h-4">{item.icon}</div>
@@ -89,54 +89,6 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Right: Camp Highlights Card with featured photo */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl overflow-hidden text-white hero-animate-delay-2">
-            {/* Real photo strip at top */}
-            <div className="h-48 overflow-hidden">
-              <img
-                src={img(featuredPhoto, 900)}
-                alt="Chicago Jewish Teens camp activities"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-8">
-            <p className="text-gold font-semibold text-xs uppercase tracking-widest mb-1">This Summer</p>
-            <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
-              What Your Teen Will Experience
-            </h2>
-
-            <div className="space-y-4 mb-8">
-              {heroHighlights.map((item) => (
-                <div key={item.label} className="flex items-center gap-4 p-3 bg-white/10 rounded-xl">
-                  <div className="w-10 h-10 bg-gold/20 border border-gold/30 rounded-lg flex items-center justify-center text-gold flex-shrink-0">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-sm">{item.label}</div>
-                    <div className="text-blue-200 text-xs">{item.sub}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="border-t border-white/20 pt-6 space-y-3">
-              <a
-                href="tel:+18474524609"
-                className="flex items-center gap-3 w-full bg-green-500 hover:bg-green-400 transition-colors text-white font-bold py-3.5 px-5 rounded-xl text-sm"
-              >
-                <PhoneIcon className="w-4 h-4 flex-shrink-0" />
-                Call Now: (847) 452-4609
-              </a>
-              <Link
-                href="/contact"
-                className="flex items-center justify-center gap-2 w-full bg-gold hover:bg-gold-dark transition-colors text-white font-bold py-3.5 px-5 rounded-xl text-sm"
-              >
-                Request Free Info Pack
-              </Link>
-            </div>
-            </div>{/* end inner p-8 div */}
           </div>
         </div>
 
@@ -173,7 +125,7 @@ export default function HomePage() {
       <section className="py-24 bg-white">
         <BlurFade delay={0.1} className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left: Visual — real camp photo */}
+            {/* Left: Visual - real camp photo */}
             <div className="relative">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                 <img
@@ -201,7 +153,7 @@ export default function HomePage() {
             <div>
               <p className="section-subheading">About Chicago Jewish Teens</p>
               <h2 className="section-heading mb-6">
-                More Than a Camp — <span className="text-gold">A Life Experience</span>
+                More Than a Camp - <span className="text-gold">A Life Experience</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
                 Teen eXtreme is a bold new concept in Jewish camping. As a child grows so does his ability for self-discovery, adventure, bonding with friends, and appreciation of group dynamics.
@@ -286,7 +238,7 @@ export default function HomePage() {
               The Chicago Jewish Teens Difference
             </h2>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-              Built on 50 years of CGI camping excellence — we&apos;re not just a day camp, we&apos;re a life-changing experience.
+              Built on 50 years of CGI camping excellence - we&apos;re not just a day camp, we&apos;re a life-changing experience.
             </p>
           </div>
 
@@ -388,10 +340,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {staff.map((member) => (
               <div key={member.name} className="card text-center">
-                <div className="bg-gradient-to-br from-primary to-primary-light h-48 flex items-center justify-center">
-                  <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
-                    <PersonIcon className="w-12 h-12 text-white" />
-                  </div>
+                <div className="h-64 overflow-hidden">
+                  <img src={img(member.image, 600)} alt={member.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-primary-dark mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
@@ -463,11 +413,11 @@ export default function HomePage() {
               See the Fun in Action
             </h2>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-              A glimpse into life at Chicago Jewish Teens — where every day is an adventure.
+              A glimpse into life at Chicago Jewish Teens - where every day is an adventure.
             </p>
           </div>
 
-          {/* Real photo grid — mix of local + Cloudinary */}
+          {/* Real photo grid - mix of local + Cloudinary */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
             {/* Row 1: large rafting + featured Cloudinary */}
             <div className="col-span-2 rounded-2xl overflow-hidden" style={{ height: '320px' }}>
@@ -559,7 +509,7 @@ export default function HomePage() {
                 Ready to Enroll? <span className="text-gold">Let&apos;s Talk!</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Our team is here to answer all your questions and help you find the perfect program for your teen. Don&apos;t miss out — enrollment spots fill up quickly!
+                Our team is here to answer all your questions and help you find the perfect program for your teen. Don&apos;t miss out - enrollment spots fill up quickly!
               </p>
               <div className="space-y-4 mb-10">
                 <div className="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-sm">
@@ -571,7 +521,7 @@ export default function HomePage() {
                     <a href="tel:+18474524609" className="text-gold font-bold text-lg hover:text-gold-dark transition-colors">
                       +1 (847) 452-4609
                     </a>
-                    <p className="text-gray-500 text-xs mt-1">Call or text anytime — we respond fast!</p>
+                    <p className="text-gray-500 text-xs mt-1">Call or text anytime - we respond fast!</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-sm">
@@ -714,12 +664,12 @@ const activities = [
 ];
 
 const whyUs = [
-  { icon: <TrophyIcon className="w-full h-full" />, title: '50 Years of Excellence', desc: 'Founded on 50 years of CGI camping principles — the largest worldwide network of Jewish camping.' },
+  { icon: <TrophyIcon className="w-full h-full" />, title: '50 Years of Excellence', desc: 'Founded on 50 years of CGI camping principles - the largest worldwide network of Jewish camping.' },
   { icon: <PersonIcon className="w-full h-full" />, title: 'Expert Staff', desc: 'Counselors hand-picked for experience, expertise, and a genuine love for teen development. Low camper-to-staff ratio.' },
-  { icon: <GlobeIcon className="w-full h-full" />, title: 'CGI Network', desc: 'Part of the global CGI camp network — a trusted name in Jewish education and youth development.' },
+  { icon: <GlobeIcon className="w-full h-full" />, title: 'CGI Network', desc: 'Part of the global CGI camp network - a trusted name in Jewish education and youth development.' },
   { icon: <LockIcon className="w-full h-full" />, title: 'Safe & Supervised', desc: 'Certified Red Cross lifeguards, experienced Boy Scout staff for overnight trips, and certified instructors.' },
   { icon: <HandshakeIcon className="w-full h-full" />, title: 'Close-Knit Community', desc: 'Small group sizes ensure every teen gets personal attention and forms real, lasting friendships.' },
-  { icon: <StarIcon className="w-full h-full" />, title: 'Life-Changing', desc: 'Campers return year after year — teens typically return to school with new energy, confidence, and Jewish pride.' },
+  { icon: <StarIcon className="w-full h-full" />, title: 'Life-Changing', desc: 'Campers return year after year - teens typically return to school with new energy, confidence, and Jewish pride.' },
 ];
 
 const programs = [
@@ -747,13 +697,13 @@ const programs = [
 ];
 
 const staff = [
-  { name: "R' Schneur Scheiman", title: 'Camp Gan Israel Chicago Director', phone: '+1 (847) 485-9770', email: null },
-  { name: "R' Zalman Notik", title: 'Chicago Jewish Teens Director', phone: '+1 (847) 452-4609', email: 'zalman@chicagojewishteens.com' },
-  { name: 'Dovid Goldshmidt', title: 'Camp Executive Coordinator', phone: '+1 (312) 972-1816', email: 'info@chicagojewishteens.com' },
+  { name: "R' Schneur Scheiman", title: 'Camp Gan Israel Chicago Director', phone: '+1 (847) 485-9770', email: null, image: staffScheiman },
+  { name: "R' Zalman Notik", title: 'Chicago Jewish Teens Director', phone: '+1 (847) 452-4609', email: 'zalman@chicagojewishteens.com', image: staffNotik },
+  { name: 'Dovid Goldshmidt', title: 'Camp Executive Coordinator', phone: '+1 (312) 972-1816', email: 'info@chicagojewishteens.com', image: staffGoldshmidt },
 ];
 
 const testimonials = [
-  { quote: "My son came home from Teen Camp a completely different person — more confident, more Jewishly aware, and with friends he still talks to every day. Best investment we ever made.", name: 'Rachel K.', location: 'Northbrook, IL' },
+  { quote: "My son came home from Teen Camp a completely different person - more confident, more Jewishly aware, and with friends he still talks to every day. Best investment we ever made.", name: 'Rachel K.', location: 'Northbrook, IL' },
   { quote: "The combination of exciting adventures and authentic Jewish values is unmatched. My teen couldn't stop talking about the Indiana Dunes hike and the Shabbaton experience.", name: 'David M.', location: 'Chicago, IL' },
   { quote: "Rabbi Notik and the entire staff are incredible. They truly care about each child as an individual. My son went back summer after summer and begged to go again.", name: 'Sarah L.', location: 'Glenview, IL' },
 ];
@@ -771,7 +721,7 @@ const galleryItems = [
 
 const faqs = [
   { q: 'What ages does Chicago Jewish Teens serve?', a: 'Our programs are designed for Jewish teens ages 12–17. We have separate programs and activities tailored to different age groups and interests.' },
-  { q: 'Where is the camp located?', a: 'Our campsite is located at 2095 Landwehr Road in Northbrook, IL 60062 — right in the heart of Northbrook with excellent indoor and outdoor facilities.' },
+  { q: 'Where is the camp located?', a: 'Our campsite is located at 2095 Landwehr Road in Northbrook, IL 60062 - right in the heart of Northbrook with excellent indoor and outdoor facilities.' },
   { q: 'Is transportation provided?', a: 'Yes, we offer transportation options. Please contact us at (847) 452-4609 to discuss your specific needs and our available transportation routes.' },
   { q: 'Is the food kosher?', a: 'Absolutely. We serve nutritious and delicious kosher snacks, lunches, and drinks daily. During extended trips, we also provide dinner. Teens even enjoy meals at local Kosher restaurants.' },
   { q: 'What is the camper-to-staff ratio?', a: 'We maintain a low camper-to-staff ratio to ensure each child receives the highest quality supervision, caring guidance, and individual attention from our experienced counselors.' },

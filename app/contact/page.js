@@ -25,7 +25,7 @@ export default function ContactPage() {
             Let&apos;s Start a <span className="text-gold">Conversation</span>
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Questions, enrollment inquiries, or just want to learn more — we&apos;d love to hear from you. We typically respond within a few hours.
+            Questions, enrollment inquiries, or just want to learn more - we&apos;d love to hear from you. We typically respond within a few hours.
           </p>
           <nav className="mt-8 flex items-center justify-center gap-2 text-sm text-blue-300">
             <Link href="/" className="hover:text-gold">Home</Link>
@@ -244,7 +244,7 @@ export default function ContactPage() {
             </a>
           </div>
           <p className="mt-8 text-blue-300 text-sm">
-            R&apos; Zalman Notik — Chicago Jewish Teens Director
+            R&apos; Zalman Notik - Chicago Jewish Teens Director
             <br />
             9041 Margail Ave, Des Plaines, IL 60015
           </p>

@@ -9,7 +9,7 @@ import { featuredPhoto, campLifePhotos, img, thumb } from '../../lib/photos';
 export const metadata = {
   title: 'Parents Area | Chicago Jewish Teens',
   description:
-    "Resources for Chicago Jewish Teens parents — director's letter, forms, FAQs, safety information, and more. Everything you need to prepare your teen for an incredible summer.",
+    "Resources for Chicago Jewish Teens parents - director's letter, forms, FAQs, safety information, and more. Everything you need to prepare your teen for an incredible summer.",
 };
 
 export default function ParentsPage() {
@@ -244,7 +244,7 @@ export default function ParentsPage() {
               <h2 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
                 Have More Questions?
               </h2>
-              <p className="text-blue-200">We&apos;re here to help — fill out the form and we&apos;ll be in touch quickly!</p>
+              <p className="text-blue-200">We&apos;re here to help - fill out the form and we&apos;ll be in touch quickly!</p>
             </div>
             <div className="p-8">
               <ContactForm />
