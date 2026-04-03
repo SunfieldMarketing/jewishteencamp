@@ -75,11 +75,82 @@ export function MartialArtsIcon({ className = 'w-8 h-8' }) {
 export function FishingIcon({ className = 'w-8 h-8' }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3 5v14" />
-      <path d="M3 8h14c0 0 2-3 4-3" />
-      <path d="M3 14h8" />
-      <circle cx="12" cy="18" r="3" />
-      <path d="M9.5 15.5l-1.5 1.5" />
+      <path d="M7 2v20" />
+      <path d="M7 5c4 0 14 3 14 8s-10 8-14 8" />
+      <path d="M7 10h5" />
+      <path d="M7 15h5" />
+      <circle cx="18" cy="13" r="2" />
+    </svg>
+  );
+}
+
+export function KayakingIcon({ className = 'w-8 h-8' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 12c-4 4-16 4-20 0 4-4 16-4 20 0Z" />
+      <path d="M12 12c0-3 2-5 2-5" />
+      <path d="M12 12c0 3-2 5-2 5" />
+      <path d="M10 7h4" />
+      <path d="M10 17h4" />
+    </svg>
+  );
+}
+
+export function BaseballIcon({ className = 'w-8 h-8' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M5 12c3-4 11-4 14 0" />
+      <path d="M5 12c3 4 11 4 14 0" />
+      <path d="M11 5v2" />
+      <path d="M13 5v2" />
+      <path d="M11 17v2" />
+      <path d="M13 17v2" />
+    </svg>
+  );
+}
+
+export function BasketballIcon({ className = 'w-8 h-8' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 2v20" />
+      <path d="M2 12h20" />
+      <path d="M4.93 4.93a10 10 0 0 1 14.14 14.14" />
+      <path d="M19.07 4.93a10 10 0 0 0-14.14 14.14" />
+    </svg>
+  );
+}
+
+export function FootballIcon({ className = 'w-8 h-8' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 12s-4-6-10-6-10 6-10 6 4 6 10 6 10-6 10-6Z" />
+      <path d="M8 8v8" />
+      <path d="M16 8v8" />
+      <line x1="10" y1="12" x2="14" y2="12" />
+      <line x1="12" y1="9" x2="12" y2="15" />
+    </svg>
+  );
+}
+
+export function SoccerIcon({ className = 'w-8 h-8' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <path d="m12 7-1.5 2.5h3L12 7Zm-2.5 3.5L7 12l2.5 1.5.5-3Zm5 0 .5 3 2.5-1.5-2.5-1.5ZM12 17l1.5-2.5h-3L12 17Z" />
+      <path d="M12 2v5m0 10v5m10-10h-2.5M4.5 12H2m13.5-6.5L18 3M6 3l2.5 2.5M18 21l-2.5-2.5M8.5 18.5 6 21" />
+    </svg>
+  );
+}
+
+export function HorseIcon({ className = 'w-8 h-8' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 18c0-4 4-7 4-7s1-2 4-2 4 2 4 2l4 3" />
+      <path d="M8 11V8s1-4 4-4 4 4 4 4v3" />
+      <path d="M16 11l4 2-1 4-3-1V11Z" />
+      <path d="M4 18h4l1 3h6l1-3h4" />
     </svg>
   );
 }

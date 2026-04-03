@@ -3,6 +3,7 @@ import ContactForm from '../../components/ContactForm';
 import {
   CalendarIcon, TentIcon, PersonIcon, MountainIcon, WavesIcon,
   SportsIcon, FishingIcon, MartialArtsIcon, CompassIcon, StarOfDavidIcon,
+  KayakingIcon, BaseballIcon, BasketballIcon, FootballIcon, SoccerIcon, HorseIcon,
 } from '../../components/Icons';
 import { featuredPhoto, adventurePhotos, sportsPhotos, tripPhotos, img, thumb } from '../../lib/photos';
 
@@ -30,7 +31,7 @@ export default function DayCampPage() {
             Daily adventures, expert coaching, authentic Jewish culture - all designed to challenge, inspire, and transform your teen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-primary">Enroll Now</Link>
+            <Link href="/contact?program=day-camp" className="btn-primary">Enroll Now</Link>
             <Link href="/schedule" className="btn-outline">View Schedule</Link>
           </div>
           <nav className="mt-8 flex items-center justify-center gap-2 text-sm text-blue-300">
@@ -94,10 +95,9 @@ export default function DayCampPage() {
               </p>
             </div>
             {/* Real adventure photos */}
-            <div className="grid grid-cols-2 gap-3">
-              {adventurePhotos.slice(0, 4).map((photo, i) => (
-                <div key={i} className={`rounded-2xl overflow-hidden ${i === 0 ? 'col-span-2' : ''}`}
-                  style={{ height: i === 0 ? '220px' : '160px' }}>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {adventurePhotos.slice(0, 6).map((photo, i) => (
+                <div key={i} className={`rounded-2xl overflow-hidden ${i === 0 ? 'md:col-span-2 md:row-span-2 h-[450px]' : 'h-[218px]'}`}>
                   <img src={thumb(photo.id)} alt={photo.alt}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
@@ -227,7 +227,7 @@ export default function DayCampPage() {
                   </div>
                 ))}
               </div>
-              <Link href="/contact" className="btn-secondary">Ask About Our Menu</Link>
+              <Link href="/contact?program=day-camp" className="btn-secondary">Ask About Our Menu</Link>
             </div>
             <div className="bg-gradient-to-br from-primary-dark to-primary rounded-3xl p-10 text-white text-center">
               <div className="w-20 h-20 mx-auto mb-6 text-gold/60"><StarOfDavidIcon className="w-full h-full" /></div>
@@ -290,14 +290,14 @@ const tripCards = [
 ];
 
 const sports = [
-  { icon: <SportsIcon className="w-full h-full" />, name: 'Baseball' },
-  { icon: <SportsIcon className="w-full h-full" />, name: 'Basketball' },
-  { icon: <SportsIcon className="w-full h-full" />, name: 'Football' },
-  { icon: <SportsIcon className="w-full h-full" />, name: 'Soccer' },
-  { icon: <MartialArtsIcon className="w-full h-full" />, name: 'Boxing' },
+  { icon: <BaseballIcon className="w-full h-full" />, name: 'Baseball' },
+  { icon: <BasketballIcon className="w-full h-full" />, name: 'Basketball' },
+  { icon: <FootballIcon className="w-full h-full" />, name: 'Football' },
+  { icon: <SoccerIcon className="w-full h-full" />, name: 'Soccer' },
+  { icon: <KayakingIcon className="w-full h-full" />, name: 'Kayaking' },
   { icon: <MartialArtsIcon className="w-full h-full" />, name: 'Martial Arts' },
   { icon: <FishingIcon className="w-full h-full" />, name: 'Fishing' },
-  { icon: <CompassIcon className="w-full h-full" />, name: 'Horseback Riding' },
+  { icon: <HorseIcon className="w-full h-full" />, name: 'Horseback Riding' },
 ];
 
 const sportsFeatures = [

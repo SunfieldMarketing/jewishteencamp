@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 export default function ContactForm({ variant = 'default' }) {
   const [formData, setFormData] = useState({
@@ -9,8 +10,18 @@ export default function ContactForm({ variant = 'default' }) {
     phone: '',
     childAge: '',
     subject: '',
+    program: '',
     message: '',
   });
+
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const programParam = searchParams.get('program');
+    if (programParam) {
+      setFormData((prev) => ({ ...prev, program: programParam }));
+    }
+  }, [searchParams]);
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
 
   const handleChange = (e) => {
@@ -30,7 +41,7 @@ export default function ContactForm({ variant = 'default' }) {
 
       if (res.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', phone: '', childAge: '', subject: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', childAge: '', subject: '', program: '', message: '' });
       } else {
         setStatus('error');
       }
@@ -151,6 +162,26 @@ export default function ContactForm({ variant = 'default' }) {
           <option value="barmitzvah">Bar Mitzvah Preparation</option>
           <option value="general">General Question</option>
           <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="program" className="block text-sm font-semibold text-gray-700 mb-2">
+          Program of Interest
+        </label>
+        <select
+          id="program"
+          name="program"
+          value={formData.program}
+          onChange={handleChange}
+          className="input-field bg-white"
+        >
+          <option value="">Select a program (optional)...</option>
+          <option value="boys-teen-camp">Boys&apos; Teen Camp (June 18 – July 11)</option>
+          <option value="girls-art-adventure">Girls&apos; Art & Adventure (July 17 – July 22)</option>
+          <option value="pacific-nw">Pacific NW Adventure</option>
+          <option value="day-camp">General Day Camp</option>
+          <option value="shabbaton">Shabbatons & Overnights</option>
         </select>
       </div>
 

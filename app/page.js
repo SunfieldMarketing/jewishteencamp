@@ -328,7 +328,7 @@ export default function HomePage() {
                         </li>
                       ))}
                     </ul>
-                    <Link href="/contact" className={`block text-center py-3 rounded-xl font-bold transition-all ${idx === 1 ? 'bg-gold text-white hover:bg-gold-dark' : 'bg-primary text-white hover:bg-primary-dark'}`}>
+                    <Link href={`/contact?program=${program.name.toLowerCase().includes('boys') ? 'boys-teen-camp' : 'girls-art-adventure'}`} className={`block text-center py-3 rounded-xl font-bold transition-all ${idx === 1 ? 'bg-gold text-white hover:bg-gold-dark' : 'bg-primary text-white hover:bg-primary-dark'}`}>
                       Register Now
                     </Link>
                   </div>
@@ -368,11 +368,11 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {staff.map((member) => (
-              <div key={member.name} className="card text-center">
-                <div className="h-64 overflow-hidden">
-                  <img src={img(member.image, 600)} alt={member.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+              <div key={member.name} className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 text-center flex flex-col items-center border border-gray-100">
+                <div className="w-32 h-32 mb-6 rounded-full overflow-hidden ring-4 ring-gold/10">
+                  <img src={img(member.image, 300)} alt={member.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-110" />
                 </div>
-                <div className="p-6">
+                <div className="flex-grow">
                   <h3 className="text-xl font-bold text-primary-dark mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
                     {member.name}
                   </h3>
