@@ -376,17 +376,17 @@ export default function HomePage() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section className="py-24 bg-white overflow-hidden">
-        <BlurFade delay={0.1}>
+      <section className="py-24 bg-white">
+        <BlurFade delay={0.1} className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <p className="section-subheading">Parent Testimonials</p>
             <h2 className="section-heading mb-4">
               What Families <span className="text-gold">Say About Us</span>
             </h2>
           </div>
-          <Marquee speed={35} className="py-4">
+          <div className="flex flex-wrap justify-center gap-8">
             {testimonials.map((t) => (
-              <div key={t.name} className="testimonial-card w-80 flex-shrink-0 mx-3">
+              <div key={t.name} className="testimonial-card w-full md:w-[calc(33.33%-1.5rem)] max-w-sm flex-shrink-0">
                 <div className="mt-8">
                   <p className="text-gray-600 leading-relaxed mb-6 italic">{t.quote}</p>
                   <div className="flex items-center gap-3">
@@ -397,16 +397,16 @@ export default function HomePage() {
                       <div className="font-semibold text-primary-dark text-sm">{t.name}</div>
                       <div className="text-gray-500 text-xs">{t.location}</div>
                     </div>
-                    <div className="ml-auto flex text-gold">
+                    <div className="ml-auto flex text-gold text-xs">
                       {[...Array(5)].map((_, i) => (
-                        <StarIcon key={i} className="w-3.5 h-3.5 fill-current" />
+                        <StarOfDavidIcon key={i} className="w-3 h-3 fill-current" />
                       ))}
                     </div>
                   </div>
                 </div>
               </div>
             ))}
-          </Marquee>
+          </div>
         </BlurFade>
       </section>
 
