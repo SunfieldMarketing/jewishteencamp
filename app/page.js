@@ -370,7 +370,7 @@ export default function HomePage() {
             {staff.map((member) => (
               <div key={member.name} className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 text-center flex flex-col items-center border border-gray-100">
                 <div className="w-32 h-32 mb-6 rounded-full overflow-hidden ring-4 ring-gold/10">
-                  <img src={img(member.image, 300)} alt={member.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-110" />
+                  <img src={img(member.image, 300)} alt={member.name} className="w-full h-full object-cover scale-110" />
                 </div>
                 <div className="flex-grow">
                   <h3 className="text-xl font-bold text-primary-dark mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>

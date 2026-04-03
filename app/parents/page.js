@@ -4,7 +4,7 @@ import {
   BookOpenIcon, LockIcon, TentIcon, CalendarIcon,
   PersonIcon, CompassIcon, PhoneIcon,
 } from '../../components/Icons';
-import { featuredPhoto, campLifePhotos, img, thumb } from '../../lib/photos';
+import { featuredPhoto, campLifePhotos, staffScheiman, staffNotik, staffGoldshmidt, img, thumb } from '../../lib/photos';
 
 export const metadata = {
   title: 'Parents Area | Chicago Jewish Teens',
@@ -208,8 +208,8 @@ export default function ParentsPage() {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {contactStaff.map((person) => (
               <div key={person.name} className="bg-accent rounded-3xl p-8 text-center">
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white mx-auto mb-4 p-4">
-                  <PersonIcon className="w-full h-full" />
+                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 ring-4 ring-gold/10">
+                  <img src={img(person.image, 300)} alt={person.name} className="w-full h-full object-cover scale-110" />
                 </div>
                 <h3 className="text-xl font-bold text-primary-dark mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>{person.name}</h3>
                 <p className="text-gold font-semibold text-sm mb-4">{person.role}</p>
@@ -349,17 +349,20 @@ const contactStaff = [
     role: 'CGI Camp Gan Israel Chicago Director',
     phone: '+1 (847) 485-9770',
     email: null,
+    image: staffScheiman,
   },
   {
     name: "R' Zalman Notik",
     role: 'Chicago Jewish Teens Director',
     phone: '+1 (847) 452-4609',
     email: 'zalman@chicagojewishteens.com',
+    image: staffNotik,
   },
   {
     name: 'Dovid Goldshmidt',
     role: 'Executive Coordinator',
     phone: '+1 (312) 972-1816',
     email: 'info@chicagojewishteens.com',
+    image: staffGoldshmidt,
   },
 ];

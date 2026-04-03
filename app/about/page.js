@@ -192,7 +192,7 @@ export default function AboutPage() {
           </div>
 
           {/* Staff Directory */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 name: "R' Schneur Scheiman",
@@ -216,17 +216,15 @@ export default function AboutPage() {
                 image: staffGoldshmidt,
               },
             ].map((person) => (
-              <div key={person.name} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-                <div className="h-64 overflow-hidden">
-                  <img src={img(person.image, 600)} alt={person.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+              <div key={person.name} className="bg-white/5 border border-white/10 rounded-3xl p-8 text-center hover:bg-white/10 transition-all duration-300">
+                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 ring-4 ring-gold/20">
+                  <img src={img(person.image, 300)} alt={person.name} className="w-full h-full object-cover scale-110" />
                 </div>
-                <div className="p-6 text-center">
-                  <h4 className="font-bold text-primary-dark">{person.name}</h4>
-                  <p className="text-gold text-sm font-medium mb-3">{person.role}</p>
-                  <div className="space-y-1 text-sm text-gray-600">
-                    <a href={`tel:${person.phone.replace(/\D/g, '')}`} className="block hover:text-gold">{person.phone}</a>
-                    {person.email && <a href={`mailto:${person.email}`} className="block hover:text-gold break-all">{person.email}</a>}
-                  </div>
+                <h4 className="text-xl font-bold text-gold mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>{person.name}</h4>
+                <p className="text-blue-100 text-sm font-semibold mb-4">{person.role}</p>
+                <div className="space-y-1 text-sm text-blue-200/70">
+                  <a href={`tel:${person.phone.replace(/\D/g, '')}`} className="block hover:text-gold transition-colors">{person.phone}</a>
+                  {person.email && <a href={`mailto:${person.email}`} className="block hover:text-gold transition-colors break-all">{person.email}</a>}
                 </div>
               </div>
             ))}

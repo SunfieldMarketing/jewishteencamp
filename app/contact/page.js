@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import ContactForm from '../../components/ContactForm';
 import { PersonIcon } from '../../components/Icons';
-import { featuredPhoto, img } from '../../lib/photos';
+import { featuredPhoto, staffScheiman, staffNotik, staffGoldshmidt, img } from '../../lib/photos';
 
 export const metadata = {
   title: 'Contact Us | Chicago Jewish Teens',
@@ -107,8 +107,8 @@ export default function ContactPage() {
               {staffDirectory.map((person) => (
                 <div key={person.name} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow">
                   <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center text-white flex-shrink-0 p-3">
-                      <PersonIcon className="w-full h-full" />
+                    <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                      <img src={img(person.image, 300)} alt={person.name} className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-bold text-primary-dark">{person.name}</h3>
@@ -260,17 +260,20 @@ const staffDirectory = [
     role: 'Camp Gan Israel Chicago Director',
     phone: '+1 (847) 485-9770',
     email: null,
+    image: staffScheiman,
   },
   {
     name: "R' Zalman Notik",
     role: 'Chicago Jewish Teens Director',
     phone: '+1 (847) 452-4609',
     email: 'zalman@chicagojewishteens.com',
+    image: staffNotik,
   },
   {
     name: 'Dovid Goldshmidt',
     role: 'Chicago Jewish Teens Executive Coordinator',
     phone: '+1 (312) 972-1816',
     email: 'info@chicagojewishteens.com',
+    image: staffGoldshmidt,
   },
 ];
