@@ -4,6 +4,7 @@ import {
   CalendarIcon, TentIcon, PersonIcon, MountainIcon, WavesIcon,
   SportsIcon, FishingIcon, MartialArtsIcon, CompassIcon, StarOfDavidIcon,
 } from '../../components/Icons';
+import { featuredPhoto, adventurePhotos, sportsPhotos, tripPhotos, img, thumb } from '../../lib/photos';
 
 export const metadata = {
   title: 'Day Camp Programs | Chicago Jewish Teens',
@@ -16,12 +17,9 @@ export default function DayCampPage() {
     <>
       {/* Hero */}
       <section className="relative py-28 bg-gradient-to-br from-primary-dark via-primary to-gold text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 50%, white 1px, transparent 1px)`,
-            backgroundSize: '40px 40px',
-          }}
-        />
+        <div className="absolute inset-0 opacity-30 bg-cover bg-center"
+          style={{ backgroundImage: `url("${img(featuredPhoto, 1400)}")` }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/80 via-primary/70 to-gold/80" />
         <div className="relative max-w-4xl mx-auto px-4 text-center">
           <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-4">Day Camp Programs</p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
@@ -95,15 +93,13 @@ export default function DayCampPage() {
                 * Campers are provided with all food they&apos;ll need every day, including dinner and snacks on full-day trips.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {tripCards.map((card, i) => (
-                <div
-                  key={card.title}
-                  className={`rounded-2xl p-6 text-white ${i % 2 === 0 ? 'bg-primary' : 'bg-gold'} ${i === 0 ? 'col-span-2' : ''}`}
-                >
-                  <div className="w-10 h-10 mb-3 text-white/70">{card.icon}</div>
-                  <h3 className="font-bold text-lg mb-2">{card.title}</h3>
-                  <p className="text-white/80 text-sm">{card.desc}</p>
+            {/* Real adventure photos */}
+            <div className="grid grid-cols-2 gap-3">
+              {adventurePhotos.slice(0, 4).map((photo, i) => (
+                <div key={i} className={`rounded-2xl overflow-hidden ${i === 0 ? 'col-span-2' : ''}`}
+                  style={{ height: i === 0 ? '220px' : '160px' }}>
+                  <img src={thumb(photo.id)} alt={photo.alt}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
               ))}
             </div>

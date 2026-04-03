@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import ContactForm from '../../components/ContactForm';
 import { PersonIcon } from '../../components/Icons';
+import { featuredPhoto, img } from '../../lib/photos';
 
 export const metadata = {
   title: 'Contact Us | Chicago Jewish Teens',
@@ -13,6 +14,9 @@ export default function ContactPage() {
     <>
       {/* Hero */}
       <section className="relative py-28 bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-20 bg-cover bg-center"
+          style={{ backgroundImage: `url("${img(featuredPhoto, 1400)}")` }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/85 via-primary/75 to-primary-light/80" />
         <div className="absolute -top-20 -right-20 w-80 h-80 bg-gold/10 rounded-full" />
         <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-white/5 rounded-full" />
         <div className="relative max-w-4xl mx-auto px-4 text-center">

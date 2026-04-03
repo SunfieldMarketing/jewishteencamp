@@ -6,6 +6,7 @@ import {
   WavesIcon, SportsIcon, TentIcon, LockIcon,
   PersonIcon, UsersIcon, GlobeIcon,
 } from '../../components/Icons';
+import { featuredPhoto, aboutPhoto, adventurePhotos, campLifePhotos, img, thumb } from '../../lib/photos';
 
 export const metadata = {
   title: 'About Our Camp | Chicago Jewish Teens',
@@ -18,8 +19,9 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <section className="relative py-28 bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+        <div className="absolute inset-0 opacity-25 bg-cover bg-center"
+          style={{ backgroundImage: `url("${img(featuredPhoto, 1400)}")` }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/85 via-primary/75 to-primary-light/80" />
         <div className="relative max-w-4xl mx-auto px-4 text-center">
           <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-4">About Us</p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
@@ -63,7 +65,15 @@ export default function AboutPage() {
                 <footer className="text-gold font-semibold mt-2">— The Lubavitcher Rebbe</footer>
               </blockquote>
             </div>
+            {/* Right: real camp photo + mission points */}
             <div className="space-y-6">
+              <div className="rounded-3xl overflow-hidden shadow-xl mb-6" style={{ height: '260px' }}>
+                <img
+                  src={img(aboutPhoto, 900)}
+                  alt="Chicago Jewish Teens campers"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               {missionPoints.map((point) => (
                 <div key={point.title} className="flex gap-4 p-5 bg-accent rounded-2xl">
                   <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white flex-shrink-0 p-2.5">
@@ -140,6 +150,20 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Photo strip between facilities and staff */}
+      <section className="py-10 bg-accent">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {campLifePhotos.slice(0, 4).map((photo, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden" style={{ height: '180px' }}>
+                <img src={thumb(photo.id)} alt={photo.alt}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+            ))}
           </div>
         </div>
       </section>

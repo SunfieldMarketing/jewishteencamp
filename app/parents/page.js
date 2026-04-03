@@ -4,6 +4,7 @@ import {
   BookOpenIcon, LockIcon, TentIcon, CalendarIcon,
   PersonIcon, CompassIcon, PhoneIcon,
 } from '../../components/Icons';
+import { featuredPhoto, campLifePhotos, img, thumb } from '../../lib/photos';
 
 export const metadata = {
   title: 'Parents Area | Chicago Jewish Teens',
@@ -15,8 +16,11 @@ export default function ParentsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-28 bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section className="relative py-28 bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-20 bg-cover bg-center"
+          style={{ backgroundImage: `url("${img(featuredPhoto, 1400)}")` }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/85 via-primary/75 to-primary-light/80" />
+        <div className="relative max-w-4xl mx-auto px-4 text-center">
           <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-4">Parents Area</p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
             Everything You Need to <span className="text-gold">Know</span>

@@ -12,6 +12,7 @@ import Marquee from '../components/ui/marquee';
 import BlurFade from '../components/ui/blur-fade';
 import BorderBeam from '../components/ui/border-beam';
 import Spotlight from '../components/ui/spotlight';
+import { aboutPhoto, featuredPhoto, homepageGallery, allPhotos, img, thumb } from '../lib/photos';
 
 export const metadata = {
   title: 'Chicago Jewish Teens | Jewish Day Camp Northbrook IL — Ages 12–17',
@@ -90,8 +91,17 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right: Camp Highlights Card */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 text-white hero-animate-delay-2">
+          {/* Right: Camp Highlights Card with featured photo */}
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl overflow-hidden text-white hero-animate-delay-2">
+            {/* Real photo strip at top */}
+            <div className="h-48 overflow-hidden">
+              <img
+                src={img(featuredPhoto, 900)}
+                alt="Chicago Jewish Teens camp activities"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-8">
             <p className="text-gold font-semibold text-xs uppercase tracking-widest mb-1">This Summer</p>
             <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
               What Your Teen Will Experience
@@ -126,6 +136,7 @@ export default function HomePage() {
                 Request Free Info Pack
               </Link>
             </div>
+            </div>{/* end inner p-8 div */}
           </div>
         </div>
 
@@ -162,20 +173,14 @@ export default function HomePage() {
       <section className="py-24 bg-white">
         <BlurFade delay={0.1} className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left: Visual */}
+            {/* Left: Visual — real camp photo */}
             <div className="relative">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-gradient-to-br from-primary via-primary-light to-gold flex items-center justify-center shadow-2xl">
-                <div className="text-center text-white p-10">
-                  <div className="w-20 h-20 mx-auto mb-6 text-gold/60">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                      <polygon points="12,0 14.5,8.5 23,8.5 16.5,13.5 19,22 12,17 5,22 7.5,13.5 1,8.5 9.5,8.5" />
-                    </svg>
-                  </div>
-                  <h3 className="text-3xl font-bold mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
-                    Teen eXtreme
-                  </h3>
-                  <p className="text-blue-200 text-lg">A bold new concept in Jewish camping</p>
-                </div>
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src={img(aboutPhoto, 900)}
+                  alt="Chicago Jewish Teens campers at camp"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 hidden md:flex items-center gap-3">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
@@ -462,55 +467,34 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Real photo grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
-            {/* Large feature photo */}
-            <div className="col-span-2 md:col-span-2 row-span-1 rounded-2xl overflow-hidden" style={{ height: '340px' }}>
-              <img
-                src="/images/rafting.png"
-                alt="Campers white water rafting with helmets and life vests"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
+          {/* Real photo grid — mix of local + Cloudinary */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+            {/* Row 1: large rafting + featured Cloudinary */}
+            <div className="col-span-2 rounded-2xl overflow-hidden" style={{ height: '320px' }}>
+              <img src="/images/rafting.png" alt="White water rafting adventure"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div className="rounded-2xl overflow-hidden" style={{ height: '340px' }}>
-              <img
-                src="/images/camp-chabad.png"
-                alt="Camp group photo at Lubavitch Chabad of Northbrook"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
+            <div className="rounded-2xl overflow-hidden" style={{ height: '320px' }}>
+              <img src={thumb(featuredPhoto)} alt="Chicago Jewish Teens campers"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div className="rounded-2xl overflow-hidden" style={{ height: '260px' }}>
-              <img
-                src="/images/paintball.png"
-                alt="Campers at paintball activity"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
+            {/* Row 2: 3 Cloudinary photos */}
+            {homepageGallery.slice(2, 5).map((photo, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden" style={{ height: '220px' }}>
+                <img src={thumb(photo.id)} alt={photo.alt}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+            ))}
+            {/* Row 3: paintball + 2 more Cloudinary */}
+            <div className="rounded-2xl overflow-hidden" style={{ height: '220px' }}>
+              <img src="/images/paintball.png" alt="Paintball activity"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div className="rounded-2xl overflow-hidden" style={{ height: '260px' }}>
-              <img
-                src="/images/chicago-waterfront.png"
-                alt="Camp trip to Chicago waterfront"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden" style={{ height: '260px' }}>
-              <img
-                src="/images/utah-trip.png"
-                alt="Camp adventure trip to Utah"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </div>
-
-          {/* Photo labels strip */}
-          <div className="flex flex-wrap gap-3 justify-center mb-10">
-            {[
-              'White Water Rafting', 'Camp Grounds', 'Paintball',
-              'Chicago Day Trip', 'Utah Adventure'
-            ].map((label) => (
-              <span key={label} className="bg-white/10 text-white/80 text-xs font-medium px-4 py-1.5 rounded-full border border-white/20">
-                {label}
-              </span>
+            {homepageGallery.slice(5, 7).map((photo, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden" style={{ height: '220px' }}>
+                <img src={thumb(photo.id)} alt={photo.alt}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
             ))}
           </div>
 

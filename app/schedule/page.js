@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import ContactForm from '../../components/ContactForm';
 import { PaletteIcon, TentIcon, MountainIcon } from '../../components/Icons';
+import { featuredPhoto, sportsPhotos, img, thumb } from '../../lib/photos';
 
 export const metadata = {
   title: 'Schedule & Pricing | Chicago Jewish Teens',
@@ -12,8 +13,11 @@ export default function SchedulePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-28 bg-gradient-to-br from-primary-dark to-primary text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section className="relative py-28 bg-gradient-to-br from-primary-dark to-primary text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-20 bg-cover bg-center"
+          style={{ backgroundImage: `url("${img(featuredPhoto, 1400)}")` }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/85 to-primary/80" />
+        <div className="relative max-w-4xl mx-auto px-4 text-center">
           <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-4">Programs & Pricing</p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
             Summer Schedule & <span className="text-gold">Pricing</span>
