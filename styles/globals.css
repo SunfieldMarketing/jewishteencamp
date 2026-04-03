@@ -1,0 +1,285 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-800 bg-white;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold text-white font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:bg-gold-dark hover:shadow-xl hover:-translate-y-0.5 inline-block;
+  }
+
+  .btn-outline {
+    @apply border-2 border-white text-white font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:bg-white hover:text-primary inline-block;
+  }
+
+  .btn-secondary {
+    @apply bg-primary text-white font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:bg-primary-dark hover:shadow-xl hover:-translate-y-0.5 inline-block;
+  }
+
+  .section-heading {
+    @apply text-4xl md:text-5xl font-bold text-primary-dark leading-tight;
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .section-subheading {
+    @apply text-gold font-semibold text-sm uppercase tracking-widest mb-3;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 text-gray-800 placeholder-gray-400;
+  }
+
+  .nav-link {
+    @apply text-gray-700 font-medium hover:text-gold transition-colors duration-200;
+  }
+}
+
+/* Hero gradient overlay */
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(11, 31, 61, 0.85) 0%, rgba(27, 58, 107, 0.7) 50%, rgba(42, 82, 152, 0.5) 100%);
+}
+
+/* Gold gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #C8922A, #E8B84B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated underline */
+.animated-underline {
+  position: relative;
+}
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #C8922A;
+  transition: width 0.3s ease;
+}
+.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* Sticky mobile buttons */
+.sticky-call-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 16px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #16a34a;
+  color: white;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(22, 163, 74, 0.5);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.sticky-text-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 16px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #1B3A6B;
+  color: white;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(27, 58, 107, 0.5);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.sticky-call-btn:active, .sticky-text-btn:active {
+  transform: scale(0.97);
+}
+
+/* Activity card icon */
+.activity-icon {
+  @apply w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-4;
+}
+
+/* Stats counter */
+.stat-card {
+  @apply text-center p-6;
+}
+
+/* Testimonial card */
+.testimonial-card {
+  @apply bg-white rounded-2xl shadow-lg p-8 relative;
+}
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 24px;
+  font-size: 80px;
+  color: #C8922A;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+/* FAQ accordion */
+.faq-item {
+  @apply border border-gray-200 rounded-xl overflow-hidden mb-4;
+}
+
+/* Navbar scrolled state */
+.navbar-scrolled {
+  @apply shadow-lg bg-white;
+}
+
+/* Mobile menu */
+.mobile-menu-enter {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Photo gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* Program card badge */
+.program-badge {
+  @apply absolute top-4 right-4 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide;
+}
+
+/* Wave divider */
+.wave-divider {
+  overflow: hidden;
+  line-height: 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #1B3A6B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2A5298;
+}
+
+/* Form focus ring */
+.form-input:focus {
+  box-shadow: 0 0 0 3px rgba(27, 58, 107, 0.15);
+}
+
+/* Loading animation for form */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Hero text animation */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate {
+  animation: heroFadeUp 0.8s ease-out forwards;
+}
+.hero-animate-delay-1 {
+  animation: heroFadeUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+.hero-animate-delay-2 {
+  animation: heroFadeUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+.hero-animate-delay-3 {
+  animation: heroFadeUp 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+/* Section reveal on scroll - handled by JS */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Trust badges */
+.trust-badge {
+  @apply flex items-center gap-2 text-sm text-gray-600;
+}
+
+/* Photo placeholder */
+.photo-placeholder {
+  background: linear-gradient(135deg, #1B3A6B 0%, #2A5298 50%, #C8922A 100%);
+}
