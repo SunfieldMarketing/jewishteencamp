@@ -47,11 +47,7 @@ export default function PhotoGallery({ photos, showFilter = true }) {
               style={{ display: 'block' }}
             />
             {/* Overlay on hover */}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-              <div>
-                <span className="text-white text-sm font-semibold">{photo.alt}</span>
-                <span className="block text-gold text-xs mt-0.5">{photo.cat}</span>
-              </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
               <div className="ml-auto w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
                 <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
@@ -87,10 +83,6 @@ export default function PhotoGallery({ photos, showFilter = true }) {
             className="max-h-[90vh] max-w-[95vw] rounded-2xl shadow-2xl object-contain"
             onClick={e => e.stopPropagation()}
           />
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center">
-            <p className="text-white font-semibold">{lightbox.alt}</p>
-            <p className="text-gold text-sm">{lightbox.cat}</p>
-          </div>
         </div>
       )}
     </>
