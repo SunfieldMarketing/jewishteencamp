@@ -451,7 +451,7 @@ export default function HomePage() {
 
       {/* ===== PHOTO GALLERY PREVIEW ===== */}
       <section className="py-24 bg-primary-dark">
-        <div className="max-w-7xl mx-auto px-4">
+        <BlurFade delay={0.1} className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-3">Camp Life</p>
             <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
@@ -461,29 +461,63 @@ export default function HomePage() {
               A glimpse into life at Chicago Jewish Teens — where every day is an adventure.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-            {galleryItems.map((item, i) => (
-              <div
-                key={i}
-                className={`rounded-2xl overflow-hidden ${i === 0 || i === 5 ? 'md:row-span-2' : ''}`}
-                style={{ height: i === 0 || i === 5 ? '320px' : '150px' }}
-              >
-                <div
-                  className="w-full h-full flex flex-col items-center justify-center gap-2"
-                  style={{ background: item.gradient }}
-                >
-                  <div className="w-8 h-8 text-white/50">
-                    {item.icon}
-                  </div>
-                  <span className="text-white/40 text-xs font-medium tracking-wide">{item.label}</span>
-                </div>
-              </div>
+
+          {/* Real photo grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+            {/* Large feature photo */}
+            <div className="col-span-2 md:col-span-2 row-span-1 rounded-2xl overflow-hidden" style={{ height: '340px' }}>
+              <img
+                src="/images/rafting.png"
+                alt="Campers white water rafting with helmets and life vests"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden" style={{ height: '340px' }}>
+              <img
+                src="/images/camp-chabad.png"
+                alt="Camp group photo at Lubavitch Chabad of Northbrook"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden" style={{ height: '260px' }}>
+              <img
+                src="/images/paintball.png"
+                alt="Campers at paintball activity"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden" style={{ height: '260px' }}>
+              <img
+                src="/images/chicago-waterfront.png"
+                alt="Camp trip to Chicago waterfront"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden" style={{ height: '260px' }}>
+              <img
+                src="/images/utah-trip.png"
+                alt="Camp adventure trip to Utah"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+
+          {/* Photo labels strip */}
+          <div className="flex flex-wrap gap-3 justify-center mb-10">
+            {[
+              'White Water Rafting', 'Camp Grounds', 'Paintball',
+              'Chicago Day Trip', 'Utah Adventure'
+            ].map((label) => (
+              <span key={label} className="bg-white/10 text-white/80 text-xs font-medium px-4 py-1.5 rounded-full border border-white/20">
+                {label}
+              </span>
             ))}
           </div>
+
           <div className="text-center">
             <Link href="/photos" className="btn-primary">View Full Gallery</Link>
           </div>
-        </div>
+        </BlurFade>
       </section>
 
       {/* ===== FAQ SECTION ===== */}
