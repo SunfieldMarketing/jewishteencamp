@@ -33,7 +33,7 @@ export const metadata = {
       'An unforgettable summer day camp for Jewish teens ages 12–17 in Northbrook, IL. Adventures, sports, trips, and authentic Jewish culture.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: 'https://res.cloudinary.com/dai2pg27n/image/upload/v1775248027/Screenshot_2026-04-03_162553_xodsyd.png',
         width: 1200,
         height: 630,
         alt: 'Chicago Jewish Teens Summer Camp',
