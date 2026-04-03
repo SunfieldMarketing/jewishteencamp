@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, email, phone, childAge, subject, message } = body;
+    const { name, email, phone, childAge, subject, program, message } = body;
 
     // Basic validation
     if (!name || !email || !subject || !message) {
@@ -29,6 +29,7 @@ export async function POST(request) {
       phone: phone || 'Not provided',
       childAge: childAge || 'Not specified',
       subject,
+      program: program || 'General Inquiry',
       message,
       timestamp: new Date().toISOString(),
       source: 'Chicago Jewish Teens Website',
@@ -53,6 +54,7 @@ export async function POST(request) {
     //     <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
     //     <p><strong>Teen Age:</strong> ${childAge || 'Not specified'}</p>
     //     <p><strong>Subject:</strong> ${subject}</p>
+    //     <p><strong>Program:</strong> ${program || 'General Inquiry'}</p>
     //     <p><strong>Message:</strong> ${message}</p>
     //   `,
     // });

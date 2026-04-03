@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-export default function ContactForm({ variant = 'default' }) {
+function ContactFormInner({ variant = 'default' }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,6 +22,7 @@ export default function ContactForm({ variant = 'default' }) {
       setFormData((prev) => ({ ...prev, program: programParam }));
     }
   }, [searchParams]);
+
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
 
   const handleChange = (e) => {
@@ -234,5 +235,13 @@ export default function ContactForm({ variant = 'default' }) {
         By submitting, you agree to be contacted about Chicago Jewish Teens programs. We respect your privacy and never share your information.
       </p>
     </form>
+  );
+}
+
+export default function ContactForm(props) {
+  return (
+    <Suspense fallback={<div className="animate-pulse bg-gray-100 h-[600px] rounded-2xl" />}>
+      <ContactFormInner {...props} />
+    </Suspense>
   );
 }
