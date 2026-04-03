@@ -11,7 +11,8 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-5 group">
               <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-white shadow-lg p-2.5">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
-                  <polygon points="12,1 15,9 23,9 17,14 19,22 12,17.5 5,22 7,14 1,9 9,9" />
+                  <path d="M12 2.5l7.5 13H4.5z" />
+                  <path d="M12 21.5l-7.5-13h15z" />
                 </svg>
               </div>
               <div>

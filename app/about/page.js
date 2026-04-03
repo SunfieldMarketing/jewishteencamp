@@ -283,7 +283,7 @@ const missionPoints = [
 
 const origins = [
   { icon: <TrophyIcon className="w-full h-full" />, title: 'CGI Camp Network', desc: 'Teen Camp is proudly founded on 50 years of successful camping principles and is affiliated with CGI camping - the largest worldwide network of Jewish camping.' },
-  { icon: <StarIcon className="w-full h-full" />, title: 'Trendsetting Programs', desc: "CGI camps enjoy a well-earned reputation as a trendsetter with adventurous trips, creative programs, and sports instruction that teens look forward to all year." },
+  { icon: <StarOfDavidIcon className="w-full h-full" />, title: 'Trendsetting Programs', desc: "CGI camps enjoy a well-earned reputation as a trendsetter with adventurous trips, creative programs, and sports instruction that teens look forward to all year." },
   { icon: <CalendarIcon className="w-full h-full" />, title: 'Est. Since 2000', desc: "Chicago Jewish Teens has served as a haven for children and their families since 2000 - building a legacy of transformative summer experiences." },
 ];
 
@@ -296,7 +296,7 @@ const facilities = [
 
 const staffDetails = [
   { icon: <LockIcon className="w-full h-full" />, title: 'Rigorous Selection', desc: 'Each staff member has been carefully chosen after a scrupulous application and training process. Our counselors are hand-picked for their experience, expertise, good social skills, and a love for working with teens.' },
-  { icon: <StarIcon className="w-full h-full" />, title: 'Experienced & Returning', desc: 'Many staff members return year after year, lending experience and continuity to our programs. Each counselor is a role model for our teens, promising friendship that will last forever.' },
+  { icon: <StarOfDavidIcon className="w-full h-full" />, title: 'Experienced & Returning', desc: 'Many staff members return year after year, lending experience and continuity to our programs. Each counselor is a role model for our teens, promising friendship that will last forever.' },
   { icon: <UsersIcon className="w-full h-full" />, title: 'Low Camper Ratio', desc: 'Our low camper-to-staff ratio ensures that each child will have the highest quality supervision along with caring and attentive guidance throughout the program.' },
   { icon: <GlobeIcon className="w-full h-full" />, title: 'Diverse International Team', desc: 'Our experienced counselors come from around the world and are known for their personal warmth and ability to care for each teen as a unique individual.' },
 ];

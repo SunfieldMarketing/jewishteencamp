@@ -26,6 +26,10 @@ export default function HomePage() {
       {/* ===== HERO SECTION ===== */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light" />
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20 pointer-events-none"
+          style={{ backgroundImage: `url("${img(featuredPhoto, 1400)}")` }}
+        />
         <Spotlight className="-top-40 left-0 md:left-60 md:-top-20 h-screen" fill="rgba(200,146,42,0.15)" />
         {/* Subtle geometric pattern */}
         <div
@@ -37,12 +41,14 @@ export default function HomePage() {
         {/* Decorative geometric star - SVG, not emoji */}
         <div className="absolute top-16 right-8 opacity-5 hidden lg:block">
           <svg width="280" height="280" viewBox="0 0 24 24" fill="white">
-            <polygon points="12,0 14.5,8.5 23,8.5 16.5,13.5 19,22 12,17 5,22 7.5,13.5 1,8.5 9.5,8.5" />
+            <path d="M12 2.5l7.5 13H4.5z" />
+            <path d="M12 21.5l-7.5-13h15z" />
           </svg>
         </div>
         <div className="absolute bottom-8 left-8 opacity-5 hidden lg:block">
           <svg width="180" height="180" viewBox="0 0 24 24" fill="white">
-            <polygon points="12,0 14.5,8.5 23,8.5 16.5,13.5 19,22 12,17 5,22 7.5,13.5 1,8.5 9.5,8.5" />
+            <path d="M12 2.5l7.5 13H4.5z" />
+            <path d="M12 21.5l-7.5-13h15z" />
           </svg>
         </div>
 
@@ -51,7 +57,7 @@ export default function HomePage() {
           <div className="flex flex-col items-center">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white text-sm font-medium mb-6 hero-animate">
               <span className="w-2 h-2 bg-gold rounded-full animate-pulse" />
-              Now Enrolling for Summer 2025
+              Now Enrolling for Summer 2026
             </div>
 
             <h1
@@ -669,7 +675,7 @@ const whyUs = [
   { icon: <GlobeIcon className="w-full h-full" />, title: 'CGI Network', desc: 'Part of the global CGI camp network - a trusted name in Jewish education and youth development.' },
   { icon: <LockIcon className="w-full h-full" />, title: 'Safe & Supervised', desc: 'Certified Red Cross lifeguards, experienced Boy Scout staff for overnight trips, and certified instructors.' },
   { icon: <HandshakeIcon className="w-full h-full" />, title: 'Close-Knit Community', desc: 'Small group sizes ensure every teen gets personal attention and forms real, lasting friendships.' },
-  { icon: <StarIcon className="w-full h-full" />, title: 'Life-Changing', desc: 'Campers return year after year - teens typically return to school with new energy, confidence, and Jewish pride.' },
+  { icon: <StarOfDavidIcon className="w-full h-full" />, title: 'Life-Changing', desc: 'Campers return year after year - teens typically return to school with new energy, confidence, and Jewish pride.' },
 ];
 
 const programs = [
