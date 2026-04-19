@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import StickyMobileButtons from '../components/StickyMobileButtons';
+import { draftMode } from 'next/headers';
 
 export const metadata = {
   metadataBase: new URL('https://www.chicagojewishteens.com'),

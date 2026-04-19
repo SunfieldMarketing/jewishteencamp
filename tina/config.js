@@ -73,6 +73,39 @@ export default defineConfig({
                 ],
               },
               {
+                name: "about",
+                label: "About Us Section",
+                fields: [
+                  { type: "string", name: "heading", label: "Heading" },
+                  { type: "string", name: "subheading", label: "Subheading" },
+                  { type: "string", name: "p1", label: "Paragraph 1", ui: { component: "textarea" } },
+                  { type: "string", name: "p2", label: "Paragraph 2", ui: { component: "textarea" } },
+                  { type: "image", name: "image", label: "Section Image" },
+                ],
+              },
+              {
+                name: "activities",
+                label: "Activities Grid",
+                fields: [
+                  { type: "string", name: "heading", label: "Heading" },
+                  { type: "string", name: "subheading", label: "Subheading" },
+                  {
+                    type: "object",
+                    list: true,
+                    name: "activities",
+                    label: "Activity Cards",
+                    fields: [
+                      { type: "string", name: "title", label: "Title" },
+                      { type: "string", name: "desc", label: "Description", ui: { component: "textarea" } },
+                      { type: "string", name: "icon", label: "Icon Name (TentIcon, WaveIcon, SportsIcon, etc.)" },
+                      { type: "string", name: "bg", label: "Icon Background Color (e.g., #dbeafe)" },
+                      { type: "string", name: "color", label: "Icon Color (e.g., #1d4ed8)" },
+                    ],
+                  },
+                ],
+              },
+
+              {
                 name: "faq",
                 label: "FAQ Section",
                 fields: [
@@ -90,6 +123,7 @@ export default defineConfig({
                   },
                 ],
               },
+
             ],
           },
         ],
