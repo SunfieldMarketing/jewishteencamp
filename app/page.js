@@ -1,19 +1,7 @@
-import { builder } from '@builder.io/react';
-import { RenderBuilderContent } from '../components/builder-content';
-
-builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
+import client from "../tina/__generated__/client";
+import HomeClient from "./home-client";
 
 export default async function HomePage() {
-  const model = 'page';
-  const content = await builder
-    .get(model, {
-      userAttributes: {
-        urlPath: '/',
-      },
-    })
-    .toPromise();
-
-  return (
-    <RenderBuilderContent content={content} model={model} />
-  );
+  const res = await client.queries.page({ relativePath: "home.md" });
+  return <HomeClient props={res} />;
 }
