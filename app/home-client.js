@@ -19,15 +19,26 @@ export default function HomeClient({ props }) {
   return (
     <div className="page-builder">
       {data.page.blocks?.map((block, i) => {
-        switch (block.__typename) {
+        // Use either __typename OR _template for maximum reliability
+        const type = block.__typename || block._template;
+        console.log("Rendering block:", type);
+
+        switch (type) {
           case "PageBlocksHero":
+          case "hero":
             return <HeroBlock key={i} data={block} />;
           case "PageBlocksStats":
+          case "stats":
             return <StatsBlock key={i} data={block} />;
           case "PageBlocksFaq":
+          case "faq":
             return <FAQBlock key={i} data={block} />;
           default:
-            return null;
+            return (
+              <div key={i} className="p-10 bg-gray-100 text-center border-2 border-dashed border-gray-300">
+                Unknown Block Type: {type}
+              </div>
+            );
         }
       })}
     </div>
