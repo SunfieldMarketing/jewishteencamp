@@ -338,9 +338,9 @@ export default function HomeClient({ props }) {
                 </div>
               );
               return idx === 1 ? (
-                <BorderBeam key={program.name} className="scale-105 shadow-2xl" colorFrom="#C8922A" colorTo="#f5d78e" borderWidth={3}>
+                <div key={program.name} className="scale-105 shadow-2xl relative">
                   {inner}
-                </BorderBeam>
+                </div>
               ) : (
                 <div key={program.name}>{inner}</div>
               );
