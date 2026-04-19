@@ -68,8 +68,7 @@ export default function HomeClient({ props }) {
               className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 hero-animate-delay-1"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
-              Make a Lifelong Investment in{' '}
-              <span className="text-gold">Your Teen</span>
+              {data.page.title}
             </h1>
 
             <p className="text-xl text-blue-100 leading-relaxed mb-8 max-w-2xl hero-animate-delay-2">
