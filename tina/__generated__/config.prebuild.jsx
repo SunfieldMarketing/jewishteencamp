@@ -21,6 +21,14 @@ var config_default = defineConfig({
         label: "Pages",
         path: "content/pages",
         format: "md",
+        ui: {
+          router: ({ document }) => {
+            if (document._sys.filename === "home") {
+              return "/";
+            }
+            return void 0;
+          }
+        },
         fields: [
           {
             type: "string",
