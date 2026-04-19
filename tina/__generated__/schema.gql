@@ -87,9 +87,58 @@ type Collection {
 
 union DocumentNode = Page | Folder
 
+type PageHeroButtons {
+  primaryLabel: String
+  primaryLink: String
+  secondaryLabel: String
+  secondaryLink: String
+}
+
+type PageStats {
+  value: Float
+  suffix: String
+  label: String
+}
+
+type PageAbout {
+  subheading: String
+  heading: String
+  p1: String
+  p2: String
+  image: String
+}
+
+type PageActivities {
+  title: String
+  desc: String
+  icon: String
+  bg: String
+  color: String
+}
+
+type PageTestimonials {
+  quote: String
+  name: String
+  location: String
+}
+
+type PageFaqs {
+  q: String
+  a: String
+}
+
 type Page implements Node & Document {
   title: String!
-  body: JSON
+  heroImage: String
+  heroDescription: String
+  heroButtons: PageHeroButtons
+  heroQuote: String
+  heroQuoteAuthor: String
+  stats: [PageStats]
+  about: PageAbout
+  activities: [PageActivities]
+  testimonials: [PageTestimonials]
+  faqs: [PageFaqs]
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -102,15 +151,75 @@ input StringFilter {
   in: [String]
 }
 
-input RichTextFilter {
+input ImageFilter {
   startsWith: String
   eq: String
   exists: Boolean
+  in: [String]
+}
+
+input PageHeroButtonsFilter {
+  primaryLabel: StringFilter
+  primaryLink: StringFilter
+  secondaryLabel: StringFilter
+  secondaryLink: StringFilter
+}
+
+input NumberFilter {
+  lt: Float
+  lte: Float
+  gte: Float
+  gt: Float
+  eq: Float
+  exists: Boolean
+  in: [Float]
+}
+
+input PageStatsFilter {
+  value: NumberFilter
+  suffix: StringFilter
+  label: StringFilter
+}
+
+input PageAboutFilter {
+  subheading: StringFilter
+  heading: StringFilter
+  p1: StringFilter
+  p2: StringFilter
+  image: ImageFilter
+}
+
+input PageActivitiesFilter {
+  title: StringFilter
+  desc: StringFilter
+  icon: StringFilter
+  bg: StringFilter
+  color: StringFilter
+}
+
+input PageTestimonialsFilter {
+  quote: StringFilter
+  name: StringFilter
+  location: StringFilter
+}
+
+input PageFaqsFilter {
+  q: StringFilter
+  a: StringFilter
 }
 
 input PageFilter {
   title: StringFilter
-  body: RichTextFilter
+  heroImage: ImageFilter
+  heroDescription: StringFilter
+  heroButtons: PageHeroButtonsFilter
+  heroQuote: StringFilter
+  heroQuoteAuthor: StringFilter
+  stats: PageStatsFilter
+  about: PageAboutFilter
+  activities: PageActivitiesFilter
+  testimonials: PageTestimonialsFilter
+  faqs: PageFaqsFilter
 }
 
 type PageConnectionEdges {
@@ -143,9 +252,58 @@ input DocumentMutation {
   page: PageMutation
 }
 
+input PageHeroButtonsMutation {
+  primaryLabel: String
+  primaryLink: String
+  secondaryLabel: String
+  secondaryLink: String
+}
+
+input PageStatsMutation {
+  value: Float
+  suffix: String
+  label: String
+}
+
+input PageAboutMutation {
+  subheading: String
+  heading: String
+  p1: String
+  p2: String
+  image: String
+}
+
+input PageActivitiesMutation {
+  title: String
+  desc: String
+  icon: String
+  bg: String
+  color: String
+}
+
+input PageTestimonialsMutation {
+  quote: String
+  name: String
+  location: String
+}
+
+input PageFaqsMutation {
+  q: String
+  a: String
+}
+
 input PageMutation {
   title: String
-  body: JSON
+  heroImage: String
+  heroDescription: String
+  heroButtons: PageHeroButtonsMutation
+  heroQuote: String
+  heroQuoteAuthor: String
+  stats: [PageStatsMutation]
+  about: PageAboutMutation
+  activities: [PageActivitiesMutation]
+  testimonials: [PageTestimonialsMutation]
+  faqs: [PageFaqsMutation]
 }
 
 schema {

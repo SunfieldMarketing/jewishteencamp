@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@builder.io/react": "^9.3.0",
+    "@builder.io/sdk-react-nextjs": "^0.25.0",
     "@tinacms/cli": "^2.2.2",
     "@tinacms/datalayer": "^2.0.15",
     "framer-motion": "^12.38.0",

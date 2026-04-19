@@ -32,7 +32,7 @@ export default function HomeClient({ props }) {
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-light" />
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20 pointer-events-none"
-          style={{ backgroundImage: `url("${img(featuredPhoto, 1400)}")` }}
+          style={{ backgroundImage: `url("${data.page.heroImage || img(featuredPhoto, 1400)}")` }}
         />
         <Spotlight className="-top-40 left-0 md:left-60 md:-top-20 h-screen" fill="rgba(200,146,42,0.15)" />
         {/* Subtle geometric pattern */}
@@ -72,20 +72,20 @@ export default function HomeClient({ props }) {
             </h1>
 
             <p className="text-xl text-blue-100 leading-relaxed mb-8 max-w-2xl hero-animate-delay-2">
-              Chicago&apos;s premier Jewish day camp for teens ages 12-17. Adventures, sports, friendships, and authentic Jewish identity - all from the heart of Northbrook, IL.
+              {data.page.heroDescription || "Chicago's premier Jewish day camp for teens ages 12-17. Adventures, sports, friendships, and authentic Jewish identity - all from the heart of Northbrook, IL."}
             </p>
 
             <blockquote className="border-l-4 border-gold pl-5 text-blue-200 italic text-sm mb-10 hero-animate-delay-2 max-w-lg mx-auto">
-              &ldquo;Every boy and girl is a seed and a sapling, which with the passage of time will bring forth fruit.&rdquo;
-              <footer className="text-gold text-xs mt-1.5 not-italic font-semibold">- The Lubavitcher Rebbe</footer>
+              &ldquo;{data.page.heroQuote || "Every boy and girl is a seed and a sapling, which with the passage of time will bring forth fruit."}&rdquo;
+              <footer className="text-gold text-xs mt-1.5 not-italic font-semibold">- {data.page.heroQuoteAuthor || "The Lubavitcher Rebbe"}</footer>
             </blockquote>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center hero-animate-delay-3">
-              <ShimmerButton href="/contact">
-                Enroll Now - Free Consultation
+              <ShimmerButton href={data.page.heroButtons?.primaryLink || "/contact"}>
+                {data.page.heroButtons?.primaryLabel || "Enroll Now - Free Consultation"}
               </ShimmerButton>
-              <Link href="/about" className="btn-outline">
-                Learn More
+              <Link href={data.page.heroButtons?.secondaryLink || "/about"} className="btn-outline">
+                {data.page.heroButtons?.secondaryLabel || "Learn More"}
               </Link>
             </div>
 
@@ -113,12 +113,12 @@ export default function HomeClient({ props }) {
       <section className="bg-gold py-10">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-x divide-white/20">
-            {[
+            {(data.page.stats || [
               { value: 25, suffix: '+', label: 'Years of Excellence' },
               { value: 500, suffix: '+', label: 'Teen Campers Served' },
               { value: 50, suffix: '+', label: 'Adventure Trips' },
               { value: 100, suffix: '%', label: 'Parent Satisfaction' },
-            ].map((stat) => (
+            ]).map((stat) => (
               <div key={stat.label} className="text-center text-white px-4">
                 <div className="text-4xl md:text-5xl font-bold mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
                   <NumberTicker value={stat.value} suffix={stat.suffix} duration={1800} />
@@ -138,7 +138,7 @@ export default function HomeClient({ props }) {
             <div className="relative">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src={img(aboutPhoto, 900)}
+                  src={data.page.about?.image || img(aboutPhoto, 900)}
                   alt="Chicago Jewish Teens campers at camp"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -165,10 +165,10 @@ export default function HomeClient({ props }) {
                 More Than a Camp - <span className="text-gold">A Life Experience</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Teen eXtreme is a bold new concept in Jewish camping. As a child grows so does his ability for self-discovery, adventure, bonding with friends, and appreciation of group dynamics.
+                {data.page.about?.p1 || "Teen eXtreme is a bold new concept in Jewish camping. As a child grows so does his ability for self-discovery, adventure, bonding with friends, and appreciation of group dynamics."}
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
-                Under the leadership of a team of senior staff members, Teen Camp combines out-of-state trips, camping excursions, athletics, swimming, and outdoor adventures with authentic Jewish spirit to impart timeless values and appreciation of others.
+                {data.page.about?.p2 || "Under the leadership of a team of senior staff members, Teen Camp combines out-of-state trips, camping excursions, athletics, swimming, and outdoor adventures with authentic Jewish spirit to impart timeless values and appreciation of others."}
               </p>
 
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -225,9 +225,9 @@ export default function HomeClient({ props }) {
                   <div className="relative z-10">
                     <div
                       className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500"
-                      style={{ background: activity.bg }}
+                      style={{ background: activity.bg || "#dbeafe" }}
                     >
-                      <div className="w-8 h-8" style={{ color: activity.color }}>
+                      <div className="w-8 h-8" style={{ color: activity.color || "#1d4ed8" }}>
                         {activity.icon}
                       </div>
                     </div>
@@ -411,7 +411,7 @@ export default function HomeClient({ props }) {
             </h2>
           </div>
           <div className="flex flex-wrap justify-center gap-8">
-            {testimonials.map((t) => (
+            {(data.page.testimonials || testimonials).map((t) => (
               <div key={t.name} className="testimonial-card w-full md:w-[calc(33.33%-1.5rem)] max-w-sm flex-shrink-0">
                 <div className="mt-8">
                   <p className="text-gray-600 leading-relaxed mb-6 italic">{t.quote}</p>
@@ -496,7 +496,7 @@ export default function HomeClient({ props }) {
             </h2>
           </div>
           <div className="space-y-4">
-            {faqs.map((faq, i) => (
+            {(data.page.faqs || faqs).map((faq, i) => (
               <FAQItem key={i} question={faq.q} answer={faq.a} />
             ))}
           </div>

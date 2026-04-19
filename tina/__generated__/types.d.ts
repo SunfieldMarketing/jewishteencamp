@@ -165,10 +165,65 @@ export type CollectionDocumentsArgs = {
 
 export type DocumentNode = Page | Folder;
 
+export type PageHeroButtons = {
+  __typename?: 'PageHeroButtons';
+  primaryLabel?: Maybe<Scalars['String']['output']>;
+  primaryLink?: Maybe<Scalars['String']['output']>;
+  secondaryLabel?: Maybe<Scalars['String']['output']>;
+  secondaryLink?: Maybe<Scalars['String']['output']>;
+};
+
+export type PageStats = {
+  __typename?: 'PageStats';
+  value?: Maybe<Scalars['Float']['output']>;
+  suffix?: Maybe<Scalars['String']['output']>;
+  label?: Maybe<Scalars['String']['output']>;
+};
+
+export type PageAbout = {
+  __typename?: 'PageAbout';
+  subheading?: Maybe<Scalars['String']['output']>;
+  heading?: Maybe<Scalars['String']['output']>;
+  p1?: Maybe<Scalars['String']['output']>;
+  p2?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
+};
+
+export type PageActivities = {
+  __typename?: 'PageActivities';
+  title?: Maybe<Scalars['String']['output']>;
+  desc?: Maybe<Scalars['String']['output']>;
+  icon?: Maybe<Scalars['String']['output']>;
+  bg?: Maybe<Scalars['String']['output']>;
+  color?: Maybe<Scalars['String']['output']>;
+};
+
+export type PageTestimonials = {
+  __typename?: 'PageTestimonials';
+  quote?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  location?: Maybe<Scalars['String']['output']>;
+};
+
+export type PageFaqs = {
+  __typename?: 'PageFaqs';
+  q?: Maybe<Scalars['String']['output']>;
+  a?: Maybe<Scalars['String']['output']>;
+};
+
 export type Page = Node & Document & {
   __typename?: 'Page';
   title: Scalars['String']['output'];
-  body?: Maybe<Scalars['JSON']['output']>;
+  heroImage?: Maybe<Scalars['String']['output']>;
+  heroDescription?: Maybe<Scalars['String']['output']>;
+  heroButtons?: Maybe<PageHeroButtons>;
+  heroQuote?: Maybe<Scalars['String']['output']>;
+  heroQuoteAuthor?: Maybe<Scalars['String']['output']>;
+  stats?: Maybe<Array<Maybe<PageStats>>>;
+  about?: Maybe<PageAbout>;
+  activities?: Maybe<Array<Maybe<PageActivities>>>;
+  testimonials?: Maybe<Array<Maybe<PageTestimonials>>>;
+  faqs?: Maybe<Array<Maybe<PageFaqs>>>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -181,15 +236,75 @@ export type StringFilter = {
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
-export type RichTextFilter = {
+export type ImageFilter = {
   startsWith?: InputMaybe<Scalars['String']['input']>;
   eq?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type PageHeroButtonsFilter = {
+  primaryLabel?: InputMaybe<StringFilter>;
+  primaryLink?: InputMaybe<StringFilter>;
+  secondaryLabel?: InputMaybe<StringFilter>;
+  secondaryLink?: InputMaybe<StringFilter>;
+};
+
+export type NumberFilter = {
+  lt?: InputMaybe<Scalars['Float']['input']>;
+  lte?: InputMaybe<Scalars['Float']['input']>;
+  gte?: InputMaybe<Scalars['Float']['input']>;
+  gt?: InputMaybe<Scalars['Float']['input']>;
+  eq?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['Float']['input']>>>;
+};
+
+export type PageStatsFilter = {
+  value?: InputMaybe<NumberFilter>;
+  suffix?: InputMaybe<StringFilter>;
+  label?: InputMaybe<StringFilter>;
+};
+
+export type PageAboutFilter = {
+  subheading?: InputMaybe<StringFilter>;
+  heading?: InputMaybe<StringFilter>;
+  p1?: InputMaybe<StringFilter>;
+  p2?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
+};
+
+export type PageActivitiesFilter = {
+  title?: InputMaybe<StringFilter>;
+  desc?: InputMaybe<StringFilter>;
+  icon?: InputMaybe<StringFilter>;
+  bg?: InputMaybe<StringFilter>;
+  color?: InputMaybe<StringFilter>;
+};
+
+export type PageTestimonialsFilter = {
+  quote?: InputMaybe<StringFilter>;
+  name?: InputMaybe<StringFilter>;
+  location?: InputMaybe<StringFilter>;
+};
+
+export type PageFaqsFilter = {
+  q?: InputMaybe<StringFilter>;
+  a?: InputMaybe<StringFilter>;
 };
 
 export type PageFilter = {
   title?: InputMaybe<StringFilter>;
-  body?: InputMaybe<RichTextFilter>;
+  heroImage?: InputMaybe<ImageFilter>;
+  heroDescription?: InputMaybe<StringFilter>;
+  heroButtons?: InputMaybe<PageHeroButtonsFilter>;
+  heroQuote?: InputMaybe<StringFilter>;
+  heroQuoteAuthor?: InputMaybe<StringFilter>;
+  stats?: InputMaybe<PageStatsFilter>;
+  about?: InputMaybe<PageAboutFilter>;
+  activities?: InputMaybe<PageActivitiesFilter>;
+  testimonials?: InputMaybe<PageTestimonialsFilter>;
+  faqs?: InputMaybe<PageFaqsFilter>;
 };
 
 export type PageConnectionEdges = {
@@ -270,19 +385,68 @@ export type DocumentMutation = {
   page?: InputMaybe<PageMutation>;
 };
 
-export type PageMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  body?: InputMaybe<Scalars['JSON']['input']>;
+export type PageHeroButtonsMutation = {
+  primaryLabel?: InputMaybe<Scalars['String']['input']>;
+  primaryLink?: InputMaybe<Scalars['String']['input']>;
+  secondaryLabel?: InputMaybe<Scalars['String']['input']>;
+  secondaryLink?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PagePartsFragment = { __typename: 'Page', title: string, body?: any | null };
+export type PageStatsMutation = {
+  value?: InputMaybe<Scalars['Float']['input']>;
+  suffix?: InputMaybe<Scalars['String']['input']>;
+  label?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PageAboutMutation = {
+  subheading?: InputMaybe<Scalars['String']['input']>;
+  heading?: InputMaybe<Scalars['String']['input']>;
+  p1?: InputMaybe<Scalars['String']['input']>;
+  p2?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PageActivitiesMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  desc?: InputMaybe<Scalars['String']['input']>;
+  icon?: InputMaybe<Scalars['String']['input']>;
+  bg?: InputMaybe<Scalars['String']['input']>;
+  color?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PageTestimonialsMutation = {
+  quote?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  location?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PageFaqsMutation = {
+  q?: InputMaybe<Scalars['String']['input']>;
+  a?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PageMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  heroImage?: InputMaybe<Scalars['String']['input']>;
+  heroDescription?: InputMaybe<Scalars['String']['input']>;
+  heroButtons?: InputMaybe<PageHeroButtonsMutation>;
+  heroQuote?: InputMaybe<Scalars['String']['input']>;
+  heroQuoteAuthor?: InputMaybe<Scalars['String']['input']>;
+  stats?: InputMaybe<Array<InputMaybe<PageStatsMutation>>>;
+  about?: InputMaybe<PageAboutMutation>;
+  activities?: InputMaybe<Array<InputMaybe<PageActivitiesMutation>>>;
+  testimonials?: InputMaybe<Array<InputMaybe<PageTestimonialsMutation>>>;
+  faqs?: InputMaybe<Array<InputMaybe<PageFaqsMutation>>>;
+};
+
+export type PagePartsFragment = { __typename: 'Page', title: string, heroImage?: string | null, heroDescription?: string | null, heroQuote?: string | null, heroQuoteAuthor?: string | null, heroButtons?: { __typename: 'PageHeroButtons', primaryLabel?: string | null, primaryLink?: string | null, secondaryLabel?: string | null, secondaryLink?: string | null } | null, stats?: Array<{ __typename: 'PageStats', value?: number | null, suffix?: string | null, label?: string | null } | null> | null, about?: { __typename: 'PageAbout', subheading?: string | null, heading?: string | null, p1?: string | null, p2?: string | null, image?: string | null } | null, activities?: Array<{ __typename: 'PageActivities', title?: string | null, desc?: string | null, icon?: string | null, bg?: string | null, color?: string | null } | null> | null, testimonials?: Array<{ __typename: 'PageTestimonials', quote?: string | null, name?: string | null, location?: string | null } | null> | null, faqs?: Array<{ __typename: 'PageFaqs', q?: string | null, a?: string | null } | null> | null };
 
 export type PageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type PageQuery = { __typename?: 'Query', page: { __typename: 'Page', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PageQuery = { __typename?: 'Query', page: { __typename: 'Page', id: string, title: string, heroImage?: string | null, heroDescription?: string | null, heroQuote?: string | null, heroQuoteAuthor?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, heroButtons?: { __typename: 'PageHeroButtons', primaryLabel?: string | null, primaryLink?: string | null, secondaryLabel?: string | null, secondaryLink?: string | null } | null, stats?: Array<{ __typename: 'PageStats', value?: number | null, suffix?: string | null, label?: string | null } | null> | null, about?: { __typename: 'PageAbout', subheading?: string | null, heading?: string | null, p1?: string | null, p2?: string | null, image?: string | null } | null, activities?: Array<{ __typename: 'PageActivities', title?: string | null, desc?: string | null, icon?: string | null, bg?: string | null, color?: string | null } | null> | null, testimonials?: Array<{ __typename: 'PageTestimonials', quote?: string | null, name?: string | null, location?: string | null } | null> | null, faqs?: Array<{ __typename: 'PageFaqs', q?: string | null, a?: string | null } | null> | null } };
 
 export type PageConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -294,13 +458,56 @@ export type PageConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PageConnectionEdges', cursor: string, node?: { __typename: 'Page', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PageConnectionEdges', cursor: string, node?: { __typename: 'Page', id: string, title: string, heroImage?: string | null, heroDescription?: string | null, heroQuote?: string | null, heroQuoteAuthor?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, heroButtons?: { __typename: 'PageHeroButtons', primaryLabel?: string | null, primaryLink?: string | null, secondaryLabel?: string | null, secondaryLink?: string | null } | null, stats?: Array<{ __typename: 'PageStats', value?: number | null, suffix?: string | null, label?: string | null } | null> | null, about?: { __typename: 'PageAbout', subheading?: string | null, heading?: string | null, p1?: string | null, p2?: string | null, image?: string | null } | null, activities?: Array<{ __typename: 'PageActivities', title?: string | null, desc?: string | null, icon?: string | null, bg?: string | null, color?: string | null } | null> | null, testimonials?: Array<{ __typename: 'PageTestimonials', quote?: string | null, name?: string | null, location?: string | null } | null> | null, faqs?: Array<{ __typename: 'PageFaqs', q?: string | null, a?: string | null } | null> | null } | null } | null> | null } };
 
 export const PagePartsFragmentDoc = gql`
     fragment PageParts on Page {
   __typename
   title
-  body
+  heroImage
+  heroDescription
+  heroButtons {
+    __typename
+    primaryLabel
+    primaryLink
+    secondaryLabel
+    secondaryLink
+  }
+  heroQuote
+  heroQuoteAuthor
+  stats {
+    __typename
+    value
+    suffix
+    label
+  }
+  about {
+    __typename
+    subheading
+    heading
+    p1
+    p2
+    image
+  }
+  activities {
+    __typename
+    title
+    desc
+    icon
+    bg
+    color
+  }
+  testimonials {
+    __typename
+    quote
+    name
+    location
+  }
+  faqs {
+    __typename
+    q
+    a
+  }
 }
     `;
 export const PageDocument = gql`

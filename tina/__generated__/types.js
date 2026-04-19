@@ -9,7 +9,50 @@ export const PagePartsFragmentDoc = gql`
     fragment PageParts on Page {
   __typename
   title
-  body
+  heroImage
+  heroDescription
+  heroButtons {
+    __typename
+    primaryLabel
+    primaryLink
+    secondaryLabel
+    secondaryLink
+  }
+  heroQuote
+  heroQuoteAuthor
+  stats {
+    __typename
+    value
+    suffix
+    label
+  }
+  about {
+    __typename
+    subheading
+    heading
+    p1
+    p2
+    image
+  }
+  activities {
+    __typename
+    title
+    desc
+    icon
+    bg
+    color
+  }
+  testimonials {
+    __typename
+    quote
+    name
+    location
+  }
+  faqs {
+    __typename
+    q
+    a
+  }
 }
     `;
 export const PageDocument = gql`
