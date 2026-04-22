@@ -1,0 +1,83 @@
+{
+  "title": "Home Page",
+  "blocks": [
+    {
+      "_template": "hero",
+      "tagline": "Now Enrolling for Summer 2026",
+      "title": "Chicago Jewish Teens",
+      "subtitle": "Chicago's premier Jewish day camp for teens ages 12-17. Adventures, sports, friendships, and authentic Jewish identity - all from the heart of Northbrook, IL.",
+      "ctaText": "Enroll Now - Free Consultation",
+      "trustSignals": [
+        { "text": "Est. Since 2000" },
+        { "text": "CGI Camp Network" },
+        { "text": "100+ Families" },
+        { "text": "Ages 12-17" }
+      ]
+    },
+    {
+      "_template": "stats",
+      "items": [
+        { "value": "25", "label": "Years of Excellence" },
+        { "value": "500", "label": "Teen Campers Served" },
+        { "value": "50", "label": "Adventure Trips" },
+        { "value": "100", "label": "Parent Satisfaction" }
+      ]
+    },
+    {
+      "_template": "splitSection",
+      "heading": "More Than a Camp - A Life Experience",
+      "tagline": "About Chicago Jewish Teens",
+      "imageSide": "left",
+      "body": {
+        "type": "root",
+        "children": [
+          {
+            "type": "p",
+            "children": [{ "type": "text", "text": "Teen eXtreme is a bold new concept in Jewish camping. As a child grows so does his ability for self-discovery, adventure, bonding with friends, and appreciation of group dynamics." }]
+          }
+        ]
+      },
+      "listItems": [
+        { "text": "Expert Coaching" },
+        { "text": "Aquatic Sports" },
+        { "text": "Jewish Culture" },
+        { "text": "Overnight Trips" }
+      ]
+    },
+    {
+      "_template": "featureGrid",
+      "heading": "The Chicago Jewish Teens Difference",
+      "subheading": "Why Families Choose Us",
+      "items": [
+        { "title": "50 Years of Excellence", "desc": "Founded on 50 years of CGI camping principles - the largest worldwide network of Jewish camping.", "icon": "Trophy" },
+        { "title": "Expert Staff", "desc": "Counselors hand-picked for experience, expertise, and a genuine love for teen development.", "icon": "Person" },
+        { "title": "CGI Network", "desc": "Part of the global CGI camp network - a trusted name in Jewish education.", "icon": "Globe" }
+      ]
+    },
+    {
+      "_template": "staff",
+      "members": [
+        { "name": "R' Schneur Scheiman", "title": "Camp Gan Israel Chicago Director", "phone": "+1 (847) 485-9770" },
+        { "name": "R' Zalman Notik", "title": "Chicago Jewish Teens Director", "phone": "+1 (847) 452-4609", "email": "zalman@chicagojewishteens.com" }
+      ]
+    },
+    {
+      "_template": "testimonials",
+      "quotes": [
+        { "quote": "My son came home from Teen Camp a completely different person - more confident, more Jewishly aware.", "name": "Rachel K.", "location": "Northbrook, IL" }
+      ]
+    },
+    {
+      "_template": "programs",
+      "plans": [
+        { "name": "Boys' Teen Camp", "dates": "June 18 – July 11", "price": "From $450" }
+      ]
+    },
+    {
+      "_template": "faqs",
+      "items": [
+        { "q": "What ages does Chicago Jewish Teens serve?", "a": "Our programs are designed for Jewish teens ages 12–17." }
+      ]
+    }
+  ]
+}

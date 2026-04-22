@@ -1,0 +1,82 @@
+{
+  "title": "Day Camp Programs",
+  "blocks": [
+    {
+      "_template": "hero",
+      "tagline": "Day Camp Programs",
+      "title": "The Ultimate Jewish Teen Camp Experience",
+      "subtitle": "Daily adventures, expert coaching, authentic Jewish culture - all designed to challenge, inspire, and transform your teen.",
+      "ctaText": "Enroll Now",
+      "ctaLink": "/contact?program=day-camp"
+    },
+    {
+      "_template": "stats",
+      "items": [
+        { "value": "8", "label": "Weeks of Summer Fun" },
+        { "value": "2x", "label": "Full-Day Trips Weekly" },
+        { "value": "3+", "label": "Overnight Experiences" },
+        { "value": "5:1", "label": "Camper to Staff Ratio" }
+      ]
+    },
+    {
+      "_template": "featureGrid",
+      "heading": "Beyond the Campgrounds",
+      "subheading": "Adventure Trips",
+      "items": [
+        { "title": "Indiana Dunes Hiking", "desc": "Twice weekly full-day hikes at Indiana Dunes National Park", "icon": "Mountain" },
+        { "title": "White Water Rafting", "desc": "Rafting on Illinois's Vermillion River with certified guides", "icon": "Waves" },
+        { "title": "Paintballing & Go-Karting", "desc": "High-energy paintball and go-kart racing experiences", "icon": "MartialArts" }
+      ]
+    },
+    {
+      "_template": "featureGrid",
+      "heading": "Champions in the Making",
+      "subheading": "Sports & Athletics",
+      "items": [
+        { "title": "Baseball", "desc": "Expert coaching and league play", "icon": "Baseball" },
+        { "title": "Basketball", "desc": "Skill development and full participation", "icon": "Basketball" },
+        { "title": "Kayaking", "desc": "Water sports and safety instruction", "icon": "Kayaking" }
+      ]
+    },
+    {
+      "_template": "splitSection",
+      "heading": "Overnight Trips",
+      "tagline": "Special Experiences",
+      "imageSide": "right",
+      "body": {
+        "type": "root",
+        "children": [
+          {
+            "type": "p",
+            "children": [{ "type": "text", "text": "Throughout the summer Teen Camp will embark on several overnight trips. Our overnights are geared toward teaching our teens good communication and survival skills." }]
+          }
+        ]
+      },
+      "listItems": [
+        { "text": "Boy Scout camping sites" },
+        { "text": "Survival skills training" },
+        { "text": "Campfire experiences" }
+      ]
+    },
+    {
+      "_template": "splitSection",
+      "heading": "Delicious Kosher Meals",
+      "tagline": "Food & Nutrition",
+      "imageSide": "left",
+      "body": {
+        "type": "root",
+        "children": [
+          {
+            "type": "p",
+            "children": [{ "type": "text", "text": "Nutritious and delicious kosher snacks, lunches, and drinks are served daily to all Teen Campers." }]
+          }
+        ]
+      },
+      "listItems": [
+        { "text": "Daily kosher snacks and lunches" },
+        { "text": "Dinner on full-day trips" },
+        { "text": "Meals at local Kosher restaurants" }
+      ]
+    }
+  ]
+}

@@ -1,26 +1,15 @@
-import { client } from '../lib/sanity';
-import HomeClient from './home-client';
-import { draftMode } from 'next/headers';
+import HomeClient from "./home-client";
+import fs from "fs/promises";
+import path from "path";
 
 export default async function HomePage() {
-  const isDraftMode = draftMode().isEnabled;
+  const filePath = path.join(process.cwd(), "content/pages/home.json");
+  const content = await fs.readFile(filePath, "utf8");
+  const data = JSON.parse(content);
 
-  const query = `*[_type == "page" && slug.current == "home"][0]{
-    title,
-    sections[]{
-      ...,
-      _type == "hero" => {
-        "backgroundImage": backgroundImage.asset->url
-      }
-    }
-  }`;
-
-  // If in draft mode, we tell Sanity to provide the Stega markers for visual editing
-  const data = await client.fetch(query, {}, { 
-    cache: isDraftMode ? 'no-store' : 'force-cache',
-    next: { revalidate: isDraftMode ? 0 : 3600 },
-    stega: isDraftMode
-  });
-
-  return <HomeClient data={data} />;
+  return (
+    <main>
+      <HomeClient data={data} />
+    </main>
+  );
 }

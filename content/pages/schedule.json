@@ -1,0 +1,96 @@
+{
+  "heroTitle": "Summer Schedule & Pricing",
+  "heroSubtitle": "Choose the perfect program for your teen. Financial assistance is available - no family should miss out on this incredible experience.",
+  "pricingPlans": [
+    {
+      "name": "Girls' Art & Adventure",
+      "subtitle": "Week-Long Intensive Program",
+      "dates": "July 17 – July 22",
+      "price": "$375",
+      "priceSuffix": "/week",
+      "icon": "palette",
+      "features": [
+        { "feature": "Full week immersive program" },
+        { "feature": "Art and creative workshops" },
+        { "feature": "Adventure outdoor activities" },
+        { "feature": "Jewish heritage programming" }
+      ]
+    },
+    {
+      "name": "Boys' Teen Camp",
+      "subtitle": "Full Summer Program",
+      "dates": "June 18 – July 11",
+      "price": "From $450",
+      "priceSuffix": "",
+      "icon": "tent",
+      "features": [
+        { "feature": "Full summer experience" },
+        { "feature": "Daily sports & athletics" },
+        { "feature": "Bi-weekly full-day trips" },
+        { "feature": "Overnight camping trips" }
+      ]
+    },
+    {
+      "name": "Pacific NW Adventure",
+      "subtitle": "Premium Multi-Day Trip",
+      "dates": "Extended Summer Trip",
+      "price": "$4,695",
+      "priceSuffix": "/trip",
+      "icon": "mountain",
+      "features": [
+        { "feature": "Multi-day Pacific Northwest exploration" },
+        { "feature": "Wilderness adventures" },
+        { "feature": "Professional guides" }
+      ]
+    }
+  ],
+  "weeklySchedule": [
+    {
+      "day": "Sunday",
+      "morning": "Camp arrival, Davening, warm-up sports",
+      "afternoon": "Swimming & aquatic activities",
+      "evening": "Jewish cultural program"
+    },
+    {
+      "day": "Monday",
+      "morning": "Full-day trip: Indiana Dunes hiking",
+      "afternoon": "Continued trip activities",
+      "evening": "Late Night dinner (trip day)"
+    },
+    {
+      "day": "Tuesday",
+      "morning": "Sports league - baseball & soccer",
+      "afternoon": "Martial arts instruction",
+      "evening": "Camp arrives home"
+    },
+    {
+      "day": "Wednesday",
+      "morning": "Arts, culture & Jewish learning",
+      "afternoon": "Paintballing / Go-Karting trip",
+      "evening": "Free time"
+    },
+    {
+      "day": "Thursday",
+      "morning": "Full-day trip: White Water Rafting",
+      "afternoon": "Continued rafting adventure",
+      "evening": "Dinner on trip, Late Night"
+    },
+    {
+      "day": "Friday",
+      "morning": "Basketball & football league",
+      "afternoon": "Shabbat preparation, Havdalah",
+      "evening": "Shabbat celebration (Shabbaton weeks)"
+    }
+  ],
+  "calendarEvents": [
+    { "date": "June 18", "title": "Boys' Camp Opens", "desc": "First day of the summer for Boys' Teen Camp" },
+    { "date": "Late June", "title": "First Indiana Dunes Trip", "desc": "Full-day hiking adventure at Indiana Dunes National Park" },
+    { "date": "Early July", "title": "First Shabbaton", "desc": "Weekend trip to a nearby Jewish community" },
+    { "date": "July 4th", "title": "July 4th Celebration", "desc": "Special camp celebration and activities" },
+    { "date": "July 8", "title": "West Coast Trip", "desc": "Multi-day West Coast adventure for select campers" },
+    { "date": "July 11", "title": "Boys' Camp Ends", "desc": "Last day of Boys' summer program" },
+    { "date": "July 17", "title": "Girls' Program Begins", "desc": "Girls' Week of Art & Adventure kicks off" },
+    { "date": "July 22", "title": "Girls' Program Ends", "desc": "Conclusion of Girls' Art & Adventure week" },
+    { "date": "Summer", "title": "Bar Mitzvah Prep", "desc": "Ongoing personalized Bar Mitzvah preparation sessions" }
+  ]
+}
