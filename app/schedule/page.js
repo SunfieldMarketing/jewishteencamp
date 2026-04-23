@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import ContactForm from '../../components/ContactForm';
 import { PaletteIcon, TentIcon, MountainIcon } from '../../components/Icons';
-import { featuredPhoto, sportsPhotos, img, thumb } from '../../lib/photos';
+import { featuredPhoto, img } from '../../lib/photos';
 
 export const metadata = {
   title: 'Schedule & Pricing | Chicago Jewish Teens',

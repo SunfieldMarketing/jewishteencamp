@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import ContactForm from '../../components/ContactForm';
-import { PersonIcon } from '../../components/Icons';
+
 import { featuredPhoto, staffScheiman, staffNotik, staffGoldshmidt, img } from '../../lib/photos';
 
 export const metadata = {

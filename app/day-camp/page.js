@@ -5,7 +5,7 @@ import {
   SportsIcon, FishingIcon, MartialArtsIcon, CompassIcon, StarOfDavidIcon,
   KayakingIcon, BaseballIcon, BasketballIcon, FootballIcon, SoccerIcon, HorseIcon,
 } from '../../components/Icons';
-import { featuredPhoto, adventurePhotos, sportsPhotos, tripPhotos, img, thumb } from '../../lib/photos';
+import { featuredPhoto, adventurePhotos, img, thumb } from '../../lib/photos';
 
 export const metadata = {
   title: 'Day Camp Programs | Chicago Jewish Teens',
@@ -283,11 +283,7 @@ const adventureTrips = [
   { icon: <MartialArtsIcon className="w-full h-full" />, name: 'Paintballing & Go-Karting', desc: 'High-energy paintball and go-kart racing experiences' },
 ];
 
-const tripCards = [
-  { icon: <MountainIcon className="w-full h-full" />, title: 'Indiana Dunes & Michigan Adventures', desc: 'Full-day hikes to Indiana Dunes and multi-day Michigan adventures that teens look forward to all summer long.' },
-  { icon: <WavesIcon className="w-full h-full" />, title: 'Speed Boating', desc: 'Exciting speed boating supervised by certified Red Cross lifeguards.' },
-  { icon: <FishingIcon className="w-full h-full" />, title: 'Canoeing & Fishing', desc: 'Peaceful canoeing and fishing trips connecting teens with nature.' },
-];
+
 
 const sports = [
   { icon: <BaseballIcon className="w-full h-full" />, name: 'Baseball' },

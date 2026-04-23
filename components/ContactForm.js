@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-function ContactFormInner({ variant = 'default' }) {
+function ContactFormInner() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',

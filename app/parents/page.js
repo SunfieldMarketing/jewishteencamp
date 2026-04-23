@@ -4,7 +4,7 @@ import {
   BookOpenIcon, LockIcon, TentIcon, CalendarIcon,
   PersonIcon, CompassIcon, PhoneIcon,
 } from '../../components/Icons';
-import { featuredPhoto, campLifePhotos, staffScheiman, staffNotik, staffGoldshmidt, img, thumb } from '../../lib/photos';
+import { featuredPhoto, staffScheiman, staffNotik, staffGoldshmidt, img } from '../../lib/photos';
 
 export const metadata = {
   title: 'Parents Area | Chicago Jewish Teens',

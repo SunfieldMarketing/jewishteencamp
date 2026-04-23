@@ -2,11 +2,11 @@ import Link from 'next/link';
 import ContactForm from '../../components/ContactForm';
 import {
   CompassIcon, HandshakeIcon, LightningIcon, StarOfDavidIcon,
-  TrophyIcon, StarIcon, CalendarIcon,
+  TrophyIcon, CalendarIcon,
   WavesIcon, SportsIcon, TentIcon, LockIcon,
-  PersonIcon, UsersIcon, GlobeIcon,
+  UsersIcon, GlobeIcon,
 } from '../../components/Icons';
-import { featuredPhoto, aboutPhoto, adventurePhotos, campLifePhotos, img, thumb, staffScheiman, staffNotik, staffGoldshmidt } from '../../lib/photos';
+import { featuredPhoto, aboutPhoto, campLifePhotos, img, thumb, staffScheiman, staffNotik, staffGoldshmidt } from '../../lib/photos';
 
 export const metadata = {
   title: 'About Our Camp | Chicago Jewish Teens',

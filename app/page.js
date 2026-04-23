@@ -3,16 +3,15 @@ import ContactForm from '../components/ContactForm';
 import {
   WavesIcon, SportsIcon, PaletteIcon, TentIcon, StarOfDavidIcon,
   MartialArtsIcon, FishingIcon, MountainIcon, BookOpenIcon,
-  TrophyIcon, UsersIcon, GlobeIcon, LockIcon, HandshakeIcon, StarIcon,
-  PersonIcon, ChatIcon, MapPinIcon, PhoneIcon, MailIcon,
+  TrophyIcon, UsersIcon, GlobeIcon, LockIcon, HandshakeIcon,
+  ChatIcon, MapPinIcon, PhoneIcon, MailIcon,
 } from '../components/Icons';
 import ShimmerButton from '../components/ui/shimmer-button';
 import NumberTicker from '../components/ui/number-ticker';
-import Marquee from '../components/ui/marquee';
 import BlurFade from '../components/ui/blur-fade';
 import BorderBeam from '../components/ui/border-beam';
 import Spotlight from '../components/ui/spotlight';
-import { aboutPhoto, featuredPhoto, homepageGallery, allPhotos, img, thumb, staffScheiman, staffNotik, staffGoldshmidt } from '../lib/photos';
+import { aboutPhoto, featuredPhoto, homepageGallery, img, thumb, staffScheiman, staffNotik, staffGoldshmidt } from '../lib/photos';
 
 export const metadata = {
   title: 'Chicago Jewish Teens | Jewish Day Camp Northbrook IL - Ages 12-17',
@@ -665,13 +664,7 @@ const heroTrust = [
   },
 ];
 
-const heroHighlights = [
-  { icon: <MountainIcon className="w-5 h-5" />, label: 'Indiana Dunes & Michigan Adventures', sub: 'Full-day trips twice weekly' },
-  { icon: <WavesIcon className="w-5 h-5" />, label: 'White Water Rafting & Speed Boating', sub: 'Certified Red Cross lifeguards' },
-  { icon: <SportsIcon className="w-5 h-5" />, label: 'Professional Sports Instruction', sub: 'Baseball, soccer, basketball & more' },
-  { icon: <StarOfDavidIcon className="w-5 h-5" />, label: 'Shabbatons & Jewish Culture', sub: 'Authentic heritage programming' },
-  { icon: <BookOpenIcon className="w-5 h-5" />, label: 'Bar Mitzvah Preparation', sub: 'Personalized tutoring available' },
-];
+
 
 const aboutFeatures = [
   { icon: <SportsIcon className="w-full h-full" />, title: 'Expert Coaching', desc: 'Professional sports instructors' },
@@ -737,16 +730,7 @@ const testimonials = [
   { quote: "Rabbi Notik and the entire staff are incredible. They truly care about each child as an individual. My son went back summer after summer and begged to go again.", name: 'Sarah L.', location: 'Glenview, IL' },
 ];
 
-const galleryItems = [
-  { gradient: 'linear-gradient(135deg, #1B3A6B, #2A5298)', icon: <TentIcon className="w-full h-full" />, label: 'Camp Life' },
-  { gradient: 'linear-gradient(135deg, #C8922A, #E8B84B)', icon: <SportsIcon className="w-full h-full" />, label: 'Sports' },
-  { gradient: 'linear-gradient(135deg, #16a34a, #22c55e)', icon: <MountainIcon className="w-full h-full" />, label: 'Adventures' },
-  { gradient: 'linear-gradient(135deg, #7c3aed, #a78bfa)', icon: <StarOfDavidIcon className="w-full h-full" />, label: 'Culture' },
-  { gradient: 'linear-gradient(135deg, #dc2626, #f87171)', icon: <MartialArtsIcon className="w-full h-full" />, label: 'Martial Arts' },
-  { gradient: 'linear-gradient(135deg, #0891b2, #22d3ee)', icon: <WavesIcon className="w-full h-full" />, label: 'Aquatics' },
-  { gradient: 'linear-gradient(135deg, #d97706, #fbbf24)', icon: <BookOpenIcon className="w-full h-full" />, label: 'Jewish Learning' },
-  { gradient: 'linear-gradient(135deg, #1B3A6B, #C8922A)', icon: <TrophyIcon className="w-full h-full" />, label: 'Excellence' },
-];
+
 
 const faqs = [
   { q: 'What ages does Chicago Jewish Teens serve?', a: 'Our programs are designed for Jewish teens ages 12–17. We have separate programs and activities tailored to different age groups and interests.' },

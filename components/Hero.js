@@ -1,6 +1,6 @@
 'use client';
 import ShimmerButton from './ui/shimmer-button';
-import { StarIcon } from './Icons';
+
 import { featuredPhoto, img } from '../lib/photos';
 
 const heroTrust = [
