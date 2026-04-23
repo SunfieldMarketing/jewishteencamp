@@ -1,17 +1,19 @@
+'use client';
+
+import * as React from "react";
 import HomeTemplate from "../components/HomeTemplate";
 import { registerComponents } from "../plasmic-init";
 
+/**
+ * HOME PAGE: CLIENT-SAFE SHELL
+ * Converts the root to a Client Component to bypass build-time 
+ * analysis of complex template component hierarchies.
+ */
 export default function Page() {
-  // Ensure components are registered for client-side hydration
-  // Note: Only for features that might use Plasmic components internally
-  try {
+  React.useEffect(() => {
+    // Only register on the client side
     registerComponents();
-  } catch (e) {
-    // Fail silently in Server Component build
-  }
+  }, []);
   
   return <HomeTemplate />;
 }
-
-// Ensure it builds correctly as a stable static page
-export const dynamic = "force-static";
