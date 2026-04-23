@@ -1,0 +1,21 @@
+{
+  "projects": [
+    {
+      "id": "fBPwvBQ6Zs5GG7HUEDfovK",
+      "token": "7pce0ksh7FtkpYoMRammUOYbeO5WVTEJG9Gvbg9CEf6FVTNiEvwawAfHQsRhTW4i2NtnGokEEsMZ1j8ttgeg"
+    }
+  ],
+  "platform": "nextjs",
+  "srcDir": ".",
+  "plasmicDir": "plasmic",
+  "codeLang": "js",
+  "codeScheme": "blackbox",
+  "styleScheme": "css-modules",
+  "images": {
+    "scheme": "public-files",
+    "publicDir": "public/plasmic",
+    "publicUrlPrefix": "/plasmic/"
+  },
+  "cliVersion": "0.1.27",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.27/dist/plasmic.schema.json"
+}

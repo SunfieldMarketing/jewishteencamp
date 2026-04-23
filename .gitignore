@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dependencies
 node_modules/
 /.pnp
@@ -18,10 +19,36 @@ node_modules/
 *.pem
 
 # Debug
+=======
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+>>>>>>> 7cccd368e596cf7a253e84b0fa3630c3bb02c5d4
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
 # Local env files
 .env
 .env.local
@@ -37,3 +64,14 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+=======
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+>>>>>>> 7cccd368e596cf7a253e84b0fa3630c3bb02c5d4

@@ -7,15 +7,22 @@ import ProgramGrid from "./components/ProgramGrid";
 import PricingTable from "./components/PricingTable";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import WholeSite from "./components/WholeSite";
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
     {
-      id: process.env.PLASMIC_PROJECT_ID,
-      token: process.env.PLASMIC_PROJECT_TOKEN,
+      id: "fBPwvBQ6Zs5GG7HUEDfovK",
+      token: "7pce0ksh7FtkpYoMRammUOYbeO5WVTEJG9Gvbg9CEf6FVTNiEvwawAfHQsRhTW4i2NtnGokEEsMZ1j8ttgeg",
     },
   ],
+  // This is the key - it must be true for the Studio to see your components!
   preview: true,
+});
+
+PLASMIC.registerComponent(WholeSite, {
+  name: "WholeSite",
+  props: {},
 });
 
 PLASMIC.registerComponent(Navbar, {
