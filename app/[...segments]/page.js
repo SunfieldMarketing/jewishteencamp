@@ -1,27 +1,38 @@
 'use client';
 
 import * as React from "react";
-import { PlasmicComponent, PlasmicRootProvider } from "@plasmicapp/loader-nextjs";
+import dynamic from "next/dynamic";
 import { PLASMIC, registerComponents } from "../../plasmic-init";
 
 /**
- * DYNAMIC BRIDGE: ASYNC CLIENT-SIDE
+ * PLASMIC COMPONENT: DYNAMIC LOAD
+ */
+const PlasmicComponent = dynamic(
+  () => import("@plasmicapp/loader-nextjs/lib/loader-nextjs").then(mod => mod.PlasmicComponent),
+  { ssr: false }
+);
+
+const PlasmicRootProvider = dynamic(
+  () => import("@plasmicapp/loader-nextjs/lib/loader-nextjs").then(mod => mod.PlasmicRootProvider),
+  { ssr: false }
+);
+
+/**
+ * DYNAMIC BRIDGE: HYDRATION-PROOF
  */
 export default function PlasmicPage({ params }) {
-  const [segments, setSegments] = React.useState(null);
   const [plasmicData, setPlasmicData] = React.useState(null);
 
   React.useEffect(() => {
     const load = async () => {
-      // 1. Register components ASYNC
+      // 1. Force registration for this session
       await registerComponents();
       
       // 2. Unwrap params
       const p = await params;
-      setSegments(p.segments);
+      const path = p.segments ? `/${p.segments.join("/")}` : "/";
       
       // 3. Fetch Data
-      const path = p.segments ? `/${p.segments.join("/")}` : "/";
       const data = await PLASMIC.maybeFetchComponentData(path);
       setPlasmicData(data);
     };

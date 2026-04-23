@@ -1,20 +1,30 @@
 'use client';
 import * as React from 'react';
-import { PlasmicCanvasHost } from '@plasmicapp/loader-nextjs';
+import dynamic from 'next/dynamic';
 import { PLASMIC, registerComponents } from '../../plasmic-init';
 
 /**
- * PLASMIC STUDIO HOST
- * This is the doorway the visual editor uses to talk to your code.
+ * PLASMIC STUDIO HOST: ULTR-PURE CLIENT
+ * We use dynamic(..., { ssr: false }) to completely bypass the 
+ * hydration phase that causes React Error #329.
  */
+const PlasmicCanvasHost = dynamic(
+  () => import('@plasmicapp/loader-nextjs').then(mod => mod.PlasmicCanvasHost),
+  { ssr: false }
+);
+
 export default function HostPage() {
+  const [init, setInit] = React.useState(false);
+
   React.useEffect(() => {
-    // We must register components for the Studio to see them!
-    const init = async () => {
+    const run = async () => {
       await registerComponents();
+      setInit(true);
     };
-    init();
+    run();
   }, []);
 
-  return PLASMIC && <PlasmicCanvasHost />;
+  if (!init) return <div style={{ padding: '20px', color: '#666' }}>Connecting Design System...</div>;
+
+  return <PlasmicCanvasHost />;
 }
