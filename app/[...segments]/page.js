@@ -5,15 +5,16 @@ import dynamic from "next/dynamic";
 import { PLASMIC, registerComponents } from "../../plasmic-init";
 
 /**
- * PLASMIC COMPONENT: DYNAMIC LOAD
+ * PLASMIC COMPONENTS: DYNAMIC BROWSER-ONLY LOAD
+ * We import from the main package to ensure compatibility.
  */
 const PlasmicComponent = dynamic(
-  () => import("@plasmicapp/loader-nextjs/lib/loader-nextjs").then(mod => mod.PlasmicComponent),
+  () => import("@plasmicapp/loader-nextjs").then(mod => mod.PlasmicComponent),
   { ssr: false }
 );
 
 const PlasmicRootProvider = dynamic(
-  () => import("@plasmicapp/loader-nextjs/lib/loader-nextjs").then(mod => mod.PlasmicRootProvider),
+  () => import("@plasmicapp/loader-nextjs").then(mod => mod.PlasmicRootProvider),
   { ssr: false }
 );
 
@@ -25,10 +26,10 @@ export default function PlasmicPage({ params }) {
 
   React.useEffect(() => {
     const load = async () => {
-      // 1. Force registration for this session
+      // 1. Force registration
       await registerComponents();
       
-      // 2. Unwrap params
+      // 2. Unwrap params correctly for Next.js 14
       const p = await params;
       const path = p.segments ? `/${p.segments.join("/")}` : "/";
       
