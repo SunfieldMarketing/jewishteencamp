@@ -2,21 +2,22 @@ import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
 
 /**
  * JEWISH TEEN CAMP PLASMIC CONFIG
+ * Project: fBPwvBQ6Zs5GG7HUEDfovK
  */
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
     {
-      id: "b6ZtAXBJJhXXQfhuHqtgD3",
-      token: "2JQmNXnnZ4YLjem659unvYf5pY7T62N8vIaRSsGVI5IBwrYf82RTT94Rv8R3GJJEuDf1W2eMzq8Wb9NUKpqkQ",
+      id: "fBPwvBQ6Zs5GG7HUEDfovK",
+      token: "7pce0ksh7FtkpYoMRammUOYbeO5WVTEJG9Gvbg9CEf6FVTNiEvwawAfHQsRhTW4i2NtnGokEEsMZ1j8ttgeg",
     },
   ],
   preview: true,
 });
 
 /**
- * FIXED REGISTRATION ENGINE
- * Resolves the "Unknown type for prop props" error.
+ * COMPONENT REGISTRATION
+ * Registering our industrial blocks to the new project.
  */
 export async function registerComponents() {
   if (typeof window === 'undefined') return;
@@ -26,7 +27,6 @@ export async function registerComponents() {
       const module = await importPromise;
       const component = module.default || module;
       if (component) {
-        // The second argument is the entire METADATA object
         PLASMIC.registerComponent(component, { name, props });
       }
     } catch (e) {
@@ -47,8 +47,7 @@ export async function registerComponents() {
   await safeRegister(import("./components/ProgramGrid"), "ProgramGrid");
   await safeRegister(import("./components/PricingTable"), "PricingTable");
   
-  // Content Modules (Fixed Metadata)
-  // We pass an empty object because safeRegister will use it as the 'props' key
+  // Content Modules
   await safeRegister(import("./components/sections/MissionSection"), "MissionBlock");
   await safeRegister(import("./components/sections/OriginsSection"), "OriginsBlock");
   await safeRegister(import("./components/sections/FacilitiesSection"), "FacilitiesBlock");
