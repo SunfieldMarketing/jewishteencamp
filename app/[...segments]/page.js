@@ -11,20 +11,17 @@ export default async function PlasmicPage({ params }) {
   try {
     plasmicData = await PLASMIC.maybeFetchComponentData(plasmicPath);
   } catch (e) {
-    console.error("Plasmic connection error:", e);
+    console.error("Plasmic fetching error:", e);
   }
 
-  // If no Plasmic page exists yet, and we are on the Home Page, 
-  // show the "FullHomeTemplate" template automatically!
   if (!plasmicData || !plasmicData.entryCompMetas?.length) {
     if (plasmicPath === '/') {
-      // Lazy load to avoid build-time circular dependencies
-      const HomeTemplate = require("../../components/HomeTemplate").default;
-      return (
-        <PlasmicRootProvider loader={PLASMIC}>
-          <HomeTemplate />
-        </PlasmicRootProvider>
-      );
+       // Temporarily disabling fallback to isolate the build error
+       return (
+         <div className="min-h-screen flex items-center justify-center bg-primary text-white">
+           <h1 className="text-2xl font-bold">Jewish Teen Camp - Site Loading...</h1>
+         </div>
+       );
     }
     notFound();
   }
