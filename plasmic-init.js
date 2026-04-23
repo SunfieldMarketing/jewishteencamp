@@ -31,90 +31,20 @@ export const PLASMIC = initPlasmicLoader({
   preview: true,
 });
 
-/**
- * JEWISH TEEN CAMP DESIGN SYSTEM
- * Custom components registered for visual editing in Plasmic Studio.
- */
-
-// --- 1. CORE LAYOUT ---
-PLASMIC.registerComponent(Navbar, {
-  name: "Navbar",
-  props: {},
-});
-
-PLASMIC.registerComponent(Footer, {
-  name: "Footer",
-  props: {},
-});
-
-// --- 2. HERO & CTA ---
-PLASMIC.registerComponent(Hero, {
-  name: "HeroSection",
-  props: {
-    title: { type: "string", defaultValue: "Make a Lifelong Investment in Your Teen" },
-    subtitle: { type: "string", defaultValue: "Chicago's premier Jewish day camp for teens ages 12-17." },
-  },
-});
-
-PLASMIC.registerComponent(ContactForm, {
-  name: "ContactForm",
-  props: {},
-});
-
-// --- 3. PAGE BLOCKS ---
-PLASMIC.registerComponent(ProgramGrid, {
-  name: "ProgramGrid",
-  props: {},
-});
-
-PLASMIC.registerComponent(PricingTable, {
-  name: "PricingTable",
-  props: {},
-});
-
-PLASMIC.registerComponent(MissionSection, {
-  name: "MissionBlock",
-  props: {},
-});
-
-PLASMIC.registerComponent(OriginsSection, {
-  name: "OriginsBlock",
-  props: {},
-});
-
-PLASMIC.registerComponent(FacilitiesSection, {
-  name: "FacilitiesBlock",
-  props: {},
-});
-
-PLASMIC.registerComponent(CultureSection, {
-  name: "CultureBlock",
-  props: {},
-});
-
-PLASMIC.registerComponent(SafetySection, {
-  name: "SafetyBlock",
-  props: {},
-});
-
-PLASMIC.registerComponent(StaffSection, {
-  name: "StaffBlock",
-  props: {},
-});
-
-PLASMIC.registerComponent(FAQSection, {
-  name: "FAQBlock",
-  props: {},
-});
-
-PLASMIC.registerComponent(TestimonialsSection, {
-  name: "TestimonialsBlock",
-  props: {},
-});
-
-// --- 4. FULL PAGE TEMPLATES ---
-PLASMIC.registerComponent(HomeTemplate, {
-  name: "FullHomeTemplate",
-  description: "The complete themed home page as a single block.",
-  props: {},
-});
+// Register Custom Components 
+// Simplified registration to clear "Red Dot" and fix black screen
+PLASMIC.registerComponent(Navbar, { name: "Navbar", props: {} });
+PLASMIC.registerComponent(Footer, { name: "Footer", props: {} });
+PLASMIC.registerComponent(Hero, { name: "HeroSection", props: { title: "string", subtitle: "string" } });
+PLASMIC.registerComponent(ContactForm, { name: "ContactForm", props: {} });
+PLASMIC.registerComponent(ProgramGrid, { name: "ProgramGrid", props: {} });
+PLASMIC.registerComponent(PricingTable, { name: "PricingTable", props: {} });
+PLASMIC.registerComponent(MissionSection, { name: "MissionBlock", props: {} });
+PLASMIC.registerComponent(OriginsSection, { name: "OriginsBlock", props: {} });
+PLASMIC.registerComponent(FacilitiesSection, { name: "FacilitiesBlock", props: {} });
+PLASMIC.registerComponent(CultureSection, { name: "CultureBlock", props: {} });
+PLASMIC.registerComponent(SafetySection, { name: "SafetyBlock", props: {} });
+PLASMIC.registerComponent(StaffSection, { name: "StaffBlock", props: {} });
+PLASMIC.registerComponent(FAQSection, { name: "FAQBlock", props: {} });
+PLASMIC.registerComponent(TestimonialsSection, { name: "TestimonialsBlock", props: {} });
+PLASMIC.registerComponent(HomeTemplate, { name: "FullHomeTemplate", props: {} });
