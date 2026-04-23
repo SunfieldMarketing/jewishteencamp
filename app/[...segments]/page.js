@@ -2,7 +2,6 @@ import * as React from "react";
 import { PlasmicComponent, PlasmicRootProvider } from "@plasmicapp/loader-nextjs";
 import { notFound } from "next/navigation";
 import { PLASMIC } from "../../plasmic-init";
-import HomeTemplate from "../../components/HomeTemplate";
 
 export default async function PlasmicPage({ params }) {
   const segments = params.segments;
@@ -16,9 +15,11 @@ export default async function PlasmicPage({ params }) {
   }
 
   // If no Plasmic page exists yet, and we are on the Home Page, 
-  // show the "ThemedHome" template automatically!
+  // show the "FullHomeTemplate" template automatically!
   if (!plasmicData || !plasmicData.entryCompMetas?.length) {
     if (plasmicPath === '/') {
+      // Lazy load to avoid build-time circular dependencies
+      const HomeTemplate = require("../../components/HomeTemplate").default;
       return (
         <PlasmicRootProvider loader={PLASMIC}>
           <HomeTemplate />
