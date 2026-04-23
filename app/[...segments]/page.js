@@ -9,8 +9,14 @@ export default async function PlasmicPage({ params }) {
   const segments = params.segments;
   const plasmicPath = segments ? `/${segments.join("/")}` : "/";
   
-  const plasmicData = await PLASMIC.maybeFetchComponentData(plasmicPath);
-  if (!plasmicData) {
+  let plasmicData = null;
+  try {
+    plasmicData = await PLASMIC.maybeFetchComponentData(plasmicPath);
+  } catch (e) {
+    console.error("Plasmic fetch error:", e);
+  }
+
+  if (!plasmicData || !plasmicData.entryCompMetas.length) {
     notFound();
   }
 
@@ -22,6 +28,4 @@ export default async function PlasmicPage({ params }) {
   );
 }
 
-// Ensure the page is always treated as dynamic
 export const dynamic = "force-dynamic";
-export const dynamicParams = true;
