@@ -22,10 +22,10 @@ export default async function PlasmicPage({ params }) {
   );
 }
 
-export async function generateStaticParams() {
-  const pages = await PLASMIC.fetchPages();
-  return pages.map((page) => ({
-    segments: page.path.substring(1).split("/"),
-  }));
-}
+// Tell Next.js to not try to pre-list pages during build
+// This prevents the "TypeError" when the Plasmic project is empty
+export const dynamicParams = true;
 
+export async function generateStaticParams() {
+  return [];
+}
