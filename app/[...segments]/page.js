@@ -1,4 +1,5 @@
-﻿import {
+﻿import * as React from "react";
+import {
   PlasmicComponent,
   PlasmicRootProvider,
 } from "@plasmicapp/loader-nextjs";
@@ -9,13 +10,7 @@ export default async function PlasmicPage({ params }) {
   const segments = params.segments;
   const plasmicPath = segments ? `/${segments.join("/")}` : "/";
   
-  let plasmicData = null;
-  try {
-    plasmicData = await PLASMIC.maybeFetchComponentData(plasmicPath);
-  } catch (e) {
-    console.error("Plasmic fetch error:", e);
-  }
-
+  const plasmicData = await PLASMIC.maybeFetchComponentData(plasmicPath);
   if (!plasmicData || !plasmicData.entryCompMetas.length) {
     notFound();
   }
