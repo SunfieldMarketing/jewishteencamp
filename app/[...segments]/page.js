@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import dynamic from "next/dynamic";
-import { PLASMIC, registerComponents } from "../../plasmic-init";
+import { PLASMIC } from "../../plasmic-init";
 
 /**
  * PLASMIC COMPONENTS: DYNAMIC BROWSER-ONLY LOAD
@@ -26,14 +26,11 @@ export default function PlasmicPage({ params }) {
 
   React.useEffect(() => {
     const load = async () => {
-      // 1. Force registration
-      await registerComponents();
-      
-      // 2. Unwrap params correctly for Next.js 14
+      // 1. Unwrap params correctly for Next.js 14
       const p = await params;
       const path = p.segments ? `/${p.segments.join("/")}` : "/";
       
-      // 3. Fetch Data
+      // 2. Fetch Data
       const data = await PLASMIC.maybeFetchComponentData(path);
       setPlasmicData(data);
     };
