@@ -3,7 +3,7 @@ import ContactForm from '../components/ContactForm';
 import {
   WavesIcon, SportsIcon, PaletteIcon, TentIcon, StarOfDavidIcon,
   MartialArtsIcon, FishingIcon, MountainIcon, BookOpenIcon,
-  TrophyIcon, UsersIcon, GlobeIcon, LockIcon, HandshakeIcon,
+  TrophyIcon, UsersIcon, GlobeIcon, LockIcon, HandshakeIcon, PersonIcon,
   ChatIcon, MapPinIcon, PhoneIcon, MailIcon,
 } from '../components/Icons';
 import ShimmerButton from '../components/ui/shimmer-button';
