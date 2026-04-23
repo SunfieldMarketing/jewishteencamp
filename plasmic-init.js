@@ -2,7 +2,6 @@ import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
 
 /**
  * JEWISH TEEN CAMP PLASMIC CONFIG
- * Connected to Fresh Project: b6ZtAXBJJhXXQfhuHqtgD3
  */
 
 export const PLASMIC = initPlasmicLoader({
@@ -17,8 +16,7 @@ export const PLASMIC = initPlasmicLoader({
 
 /**
  * ASYNC COMPONENT REGISTRATION
- * This ensures all your local designs (Navbar, Hero, Blocks) 
- * show up in your BRAND NEW Plasmic project automatically.
+ * Now with mandatory props objects to satisfy the Plasmic Studio parser.
  */
 export async function registerComponents() {
   if (typeof window === 'undefined') return;
@@ -47,7 +45,7 @@ export async function registerComponents() {
     PLASMIC.registerComponent(ProgramGrid, { name: "ProgramGrid", props: {} });
     PLASMIC.registerComponent(PricingTable, { name: "PricingTable", props: {} });
     
-    // Module Sections (Dynamic Batch)
+    // Module Sections (Validated Definitions)
     const [
       Mission, Origins, Facilities, Culture, Safety, Staff, FAQ, Testimonials
     ] = await Promise.all([
@@ -61,14 +59,14 @@ export async function registerComponents() {
       import("./components/sections/TestimonialsSection")
     ]);
 
-    PLASMIC.registerComponent(Mission.default, { name: "MissionBlock" });
-    PLASMIC.registerComponent(Origins.default, { name: "OriginsBlock" });
-    PLASMIC.registerComponent(Facilities.default, { name: "FacilitiesBlock" });
-    PLASMIC.registerComponent(Culture.default, { name: "CultureBlock" });
-    PLASMIC.registerComponent(Safety.default, { name: "SafetyBlock" });
-    PLASMIC.registerComponent(Staff.default, { name: "StaffBlock" });
-    PLASMIC.registerComponent(FAQ.default, { name: "FAQBlock" });
-    PLASMIC.registerComponent(Testimonials.default, { name: "TestimonialsBlock" });
+    PLASMIC.registerComponent(Mission.default, { name: "MissionBlock", props: {} });
+    PLASMIC.registerComponent(Origins.default, { name: "OriginsBlock", props: {} });
+    PLASMIC.registerComponent(Facilities.default, { name: "FacilitiesBlock", props: {} });
+    PLASMIC.registerComponent(Culture.default, { name: "CultureBlock", props: {} });
+    PLASMIC.registerComponent(Safety.default, { name: "SafetyBlock", props: {} });
+    PLASMIC.registerComponent(Staff.default, { name: "StaffBlock", props: {} });
+    PLASMIC.registerComponent(FAQ.default, { name: "FAQBlock", props: {} });
+    PLASMIC.registerComponent(Testimonials.default, { name: "TestimonialsBlock", props: {} });
     
     // Page Template Fallback
     const HomeTemplate = (await import("./components/HomeTemplate")).default;
