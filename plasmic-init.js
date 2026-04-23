@@ -17,46 +17,61 @@ export const PLASMIC = initPlasmicLoader({
 
 /**
  * COMPONENT REGISTRATION
- * Registering our industrial blocks to the new project.
+ * Registering our industrial blocks synchronously.
  */
-export async function registerComponents() {
-  if (typeof window === 'undefined') return;
 
-  const safeRegister = async (importPromise, name, props = {}) => {
-    try {
-      const module = await importPromise;
-      const component = module.default || module;
-      if (component) {
-        PLASMIC.registerComponent(component, { name, props });
-      }
-    } catch (e) {
-      console.warn(`Plasmic Shield: Skipping ${name}`);
-    }
-  };
+// Layout & Global Sections
+import Navbar from "./components/Navbar";
+PLASMIC.registerComponent(Navbar, { name: "Navbar", importPath: "./components/Navbar", props: {} });
 
-  // Layout & Global Sections
-  await safeRegister(import("./components/Navbar"), "Navbar");
-  await safeRegister(import("./components/Footer"), "Footer");
-  await safeRegister(import("./components/Hero"), "HeroSection", {
+import Footer from "./components/Footer";
+PLASMIC.registerComponent(Footer, { name: "Footer", importPath: "./components/Footer", props: {} });
+
+import Hero from "./components/Hero";
+PLASMIC.registerComponent(Hero, { 
+  name: "HeroSection", 
+  importPath: "./components/Hero",
+  props: {
     title: { type: "string", defaultValue: "Chicago Jewish Teens" },
     subtitle: { type: "string" },
-  });
+  } 
+});
 
-  // Functional Blocks
-  await safeRegister(import("./components/ContactForm"), "ContactForm");
-  await safeRegister(import("./components/ProgramGrid"), "ProgramGrid");
-  await safeRegister(import("./components/PricingTable"), "PricingTable");
-  
-  // Content Modules
-  await safeRegister(import("./components/sections/MissionSection"), "MissionBlock");
-  await safeRegister(import("./components/sections/OriginsSection"), "OriginsBlock");
-  await safeRegister(import("./components/sections/FacilitiesSection"), "FacilitiesBlock");
-  await safeRegister(import("./components/sections/CultureSection"), "CultureBlock");
-  await safeRegister(import("./components/sections/SafetySection"), "SafetyBlock");
-  await safeRegister(import("./components/sections/StaffSection"), "StaffBlock");
-  await safeRegister(import("./components/sections/FAQSection"), "FAQBlock");
-  await safeRegister(import("./components/sections/TestimonialsSection"), "TestimonialsBlock");
-  
-  // Root Template
-  await safeRegister(import("./components/HomeTemplate"), "FullHomeTemplate");
-}
+// Functional Blocks
+import ContactForm from "./components/ContactForm";
+PLASMIC.registerComponent(ContactForm, { name: "ContactForm", importPath: "./components/ContactForm", props: {} });
+
+import ProgramGrid from "./components/ProgramGrid";
+PLASMIC.registerComponent(ProgramGrid, { name: "ProgramGrid", importPath: "./components/ProgramGrid", props: {} });
+
+import PricingTable from "./components/PricingTable";
+PLASMIC.registerComponent(PricingTable, { name: "PricingTable", importPath: "./components/PricingTable", props: {} });
+
+// Content Modules
+import MissionSection from "./components/sections/MissionSection";
+PLASMIC.registerComponent(MissionSection, { name: "MissionBlock", importPath: "./components/sections/MissionSection", props: {} });
+
+import OriginsSection from "./components/sections/OriginsSection";
+PLASMIC.registerComponent(OriginsSection, { name: "OriginsBlock", importPath: "./components/sections/OriginsSection", props: {} });
+
+import FacilitiesSection from "./components/sections/FacilitiesSection";
+PLASMIC.registerComponent(FacilitiesSection, { name: "FacilitiesBlock", importPath: "./components/sections/FacilitiesSection", props: {} });
+
+import CultureSection from "./components/sections/CultureSection";
+PLASMIC.registerComponent(CultureSection, { name: "CultureBlock", importPath: "./components/sections/CultureSection", props: {} });
+
+import SafetySection from "./components/sections/SafetySection";
+PLASMIC.registerComponent(SafetySection, { name: "SafetyBlock", importPath: "./components/sections/SafetySection", props: {} });
+
+import StaffSection from "./components/sections/StaffSection";
+PLASMIC.registerComponent(StaffSection, { name: "StaffBlock", importPath: "./components/sections/StaffSection", props: {} });
+
+import FAQSection from "./components/sections/FAQSection";
+PLASMIC.registerComponent(FAQSection, { name: "FAQBlock", importPath: "./components/sections/FAQSection", props: {} });
+
+import TestimonialsSection from "./components/sections/TestimonialsSection";
+PLASMIC.registerComponent(TestimonialsSection, { name: "TestimonialsBlock", importPath: "./components/sections/TestimonialsSection", props: {} });
+
+// Root Template
+import HomeTemplate from "./components/HomeTemplate";
+PLASMIC.registerComponent(HomeTemplate, { name: "FullHomeTemplate", importPath: "./components/HomeTemplate", props: {} });
