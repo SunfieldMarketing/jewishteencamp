@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
   "name": "chicago-jewish-teens",
   "version": "1.0.0",
-=======
-  "name": "tmp-cpa",
-  "version": "0.1.0",
->>>>>>> 7cccd368e596cf7a253e84b0fa3630c3bb02c5d4
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -15,28 +10,20 @@
   },
   "dependencies": {
     "@plasmicapp/loader-nextjs": "^2.0.2",
-<<<<<<< HEAD
     "framer-motion": "^12.38.0",
-    "next": "14.2.5",
+    "next": "14.2.35",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "devDependencies": {
     "autoprefixer": "10.4.19",
     "postcss": "8.4.39",
-    "tailwindcss": "3.4.6"
-=======
-    "next": "14.2.35",
-    "react": "^18",
-    "react-dom": "^18"
-  },
-  "devDependencies": {
+    "tailwindcss": "3.4.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.35",
     "typescript": "^5"
->>>>>>> 7cccd368e596cf7a253e84b0fa3630c3bb02c5d4
   }
 }
