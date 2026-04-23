@@ -24,19 +24,28 @@ const puppeteer = require('puppeteer');
   });
 
   try {
-    await page.goto('https://jewishteencamp.vercel.app/plasmic-host', { waitUntil: 'domcontentloaded' });
+    await page.goto('http://localhost:3001/plasmic-host', { waitUntil: 'domcontentloaded' });
     console.log('Page loaded successfully.');
 
     // Wait a couple of seconds to see if anything late crashes
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     // Try to dump window.__PlasmicSdk component count
+    await page.waitForFunction(() => window.__PlasmicSdk !== undefined, { timeout: 15000 });
     const sdkKeys = await page.evaluate(() => {
       if (!window.__PlasmicSdk) return 'UNDEFINED';
       return Object.keys(window.__PlasmicSdk).join(', ');
     });
+    
+    const componentCount = await page.evaluate(() => {
+      if (window.__PlasmicSdk && window.__PlasmicSdk.getRegisteredComponents) {
+        return window.__PlasmicSdk.getRegisteredComponents().length;
+      }
+      return -1;
+    });
 
     console.log('window.__PlasmicSdk keys:', sdkKeys);
+    console.log('Registered Code Components count:', componentCount);
 
   } catch (err) {
     console.log('Fatal Navigation Error:', err.message);

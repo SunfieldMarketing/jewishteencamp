@@ -1,9 +1,13 @@
 'use client';
 import * as React from 'react';
-import { PlasmicCanvasHost } from '@plasmicapp/loader-nextjs';
-// This import ensures that all synchronous PLASMIC.registerComponent calls happen immediately
+import dynamic from 'next/dynamic';
 import { PLASMIC } from '../../plasmic-init';
 
+const PlasmicCanvasHost = dynamic(
+  () => import('@plasmicapp/loader-nextjs').then(mod => mod.PlasmicCanvasHost),
+  { ssr: false }
+);
+
 export default function HostPage() {
-  return PLASMIC && <PlasmicCanvasHost />;
+  return PLASMIC ? <PlasmicCanvasHost /> : null;
 }
