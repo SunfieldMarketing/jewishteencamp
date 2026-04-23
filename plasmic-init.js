@@ -2,13 +2,14 @@ import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
 
 /**
  * JEWISH TEEN CAMP PLASMIC CONFIG
+ * Connected to Fresh Project: b6ZtAXBJJhXXQfhuHqtgD3
  */
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
     {
-      id: "fBPwvBQ6Zs5GG7HUEDfovK",
-      token: "7pce0ksh7FtkpYoMRammUOYbeO5WVTEJG9Gvbg9CEf6FVTNiEvwawAfHQsRhTW4i2NtnGokEEsMZ1j8ttgeg",
+      id: "b6ZtAXBJJhXXQfhuHqtgD3",
+      token: "2JQmNXnnZ4YLjem659unvYf5pY7T62N8vIaRSsGVI5IBwrYf82RTT94Rv8R3GJJEuDf1W2eMzq8Wb9NUKpqkQ",
     },
   ],
   preview: true,
@@ -16,9 +17,8 @@ export const PLASMIC = initPlasmicLoader({
 
 /**
  * ASYNC COMPONENT REGISTRATION
- * This is the ultimate build shield. By using dynamic imports 
- * inside an async function, we ensure the Vercel build engine 
- * NEVER sees or executes these components during static analysis.
+ * This ensures all your local designs (Navbar, Hero, Blocks) 
+ * show up in your BRAND NEW Plasmic project automatically.
  */
 export async function registerComponents() {
   if (typeof window === 'undefined') return;
