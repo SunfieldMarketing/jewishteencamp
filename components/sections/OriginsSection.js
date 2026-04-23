@@ -1,3 +1,4 @@
+'use client';
 import { TrophyIcon, StarOfDavidIcon, CalendarIcon } from '../Icons';
 
 export default function OriginsSection() {
@@ -27,3 +28,4 @@ const origins = [
   { icon: <StarOfDavidIcon className="w-full h-full" />, title: 'Trendsetting Programs', desc: "CGI camps enjoy a well-earned reputation as a trendsetter with adventurous trips, creative programs, and sports instruction that teens look forward to all year." },
   { icon: <CalendarIcon className="w-full h-full" />, title: 'Est. Since 2000', desc: "Chicago Jewish Teens has served as a haven for children and their families since 2000 - building a legacy of transformative summer experiences." },
 ];
+

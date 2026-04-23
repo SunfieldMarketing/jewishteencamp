@@ -1,3 +1,4 @@
+'use client';
 import { LockIcon, SportsIcon, WavesIcon, TentIcon } from '../Icons';
 
 export default function FacilitiesSection() {
@@ -54,3 +55,4 @@ const facilities = [
   { icon: <WavesIcon className="w-full h-full" />, name: 'Aquatic Facilities', desc: 'Swimming and water sports with certified lifeguards' },
   { icon: <TentIcon className="w-full h-full" />, name: 'Camping Area', desc: 'Dedicated outdoor camping and fire pit areas for overnight experiences' },
 ];
+

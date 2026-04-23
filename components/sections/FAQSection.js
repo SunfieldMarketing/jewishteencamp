@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 
 export default function FAQSection() {
@@ -45,3 +46,4 @@ const faqs = [
   { q: 'What is included in the price?', a: 'Program fees include all daily activities, snacks, lunches, and trips. Extended full-day trips include dinner. Overnight and Shabbaton programming includes all meals. Contact us for complete pricing details.' },
   { q: 'Is financial assistance available?', a: 'We are committed to making our program accessible. Please contact us directly to discuss financial assistance options. We want every teen who wants to attend to have the opportunity.' },
 ];
+

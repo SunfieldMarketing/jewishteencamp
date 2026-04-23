@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import { img, aboutPhoto } from '../../lib/photos';
 import { CompassIcon, HandshakeIcon, LightningIcon, StarOfDavidIcon, TentIcon } from '../Icons';
@@ -63,3 +64,4 @@ const missionPoints = [
   { icon: <LightningIcon className="w-full h-full" />, title: 'Confidence Building', desc: 'Every activity is designed to boost self-esteem and give teens a sense of accomplishment.' },
   { icon: <StarOfDavidIcon className="w-full h-full" />, title: 'Jewish Identity', desc: 'Authentic programming that makes Jewish heritage exciting, relevant, and personally meaningful.' },
 ];
+

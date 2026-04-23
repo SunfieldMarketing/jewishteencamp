@@ -1,3 +1,4 @@
+'use client';
 export default function SafetySection() {
   return (
     <section className="py-20 bg-white">
@@ -65,3 +66,4 @@ const safetyStats = [
   { value: '25+', label: 'Years of safe operation' },
   { value: '24/7', label: 'Supervision on overnights' },
 ];
+

@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -185,3 +186,4 @@ export default function Footer() {
     </footer>
   );
 }
+

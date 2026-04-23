@@ -1,3 +1,4 @@
+'use client';
 import { img, staffScheiman, staffNotik, staffGoldshmidt } from '../../lib/photos';
 import { LockIcon, StarOfDavidIcon, UsersIcon, GlobeIcon } from '../Icons';
 
@@ -76,3 +77,4 @@ const staffDirectory = [
     image: staffGoldshmidt,
   },
 ];
+

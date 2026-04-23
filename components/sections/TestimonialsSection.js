@@ -1,3 +1,4 @@
+'use client';
 import { StarOfDavidIcon } from '../Icons';
 
 export default function TestimonialsSection() {
@@ -43,3 +44,4 @@ const testimonials = [
   { quote: "The combination of exciting adventures and authentic Jewish values is unmatched. My teen couldn't stop talking about the Indiana Dunes hike and the Shabbaton experience.", name: 'David M.', location: 'Chicago, IL' },
   { quote: "Rabbi Notik and the entire staff are incredible. They truly care about each child as an individual. My son went back summer after summer and begged to go again.", name: 'Sarah L.', location: 'Glenview, IL' },
 ];
+
