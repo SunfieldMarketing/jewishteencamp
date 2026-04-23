@@ -5,15 +5,20 @@ import HomeTemplate from "../components/HomeTemplate";
 import { registerComponents } from "../plasmic-init";
 
 /**
- * HOME PAGE: CLIENT-SAFE SHELL
- * Converts the root to a Client Component to bypass build-time 
- * analysis of complex template component hierarchies.
+ * HOME PAGE: ASYNC CLIENT SHELL
  */
 export default function Page() {
+  const [ready, setReady] = React.useState(false);
+
   React.useEffect(() => {
-    // Only register on the client side
-    registerComponents();
+    const init = async () => {
+      await registerComponents();
+      setReady(true);
+    };
+    init();
   }, []);
   
+  // We render the template immediately (it doesn't need registration for basic HTML)
+  // But registration activates the interaction features
   return <HomeTemplate />;
 }

@@ -5,29 +5,28 @@ import { PlasmicComponent, PlasmicRootProvider } from "@plasmicapp/loader-nextjs
 import { PLASMIC, registerComponents } from "../../plasmic-init";
 
 /**
- * DYNAMIC BRIDGE: CLIENT-SIDE ONLY
- * This avoids the 'TypeError: l is not a function' build crash 
- * by deferring the Plasmic render to the client.
+ * DYNAMIC BRIDGE: ASYNC CLIENT-SIDE
  */
 export default function PlasmicPage({ params }) {
   const [segments, setSegments] = React.useState(null);
   const [plasmicData, setPlasmicData] = React.useState(null);
 
   React.useEffect(() => {
-    // We register components only on the client
-    registerComponents();
-    
-    // Unwrap params
-    const getParams = async () => {
+    const load = async () => {
+      // 1. Register components ASYNC
+      await registerComponents();
+      
+      // 2. Unwrap params
       const p = await params;
       setSegments(p.segments);
       
+      // 3. Fetch Data
       const path = p.segments ? `/${p.segments.join("/")}` : "/";
       const data = await PLASMIC.maybeFetchComponentData(path);
       setPlasmicData(data);
     };
     
-    getParams();
+    load();
   }, [params]);
 
   if (!plasmicData || !plasmicData.entryCompMetas?.length) {
