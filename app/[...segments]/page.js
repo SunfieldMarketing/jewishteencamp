@@ -22,10 +22,6 @@ export default async function PlasmicPage({ params }) {
   );
 }
 
-// Tell Next.js to not try to pre-list pages during build
-// This prevents the "TypeError" when the Plasmic project is empty
+// Ensure the page is always treated as dynamic
+export const dynamic = "force-dynamic";
 export const dynamicParams = true;
-
-export async function generateStaticParams() {
-  return [];
-}
