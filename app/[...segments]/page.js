@@ -28,3 +28,4 @@ export async function generateStaticParams() {
     segments: page.path.substring(1).split("/"),
   }));
 }
+
