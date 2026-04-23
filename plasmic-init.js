@@ -2,7 +2,7 @@ import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
 
 /**
  * JEWISH TEEN CAMP PLASMIC CONFIG
- * This version uses "Next-Safe" dynamic registrations.
+ * Centralized loader configuration.
  */
 
 export const PLASMIC = initPlasmicLoader({
@@ -15,9 +15,11 @@ export const PLASMIC = initPlasmicLoader({
   preview: true,
 });
 
+/**
+ * Manual Component Registration
+ * Call this in Client Components to register our design system.
+ */
 export function registerComponents() {
-  // Only register if we are in a browser or we are NOT in a sensitive build phase
-  // But practically, the try-catch with require() handles the NodeJS side.
   try {
     // Layout
     PLASMIC.registerComponent(require("./components/Navbar").default, { name: "Navbar", props: {} });
@@ -50,13 +52,6 @@ export function registerComponents() {
     PLASMIC.registerComponent(require("./components/HomeTemplate").default, { name: "FullHomeTemplate", props: {} });
 
   } catch (err) {
-    // During Next.js build trace, some files might not be fully resolvable via require
-    // This allows the build to continue while leaving registration for runtime.
-    if (process.env.NODE_ENV !== 'production') {
-       console.warn("Plasmic Bridge: Component registration deferred.");
-    }
+    console.warn("Plasmic Bridge: Component registration deferred or errored.");
   }
 }
-
-// Auto-run for easy integration
-registerComponents();

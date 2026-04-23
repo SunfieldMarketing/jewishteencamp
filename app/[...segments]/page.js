@@ -1,28 +1,41 @@
+'use client';
+
 import * as React from "react";
 import { PlasmicComponent, PlasmicRootProvider } from "@plasmicapp/loader-nextjs";
-import { notFound } from "next/navigation";
 import { PLASMIC, registerComponents } from "../../plasmic-init";
 
-// Initialize components for this route
-registerComponents();
+/**
+ * DYNAMIC BRIDGE: CLIENT-SIDE ONLY
+ * This avoids the 'TypeError: l is not a function' build crash 
+ * by deferring the Plasmic render to the client.
+ */
+export default function PlasmicPage({ params }) {
+  const [segments, setSegments] = React.useState(null);
+  const [plasmicData, setPlasmicData] = React.useState(null);
 
-export default async function PlasmicPage({ params }) {
-  const segments = params.segments;
-  const plasmicPath = segments ? `/${segments.join("/")}` : "/";
-  
-  let plasmicData = null;
-  try {
-    plasmicData = await PLASMIC.maybeFetchComponentData(plasmicPath);
-  } catch (e) {
-    console.error("Plasmic fetching error:", e);
-  }
+  React.useEffect(() => {
+    // We register components only on the client
+    registerComponents();
+    
+    // Unwrap params
+    const getParams = async () => {
+      const p = await params;
+      setSegments(p.segments);
+      
+      const path = p.segments ? `/${p.segments.join("/")}` : "/";
+      const data = await PLASMIC.maybeFetchComponentData(path);
+      setPlasmicData(data);
+    };
+    
+    getParams();
+  }, [params]);
 
   if (!plasmicData || !plasmicData.entryCompMetas?.length) {
-    if (plasmicPath === '/') {
-       // Root is handled by app/page.js, but we provide a safety fallback
-       return notFound();
-    }
-    notFound();
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', background: 'white' }}>
+        <div className="spinner" style={{ width: '40px', height: '40px', border: '4px solid #f3f3f3', borderTop: '4px solid #C8922A', borderRadius: '50%' }}></div>
+      </div>
+    );
   }
 
   const pageMeta = plasmicData.entryCompMetas[0];
@@ -32,5 +45,3 @@ export default async function PlasmicPage({ params }) {
     </PlasmicRootProvider>
   );
 }
-
-export const dynamic = "force-dynamic";
