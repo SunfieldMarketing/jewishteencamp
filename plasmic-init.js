@@ -2,6 +2,7 @@ import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
 
 /**
  * JEWISH TEEN CAMP PLASMIC CONFIG
+ * Project: b6ZtAXBJJhXXQfhuHqtgD3
  */
 
 export const PLASMIC = initPlasmicLoader({
@@ -11,13 +12,13 @@ export const PLASMIC = initPlasmicLoader({
       token: "2JQmNXnnZ4YLjem659unvYf5pY7T62N8vIaRSsGVI5IBwrYf82RTT94Rv8R3GJJEuDf1W2eMzq8Wb9NUKpqkQ",
     },
   ],
+  // preview: true allows you to see unpublished changes in the Studio
   preview: true,
 });
 
 /**
- * ULTR-HARDENED REGISTRATION
- * Individually wraps every component to prevent a single 'Red Dot' error 
- * from crashing the whole Studio registration.
+ * ASYNC COMPONENT REGISTRATION
+ * Individually wrapped to ensure total Studio stability.
  */
 export async function registerComponents() {
   if (typeof window === 'undefined') return;
@@ -30,34 +31,33 @@ export async function registerComponents() {
         PLASMIC.registerComponent(component, { name, props });
       }
     } catch (e) {
-      console.warn(`Plasmic Shield: Skipping ${name} due to load error.`);
+      console.warn(`Plasmic Shield: Skipping ${name}`);
     }
   };
 
-  // Layout
+  // Layout & Global Sections
   await safeRegister(import("./components/Navbar"), "Navbar");
   await safeRegister(import("./components/Footer"), "Footer");
-
-  // Hero & Blocks
   await safeRegister(import("./components/Hero"), "HeroSection", {
     title: { type: "string", defaultValue: "Chicago Jewish Teens" },
     subtitle: { type: "string" },
   });
 
+  // Functional Blocks
   await safeRegister(import("./components/ContactForm"), "ContactForm");
   await safeRegister(import("./components/ProgramGrid"), "ProgramGrid");
   await safeRegister(import("./components/PricingTable"), "PricingTable");
   
-  // Section Blocks
-  await safeRegister(import("./components/sections/MissionSection"), "MissionBlock");
-  await safeRegister(import("./components/sections/OriginsSection"), "OriginsBlock");
-  await safeRegister(import("./components/sections/FacilitiesSection"), "FacilitiesBlock");
-  await safeRegister(import("./components/sections/CultureSection"), "CultureBlock");
-  await safeRegister(import("./components/sections/SafetySection"), "SafetyBlock");
-  await safeRegister(import("./components/sections/StaffSection"), "StaffBlock");
-  await safeRegister(import("./components/sections/FAQSection"), "FAQBlock");
-  await safeRegister(import("./components/sections/TestimonialsSection"), "TestimonialsBlock");
+  // Content Modules
+  await safeRegister(import("./components/sections/MissionSection"), "MissionBlock", { props: {} });
+  await safeRegister(import("./components/sections/OriginsSection"), "OriginsBlock", { props: {} });
+  await safeRegister(import("./components/sections/FacilitiesSection"), "FacilitiesBlock", { props: {} });
+  await safeRegister(import("./components/sections/CultureSection"), "CultureBlock", { props: {} });
+  await safeRegister(import("./components/sections/SafetySection"), "SafetyBlock", { props: {} });
+  await safeRegister(import("./components/sections/StaffSection"), "StaffBlock", { props: {} });
+  await safeRegister(import("./components/sections/FAQSection"), "FAQBlock", { props: {} });
+  await safeRegister(import("./components/sections/TestimonialsSection"), "TestimonialsBlock", { props: {} });
   
-  // Template
-  await safeRegister(import("./components/HomeTemplate"), "FullHomeTemplate");
+  // Root Template
+  await safeRegister(import("./components/HomeTemplate"), "FullHomeTemplate", { props: {} });
 }
