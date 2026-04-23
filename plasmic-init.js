@@ -15,64 +15,49 @@ export const PLASMIC = initPlasmicLoader({
 });
 
 /**
- * ASYNC COMPONENT REGISTRATION
- * Now with mandatory props objects to satisfy the Plasmic Studio parser.
+ * ULTR-HARDENED REGISTRATION
+ * Individually wraps every component to prevent a single 'Red Dot' error 
+ * from crashing the whole Studio registration.
  */
 export async function registerComponents() {
   if (typeof window === 'undefined') return;
 
-  try {
-    // Layout
-    const Navbar = (await import("./components/Navbar")).default;
-    const Footer = (await import("./components/Footer")).default;
-    PLASMIC.registerComponent(Navbar, { name: "Navbar", props: {} });
-    PLASMIC.registerComponent(Footer, { name: "Footer", props: {} });
+  const safeRegister = async (importPromise, name, props = {}) => {
+    try {
+      const module = await importPromise;
+      const component = module.default || module;
+      if (component) {
+        PLASMIC.registerComponent(component, { name, props });
+      }
+    } catch (e) {
+      console.warn(`Plasmic Shield: Skipping ${name} due to load error.`);
+    }
+  };
 
-    // Hero & Blocks
-    const Hero = (await import("./components/Hero")).default;
-    PLASMIC.registerComponent(Hero, {
-      name: "HeroSection",
-      props: {
-        title: { type: "string", defaultValue: "Chicago Jewish Teens" },
-        subtitle: { type: "string" },
-      },
-    });
+  // Layout
+  await safeRegister(import("./components/Navbar"), "Navbar");
+  await safeRegister(import("./components/Footer"), "Footer");
 
-    const ContactForm = (await import("./components/ContactForm")).default;
-    const ProgramGrid = (await import("./components/ProgramGrid")).default;
-    const PricingTable = (await import("./components/PricingTable")).default;
-    PLASMIC.registerComponent(ContactForm, { name: "ContactForm", props: {} });
-    PLASMIC.registerComponent(ProgramGrid, { name: "ProgramGrid", props: {} });
-    PLASMIC.registerComponent(PricingTable, { name: "PricingTable", props: {} });
-    
-    // Module Sections (Validated Definitions)
-    const [
-      Mission, Origins, Facilities, Culture, Safety, Staff, FAQ, Testimonials
-    ] = await Promise.all([
-      import("./components/sections/MissionSection"),
-      import("./components/sections/OriginsSection"),
-      import("./components/sections/FacilitiesSection"),
-      import("./components/sections/CultureSection"),
-      import("./components/sections/SafetySection"),
-      import("./components/sections/StaffSection"),
-      import("./components/sections/FAQSection"),
-      import("./components/sections/TestimonialsSection")
-    ]);
+  // Hero & Blocks
+  await safeRegister(import("./components/Hero"), "HeroSection", {
+    title: { type: "string", defaultValue: "Chicago Jewish Teens" },
+    subtitle: { type: "string" },
+  });
 
-    PLASMIC.registerComponent(Mission.default, { name: "MissionBlock", props: {} });
-    PLASMIC.registerComponent(Origins.default, { name: "OriginsBlock", props: {} });
-    PLASMIC.registerComponent(Facilities.default, { name: "FacilitiesBlock", props: {} });
-    PLASMIC.registerComponent(Culture.default, { name: "CultureBlock", props: {} });
-    PLASMIC.registerComponent(Safety.default, { name: "SafetyBlock", props: {} });
-    PLASMIC.registerComponent(Staff.default, { name: "StaffBlock", props: {} });
-    PLASMIC.registerComponent(FAQ.default, { name: "FAQBlock", props: {} });
-    PLASMIC.registerComponent(Testimonials.default, { name: "TestimonialsBlock", props: {} });
-    
-    // Page Template Fallback
-    const HomeTemplate = (await import("./components/HomeTemplate")).default;
-    PLASMIC.registerComponent(HomeTemplate, { name: "FullHomeTemplate", props: {} });
-
-  } catch (err) {
-    console.warn("Plasmic Shield: Registration deferred.");
-  }
+  await safeRegister(import("./components/ContactForm"), "ContactForm");
+  await safeRegister(import("./components/ProgramGrid"), "ProgramGrid");
+  await safeRegister(import("./components/PricingTable"), "PricingTable");
+  
+  // Section Blocks
+  await safeRegister(import("./components/sections/MissionSection"), "MissionBlock");
+  await safeRegister(import("./components/sections/OriginsSection"), "OriginsBlock");
+  await safeRegister(import("./components/sections/FacilitiesSection"), "FacilitiesBlock");
+  await safeRegister(import("./components/sections/CultureSection"), "CultureBlock");
+  await safeRegister(import("./components/sections/SafetySection"), "SafetyBlock");
+  await safeRegister(import("./components/sections/StaffSection"), "StaffBlock");
+  await safeRegister(import("./components/sections/FAQSection"), "FAQBlock");
+  await safeRegister(import("./components/sections/TestimonialsSection"), "TestimonialsBlock");
+  
+  // Template
+  await safeRegister(import("./components/HomeTemplate"), "FullHomeTemplate");
 }
