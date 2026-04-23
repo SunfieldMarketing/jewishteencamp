@@ -2,7 +2,6 @@ import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
 
 /**
  * JEWISH TEEN CAMP PLASMIC CONFIG
- * Project: b6ZtAXBJJhXXQfhuHqtgD3
  */
 
 export const PLASMIC = initPlasmicLoader({
@@ -12,13 +11,12 @@ export const PLASMIC = initPlasmicLoader({
       token: "2JQmNXnnZ4YLjem659unvYf5pY7T62N8vIaRSsGVI5IBwrYf82RTT94Rv8R3GJJEuDf1W2eMzq8Wb9NUKpqkQ",
     },
   ],
-  // preview: true allows you to see unpublished changes in the Studio
   preview: true,
 });
 
 /**
- * ASYNC COMPONENT REGISTRATION
- * Individually wrapped to ensure total Studio stability.
+ * FIXED REGISTRATION ENGINE
+ * Resolves the "Unknown type for prop props" error.
  */
 export async function registerComponents() {
   if (typeof window === 'undefined') return;
@@ -28,6 +26,7 @@ export async function registerComponents() {
       const module = await importPromise;
       const component = module.default || module;
       if (component) {
+        // The second argument is the entire METADATA object
         PLASMIC.registerComponent(component, { name, props });
       }
     } catch (e) {
@@ -48,16 +47,17 @@ export async function registerComponents() {
   await safeRegister(import("./components/ProgramGrid"), "ProgramGrid");
   await safeRegister(import("./components/PricingTable"), "PricingTable");
   
-  // Content Modules
-  await safeRegister(import("./components/sections/MissionSection"), "MissionBlock", { props: {} });
-  await safeRegister(import("./components/sections/OriginsSection"), "OriginsBlock", { props: {} });
-  await safeRegister(import("./components/sections/FacilitiesSection"), "FacilitiesBlock", { props: {} });
-  await safeRegister(import("./components/sections/CultureSection"), "CultureBlock", { props: {} });
-  await safeRegister(import("./components/sections/SafetySection"), "SafetyBlock", { props: {} });
-  await safeRegister(import("./components/sections/StaffSection"), "StaffBlock", { props: {} });
-  await safeRegister(import("./components/sections/FAQSection"), "FAQBlock", { props: {} });
-  await safeRegister(import("./components/sections/TestimonialsSection"), "TestimonialsBlock", { props: {} });
+  // Content Modules (Fixed Metadata)
+  // We pass an empty object because safeRegister will use it as the 'props' key
+  await safeRegister(import("./components/sections/MissionSection"), "MissionBlock");
+  await safeRegister(import("./components/sections/OriginsSection"), "OriginsBlock");
+  await safeRegister(import("./components/sections/FacilitiesSection"), "FacilitiesBlock");
+  await safeRegister(import("./components/sections/CultureSection"), "CultureBlock");
+  await safeRegister(import("./components/sections/SafetySection"), "SafetyBlock");
+  await safeRegister(import("./components/sections/StaffSection"), "StaffBlock");
+  await safeRegister(import("./components/sections/FAQSection"), "FAQBlock");
+  await safeRegister(import("./components/sections/TestimonialsSection"), "TestimonialsBlock");
   
   // Root Template
-  await safeRegister(import("./components/HomeTemplate"), "FullHomeTemplate", { props: {} });
+  await safeRegister(import("./components/HomeTemplate"), "FullHomeTemplate");
 }
