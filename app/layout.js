@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import StickyMobileButtons from '../components/StickyMobileButtons';
+import TinaProvider from '../components/TinaProvider';
 
 export const metadata = {
   metadataBase: new URL('https://www.chicagojewishteens.com'),
@@ -111,10 +112,12 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-sans antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <StickyMobileButtons />
+        <TinaProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <StickyMobileButtons />
+        </TinaProvider>
       </body>
     </html>
   );

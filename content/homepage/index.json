@@ -1,0 +1,11 @@
+{
+  "heroTitle": "Make a Lifelong Investment in Your Teen",
+  "heroSubtitle": "Chicago's premier Jewish day camp for teens ages 12-17. Adventures, sports, friendships, and authentic Jewish identity - all from the heart of Northbrook, IL.",
+  "heroQuote": "Every boy and girl is a seed and a sapling, which with the passage of time will bring forth fruit.",
+  "stats": [
+    { "label": "Years of Excellence", "value": 25, "suffix": "+" },
+    { "label": "Teen Campers Served", "value": 500, "suffix": "+" },
+    { "label": "Adventure Trips", "value": 50, "suffix": "+" },
+    { "label": "Parent Satisfaction", "value": 100, "suffix": "%" }
+  ]
+}
