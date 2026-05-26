@@ -40,8 +40,8 @@ export default function TestimonialsSection() {
 }
 
 const testimonials = [
-  { quote: "My son came home from Teen Camp a completely different person - more confident, more Jewishly aware, and with friends he still talks to every day. Best investment we ever made.", name: 'Rachel K.', location: 'Northbrook, IL' },
-  { quote: "The combination of exciting adventures and authentic Jewish values is unmatched. My teen couldn't stop talking about the Indiana Dunes hike and the Shabbaton experience.", name: 'David M.', location: 'Chicago, IL' },
+  { quote: "My son came home from Teen Camp a completely different person - more confident, more Jewishly aware, and with friends he still talks to every day. Best investment we ever made.", name: 'Rachel K.', location: 'Beverly Hills, CA' },
+  { quote: "The combination of exciting adventures and authentic Jewish values is unmatched. My teen couldn't stop talking about the Indiana Dunes hike and the Shabbaton experience.", name: 'David M.', location: 'California, IL' },
   { quote: "Rabbi Notik and the entire staff are incredible. They truly care about each child as an individual. My son went back summer after summer and begged to go again.", name: 'Sarah L.', location: 'Glenview, IL' },
 ];
 

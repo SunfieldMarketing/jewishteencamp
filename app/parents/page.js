@@ -7,9 +7,9 @@ import {
 import { featuredPhoto, staffScheiman, staffNotik, staffGoldshmidt, img } from '../../lib/photos';
 
 export const metadata = {
-  title: 'Parents Area | Chicago Jewish Teens',
+  title: 'Parents Area | California Jewish Teens',
   description:
-    "Resources for Chicago Jewish Teens parents - director's letter, forms, FAQs, safety information, and more. Everything you need to prepare your teen for an incredible summer.",
+    "Resources for California Jewish Teens parents - director's letter, forms, FAQs, safety information, and more. Everything you need to prepare your teen for an incredible summer.",
 };
 
 export default function ParentsPage() {
@@ -56,7 +56,7 @@ export default function ParentsPage() {
                 This summer your son is invited to join a close-knit group of Jewish teens for an unforgettable, fun, wholesome, two month Jewish camp experience. Our program aims to boost your teen&apos;s self-esteem by providing robust sports instruction, exciting trips, and a passion for our rich Jewish heritage.
               </p>
               <p>
-                Located close to home in Northbrook, Illinois, Teen Camp resembles the overnight camp program with exciting bi-weekly &ldquo;Late Nights&rdquo; (full day trips followed by dinner), an overnight, and special Shabbat (weekend) programming. Teen Camp will provide your son with memories, friendships, and inspiration that will last a lifetime.
+                Located close to home in Beverly Hills, CAlinois, Teen Camp resembles the overnight camp program with exciting bi-weekly &ldquo;Late Nights&rdquo; (full day trips followed by dinner), an overnight, and special Shabbat (weekend) programming. Teen Camp will provide your son with memories, friendships, and inspiration that will last a lifetime.
               </p>
               <p>
                 Camp Gan Israel&apos;s Teen Camp is founded on 50 years of successful camping principles and experiences and is affiliated with the largest worldwide network of Jewish camping. You can be assured that you are entrusting your son into the care of energetic staff-members hand-picked for their experience, expertise, good social skills and a love and knack for teen development.
@@ -76,7 +76,7 @@ export default function ParentsPage() {
               <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white p-3"><PersonIcon className="w-full h-full" /></div>
               <div>
                 <div className="font-bold text-primary-dark text-lg">Zalman Notik</div>
-                <div className="text-gold font-medium text-sm">Chicago Jewish Teens Director</div>
+                <div className="text-gold font-medium text-sm">California Jewish Teens Director</div>
                 <a href="tel:+18474524609" className="text-gray-500 text-xs hover:text-gold">+1 (847) 452-4609</a>
               </div>
             </div>
@@ -339,30 +339,30 @@ const parentFaqs = [
   },
   {
     q: 'How do I enroll?',
-    a: "Simply fill out the contact form on our website, call us at (847) 452-4609, or email zalman@chicagojewishteens.com. We'll guide you through the entire enrollment process step by step.",
+    a: "Simply fill out the contact form on our website, call us at (847) 452-4609, or email RabbiZalman@chabadmammoth.com. We'll guide you through the entire enrollment process step by step.",
   },
 ];
 
 const contactStaff = [
   {
     name: "R' Schneur Scheiman",
-    role: 'CGI Camp Gan Israel Chicago Director',
+    role: 'CGI Camp Gan Israel California Director',
     phone: '+1 (847) 485-9770',
     email: null,
     image: staffScheiman,
   },
   {
     name: "R' Zalman Notik",
-    role: 'Chicago Jewish Teens Director',
+    role: 'California Jewish Teens Director',
     phone: '+1 (847) 452-4609',
-    email: 'zalman@chicagojewishteens.com',
+    email: 'RabbiZalman@chabadmammoth.com',
     image: staffNotik,
   },
   {
     name: 'Dovid Goldshmidt',
     role: 'Executive Coordinator',
     phone: '+1 (312) 972-1816',
-    email: 'info@chicagojewishteens.com',
+    email: 'info@chabadmammoth.com',
     image: staffGoldshmidt,
   },
 ];

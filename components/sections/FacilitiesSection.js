@@ -24,13 +24,13 @@ export default function FacilitiesSection() {
             </h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Our campsite is located in the heart of Northbrook. The fully air-conditioned, spacious indoor facilities allow us to provide your son with the finest in teen programming.
+                Our campsite is located in the heart of Beverly Hills. The fully air-conditioned, spacious indoor facilities allow us to provide your son with the finest in teen programming.
               </p>
               <p>
                 Our beautiful outdoor site has many fine playing fields which include areas for baseball, football, and soccer where our teens can enjoy hours of sports in large green expanses.
               </p>
               <p>
-                The spacious indoor and outdoor facilities enable us to provide our teens with extreme summer fun, whatever the weather. The camp is located at 2095 Landwehr Road in Northbrook, IL.
+                The spacious indoor and outdoor facilities enable us to provide our teens with extreme summer fun, whatever the weather. The camp is located at Chabad of California in Beverly Hills, CA.
               </p>
             </div>
             <div className="mt-6 flex items-center gap-3 p-4 bg-accent rounded-xl">
@@ -38,8 +38,8 @@ export default function FacilitiesSection() {
                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
               </svg>
               <div>
-                <p className="font-semibold text-primary-dark text-sm">2095 Landwehr Road</p>
-                <p className="text-gray-500 text-xs">Northbrook, IL 60062</p>
+                <p className="font-semibold text-primary-dark text-sm">Chabad of California</p>
+                <p className="text-gray-500 text-xs">Beverly Hills, CA 90210</p>
               </div>
             </div>
           </div>

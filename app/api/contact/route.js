@@ -32,7 +32,7 @@ export async function POST(request) {
       program: program || 'General Inquiry',
       message,
       timestamp: new Date().toISOString(),
-      source: 'Chicago Jewish Teens Website',
+      source: 'California Jewish Teens Website',
     });
 
     // To send emails in production, integrate with services like:
@@ -44,8 +44,8 @@ export async function POST(request) {
     // const { Resend } = await import('resend');
     // const resend = new Resend(process.env.RESEND_API_KEY);
     // await resend.emails.send({
-    //   from: 'website@chicagojewishteens.com',
-    //   to: 'zalman@chicagojewishteens.com',
+    //   from: 'website@chabadmammoth.com',
+    //   to: 'RabbiZalman@chabadmammoth.com',
     //   subject: `New Inquiry: ${subject} - ${name}`,
     //   html: `
     //     <h2>New Contact Form Submission</h2>

@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://www.chicagojewishteens.com';
+  const baseUrl = 'https://www.californiajewishteens.com';
 
   const routes = [
     { url: '/', changeFrequency: 'weekly', priority: 1.0 },

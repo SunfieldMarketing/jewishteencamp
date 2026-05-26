@@ -4,9 +4,9 @@ import ContactForm from '../../components/ContactForm';
 import { featuredPhoto, staffScheiman, staffNotik, staffGoldshmidt, img } from '../../lib/photos';
 
 export const metadata = {
-  title: 'Contact Us | Chicago Jewish Teens',
+  title: 'Contact Us | California Jewish Teens',
   description:
-    'Contact Chicago Jewish Teens to enroll your teen, ask questions, or get more information. Call (847) 452-4609, email zalman@chicagojewishteens.com, or fill out our contact form.',
+    'Contact California Jewish Teens to enroll your teen, ask questions, or get more information. Call (847) 452-4609, email RabbiZalman@chabadmammoth.com, or fill out our contact form.',
 };
 
 export default function ContactPage() {
@@ -72,7 +72,7 @@ export default function ContactPage() {
             </a>
 
             <a
-              href="mailto:zalman@chicagojewishteens.com"
+              href="mailto:RabbiZalman@chabadmammoth.com"
               className="bg-white rounded-2xl shadow-xl p-6 flex items-center gap-4 hover:shadow-2xl transition-shadow border-2 border-transparent hover:border-gold group"
             >
               <div className="w-14 h-14 bg-gold/10 rounded-2xl flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition-colors">
@@ -83,7 +83,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <div className="font-bold text-primary-dark">Email Us</div>
-                <div className="text-gold font-semibold text-sm">zalman@chicagojewishteens.com</div>
+                <div className="text-gold font-semibold text-sm">RabbiZalman@chabadmammoth.com</div>
                 <div className="text-gray-400 text-xs">24-hour response</div>
               </div>
             </a>
@@ -143,10 +143,10 @@ export default function ContactPage() {
                   </svg>
                   Camp Location
                 </h3>
-                <p className="text-gray-700">2095 Landwehr Rd</p>
-                <p className="text-gray-700">Northbrook, IL 60062</p>
+                <p className="text-gray-700">Chabad of California</p>
+                <p className="text-gray-700">Beverly Hills, CA 90210</p>
                 <a
-                  href="https://maps.google.com/?q=2095+Landwehr+Rd+Northbrook+IL+60062"
+                  href="https://maps.google.com/?q=2095+Landwehr+Rd+Beverly Hills+IL+60062"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-3 inline-flex items-center gap-1 text-gold text-sm font-semibold hover:text-gold-dark"
@@ -162,15 +162,15 @@ export default function ContactPage() {
               <div className="bg-white rounded-2xl p-6 shadow-sm">
                 <h3 className="font-bold text-primary-dark mb-4">Follow Us</h3>
                 <div className="space-y-3">
-                  <a href="https://www.facebook.com/ChicAgoJewishTeens/" target="_blank" rel="noopener noreferrer"
+                  <a href="https://www.facebook.com/californiajewishteens/" target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors">
                     <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm">f</div>
-                    <span className="text-blue-800 font-medium text-sm">@ChicAgoJewishTeens</span>
+                    <span className="text-blue-800 font-medium text-sm">@californiajewishteens</span>
                   </a>
-                  <a href="https://www.instagram.com/chicagojewishteens" target="_blank" rel="noopener noreferrer"
+                  <a href="https://www.instagram.com/californiajewishteens" target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 bg-pink-50 rounded-xl hover:bg-pink-100 transition-colors">
                     <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white text-xs">ig</div>
-                    <span className="text-pink-800 font-medium text-sm">@chicagojewishteens</span>
+                    <span className="text-pink-800 font-medium text-sm">@californiajewishteens</span>
                   </a>
                 </div>
               </div>
@@ -209,18 +209,18 @@ export default function ContactPage() {
       <section className="bg-white py-12">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-primary-dark mb-6 text-center" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Find Us in Northbrook
+            Find Us in Beverly Hills
           </h2>
           <div className="rounded-3xl overflow-hidden shadow-xl h-96">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2959.5!2d-87.8389!3d42.1294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s2095+Landwehr+Rd%2C+Northbrook%2C+IL+60062!5e0!3m2!1sen!2sus!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2959.5!2d-87.8389!3d42.1294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s2095+Landwehr+Rd%2C+Beverly Hills%2C+IL+60062!5e0!3m2!1sen!2sus!4v1"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Chicago Jewish Teens Location"
+              title="California Jewish Teens Location"
             />
           </div>
         </div>
@@ -233,18 +233,18 @@ export default function ContactPage() {
             This Summer Make an <span className="text-gold">Extreme Investment</span> in Your Teen!
           </h2>
           <p className="text-blue-200 text-xl mb-10 max-w-2xl mx-auto">
-            Don&apos;t let this summer pass by. Every week your teen isn&apos;t at Chicago Jewish Teens is a week of memories, friendships, and growth they could be having.
+            Don&apos;t let this summer pass by. Every week your teen isn&apos;t at California Jewish Teens is a week of memories, friendships, and growth they could be having.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+18474524609" className="btn-primary">
               Call Now: (847) 452-4609
             </a>
-            <a href="mailto:zalman@chicagojewishteens.com" className="btn-outline">
+            <a href="mailto:RabbiZalman@chabadmammoth.com" className="btn-outline">
               Email Us Today
             </a>
           </div>
           <p className="mt-8 text-blue-300 text-sm">
-            R&apos; Zalman Notik - Chicago Jewish Teens Director
+            R&apos; Zalman Notik - California Jewish Teens Director
             <br />
             9041 Margail Ave, Des Plaines, IL 60015
           </p>
@@ -257,23 +257,23 @@ export default function ContactPage() {
 const staffDirectory = [
   {
     name: "R' Schneur Scheiman",
-    role: 'Camp Gan Israel Chicago Director',
+    role: 'Camp Gan Israel California Director',
     phone: '+1 (847) 485-9770',
     email: null,
     image: staffScheiman,
   },
   {
     name: "R' Zalman Notik",
-    role: 'Chicago Jewish Teens Director',
+    role: 'California Jewish Teens Director',
     phone: '+1 (847) 452-4609',
-    email: 'zalman@chicagojewishteens.com',
+    email: 'RabbiZalman@chabadmammoth.com',
     image: staffNotik,
   },
   {
     name: 'Dovid Goldshmidt',
-    role: 'Chicago Jewish Teens Executive Coordinator',
+    role: 'California Jewish Teens Executive Coordinator',
     phone: '+1 (312) 972-1816',
-    email: 'info@chicagojewishteens.com',
+    email: 'info@chabadmammoth.com',
     image: staffGoldshmidt,
   },
 ];

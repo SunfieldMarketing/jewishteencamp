@@ -63,7 +63,7 @@ function ContactFormInner() {
           Thank You!
         </h3>
         <p className="text-gray-600 mb-6">
-          We&apos;ve received your inquiry and will be in touch within 24 hours. We can&apos;t wait to welcome your teen to the Chicago Jewish Teens family!
+          We&apos;ve received your inquiry and will be in touch within 24 hours. We can&apos;t wait to welcome your teen to the California Jewish Teens family!
         </p>
         <a href="tel:+18474524609" className="btn-primary">
           Call Us Now: (847) 452-4609
@@ -232,7 +232,7 @@ function ContactFormInner() {
       </button>
 
       <p className="text-center text-xs text-gray-500">
-        By submitting, you agree to be contacted about Chicago Jewish Teens programs. We respect your privacy and never share your information.
+        By submitting, you agree to be contacted about California Jewish Teens programs. We respect your privacy and never share your information.
       </p>
     </form>
   );

@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/day-camp', label: 'Day Camp' },
+  { href: '/social-events', label: 'Social Events' },
   { href: '/about', label: 'About Us' },
   { href: '/schedule', label: 'Schedule & Pricing' },
   { href: '/photos', label: 'Photos' },
@@ -48,17 +49,17 @@ export default function Navbar() {
               <PhoneIcon />
               <span>+1 (847) 452-4609</span>
             </a>
-            <a href="mailto:zalman@chicagojewishteens.com" className="flex items-center gap-2 hover:text-gold transition-colors">
+            <a href="mailto:RabbiZalman@chabadmammoth.com" className="flex items-center gap-2 hover:text-gold transition-colors">
               <EmailIcon />
-              <span>zalman@chicagojewishteens.com</span>
+              <span>RabbiZalman@chabadmammoth.com</span>
             </a>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-gray-400">Follow us:</span>
-            <a href="https://www.facebook.com/ChicAgoJewishTeens/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors" aria-label="Facebook">
+            <a href="https://www.facebook.com/californiajewishteens/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors" aria-label="Facebook">
               <FacebookIcon />
             </a>
-            <a href="https://www.instagram.com/chicagojewishteens" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors" aria-label="Instagram">
+            <a href="https://www.instagram.com/californiajewishteens" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors" aria-label="Instagram">
               <InstagramIcon />
             </a>
           </div>
@@ -82,7 +83,7 @@ export default function Navbar() {
             </div>
             <div>
               <div className="font-bold text-primary text-lg leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
-                Chicago Jewish
+                California Jewish
               </div>
               <div className="text-gold font-semibold text-sm uppercase tracking-widest leading-tight">
                 Teens
@@ -177,9 +178,9 @@ export default function Navbar() {
                 </Link>
               </div>
               <div className="pt-2 flex items-center gap-4 px-4 text-sm text-gray-500">
-                <a href="https://www.facebook.com/ChicAgoJewishTeens/" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Facebook</a>
-                <a href="https://www.instagram.com/chicagojewishteens" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Instagram</a>
-                <a href="mailto:zalman@chicagojewishteens.com" className="hover:text-gold">Email</a>
+                <a href="https://www.facebook.com/californiajewishteens/" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Facebook</a>
+                <a href="https://www.instagram.com/californiajewishteens" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Instagram</a>
+                <a href="mailto:RabbiZalman@chabadmammoth.com" className="hover:text-gold">Email</a>
               </div>
             </div>
           </div>

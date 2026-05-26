@@ -8,12 +8,12 @@ import {
 import { featuredPhoto, adventurePhotos, img, thumb } from '../../lib/photos';
 
 export const metadata = {
-  title: 'Day Camp Programs | California Jewish Teens',
+  title: 'Social Events | California Jewish Teens',
   description:
-    'Explore all programs at California Jewish Teens day camp - sports, adventures, trips, Jewish culture, overnight experiences, and more for teens ages 12–17 in Beverly Hills, CA.',
+    'Explore social events at California Jewish Teens - connect, have fun, and engage in Jewish culture with other teens ages 12–17 in Beverly Hills, CA.',
 };
 
-export default function DayCampPage() {
+export default function SocialEventsPage() {
   return (
     <>
       {/* Hero */}
@@ -22,22 +22,22 @@ export default function DayCampPage() {
           style={{ backgroundImage: `url("${img(featuredPhoto, 1400)}")` }} />
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/80 via-primary/70 to-gold/80" />
         <div className="relative max-w-4xl mx-auto px-4 text-center">
-          <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-4">Day Camp Programs</p>
+          <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-4">Social Events</p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
-            The Ultimate Jewish <br />
-            <span className="text-gold">Teen Camp Experience</span>
+            Unforgettable <br />
+            <span className="text-gold">Social Gatherings</span>
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-            Daily adventures, expert coaching, authentic Jewish culture - all designed to challenge, inspire, and transform your teen.
+            Connect with friends, enjoy exciting activities, and experience authentic Jewish culture through our dynamic social events.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact?program=day-camp" className="btn-primary">Enroll Now</Link>
-            <Link href="/schedule" className="btn-outline">View Schedule</Link>
+            <Link href="/contact?program=social-events" className="btn-primary">Join the Fun</Link>
+            <Link href="/schedule" className="btn-outline">View Calendar</Link>
           </div>
           <nav className="mt-8 flex items-center justify-center gap-2 text-sm text-blue-300">
             <Link href="/" className="hover:text-gold">Home</Link>
             <span>/</span>
-            <span className="text-white">Day Camp</span>
+            <span className="text-white">Social Events</span>
           </nav>
         </div>
       </section>

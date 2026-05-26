@@ -26,6 +26,6 @@ export default function OriginsSection() {
 const origins = [
   { icon: <TrophyIcon className="w-full h-full" />, title: 'CGI Camp Network', desc: 'Teen Camp is proudly founded on 50 years of successful camping principles and is affiliated with CGI camping - the largest worldwide network of Jewish camping.' },
   { icon: <StarOfDavidIcon className="w-full h-full" />, title: 'Trendsetting Programs', desc: "CGI camps enjoy a well-earned reputation as a trendsetter with adventurous trips, creative programs, and sports instruction that teens look forward to all year." },
-  { icon: <CalendarIcon className="w-full h-full" />, title: 'Est. Since 2000', desc: "Chicago Jewish Teens has served as a haven for children and their families since 2000 - building a legacy of transformative summer experiences." },
+  { icon: <CalendarIcon className="w-full h-full" />, title: 'Est. Since 2000', desc: "California Jewish Teens has served as a haven for children and their families since 2000 - building a legacy of transformative summer experiences." },
 ];
 

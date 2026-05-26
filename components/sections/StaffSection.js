@@ -57,23 +57,23 @@ const staffDetails = [
 const staffDirectory = [
   {
     name: "R' Schneur Scheiman",
-    role: 'CGI Chicago Director',
+    role: 'CGI California Director',
     phone: '+1 (847) 485-9770',
     email: null,
     image: staffScheiman,
   },
   {
     name: "R' Zalman Notik",
-    role: 'Chicago Jewish Teens Director',
+    role: 'California Jewish Teens Director',
     phone: '+1 (847) 452-4609',
-    email: 'zalman@chicagojewishteens.com',
+    email: 'RabbiZalman@chabadmammoth.com',
     image: staffNotik,
   },
   {
     name: 'Dovid Goldshmidt',
     role: 'Executive Coordinator',
     phone: '+1 (312) 972-1816',
-    email: 'info@chicagojewishteens.com',
+    email: 'info@chabadmammoth.com',
     image: staffGoldshmidt,
   },
 ];

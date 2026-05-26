@@ -18,17 +18,17 @@ export default function Footer() {
               </div>
               <div>
                 <div className="font-bold text-xl leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
-                  Chicago Jewish
+                  California Jewish
                 </div>
                 <div className="text-gold text-sm font-semibold uppercase tracking-widest">Teens</div>
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Premier Jewish day camp for teens ages 12–17 in Northbrook, IL. Building character, friendships, and Jewish identity since 2000.
+              Premier Jewish day camp for teens ages 12–17 in Beverly Hills, CA. Building character, friendships, and Jewish identity since 2000.
             </p>
             <div className="flex gap-3">
               <a
-                href="https://www.facebook.com/ChicAgoJewishTeens/"
+                href="https://www.facebook.com/californiajewishteens/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-gold transition-colors duration-300"
@@ -39,7 +39,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/chicagojewishteens"
+                href="https://www.instagram.com/californiajewishteens"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-gold transition-colors duration-300"
@@ -61,6 +61,7 @@ export default function Footer() {
               {[
                 { href: '/', label: 'Home' },
                 { href: '/day-camp', label: 'Day Camp' },
+                { href: '/social-events', label: 'Social Events' },
                 { href: '/about', label: 'About Our Camp' },
                 { href: '/schedule', label: 'Schedule & Pricing' },
                 { href: '/photos', label: 'Photo Gallery' },
@@ -118,8 +119,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-white font-medium text-sm">Camp Location</p>
-                  <p className="text-gray-400 text-sm">2095 Landwehr Rd</p>
-                  <p className="text-gray-400 text-sm">Northbrook, IL 60062</p>
+                  <p className="text-gray-400 text-sm">Chabad of California</p>
+                  <p className="text-gray-400 text-sm">Beverly Hills, CA 90210</p>
                 </div>
               </div>
 
@@ -145,8 +146,8 @@ export default function Footer() {
                   </svg>
                 </div>
                 <div>
-                  <a href="mailto:zalman@chicagojewishteens.com" className="text-white hover:text-gold transition-colors text-sm font-medium break-all">
-                    zalman@chicagojewishteens.com
+                  <a href="mailto:RabbiZalman@chabadmammoth.com" className="text-white hover:text-gold transition-colors text-sm font-medium break-all">
+                    RabbiZalman@chabadmammoth.com
                   </a>
                 </div>
               </div>
@@ -168,7 +169,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm text-center md:text-left">
-            &copy; {new Date().getFullYear()} Chicago Jewish Teens. All rights reserved.
+            &copy; {new Date().getFullYear()} California Jewish Teens. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/contact" className="text-gray-500 hover:text-gold text-sm transition-colors">

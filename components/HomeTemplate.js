@@ -63,7 +63,7 @@ export default function HomeTemplate() {
             </h1>
 
             <p className="text-xl text-blue-100 leading-relaxed mb-8 max-w-2xl hero-animate-delay-2">
-              Chicago&apos;s premier Jewish day camp for teens ages 12-17. Adventures, sports, friendships, and authentic Jewish identity - all from the heart of Northbrook, IL.
+              California&apos;s premier Jewish day camp for teens ages 12-17. Adventures, sports, friendships, and authentic Jewish identity - all from the heart of Beverly Hills, CA.
             </p>
 
             <blockquote className="border-l-4 border-gold pl-5 text-blue-200 italic text-sm mb-10 hero-animate-delay-2 max-w-lg mx-auto">
@@ -130,7 +130,7 @@ export default function HomeTemplate() {
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                 <img
                   src={img(aboutPhoto, 900)}
-                  alt="Chicago Jewish Teens campers at camp"
+                  alt="California Jewish Teens campers at camp"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -151,7 +151,7 @@ export default function HomeTemplate() {
 
             {/* Right: Text */}
             <div>
-              <p className="section-subheading">About Chicago Jewish Teens</p>
+              <p className="section-subheading">About California Jewish Teens</p>
               <h2 className="section-heading mb-6">
                 More Than a Camp - <span className="text-gold">A Life Experience</span>
               </h2>
@@ -202,7 +202,7 @@ export default function HomeTemplate() {
               What We <span className="text-gold">Do Best</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Every day at Chicago Jewish Teens is more than just a schedule - it&apos;s a curated journey of discovery, growth, and unapologetic fun.
+              Every day at California Jewish Teens is more than just a schedule - it&apos;s a curated journey of discovery, growth, and unapologetic fun.
             </p>
           </div>
 
@@ -258,7 +258,7 @@ export default function HomeTemplate() {
           <div className="text-center mb-16">
             <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-3">Why Families Choose Us</p>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-              The Chicago Jewish Teens Difference
+              The California Jewish Teens Difference
             </h2>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
               Built on 50 years of CGI camping excellence - we&apos;re not just a day camp, we&apos;re a life-changing experience.
@@ -436,7 +436,7 @@ export default function HomeTemplate() {
               See the Fun in Action
             </h2>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-              A glimpse into life at Chicago Jewish Teens - where every day is an adventure.
+              A glimpse into life at California Jewish Teens - where every day is an adventure.
             </p>
           </div>
 
@@ -448,7 +448,7 @@ export default function HomeTemplate() {
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="rounded-2xl overflow-hidden" style={{ height: '320px' }}>
-              <img src={thumb(featuredPhoto)} alt="Chicago Jewish Teens campers"
+              <img src={thumb(featuredPhoto)} alt="California Jewish Teens campers"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
             </div>
             {/* Row 2: 3 Cloudinary photos */}
@@ -553,8 +553,8 @@ export default function HomeTemplate() {
                   </div>
                   <div>
                     <div className="font-bold text-primary-dark">Email</div>
-                    <a href="mailto:zalman@chicagojewishteens.com" className="text-gold font-semibold hover:text-gold-dark transition-colors break-all">
-                      zalman@chicagojewishteens.com
+                    <a href="mailto:RabbiZalman@chabadmammoth.com" className="text-gold font-semibold hover:text-gold-dark transition-colors break-all">
+                      RabbiZalman@chabadmammoth.com
                     </a>
                     <p className="text-gray-500 text-xs mt-1">We reply within 24 hours</p>
                   </div>
@@ -565,8 +565,8 @@ export default function HomeTemplate() {
                   </div>
                   <div>
                     <div className="font-bold text-primary-dark">Camp Location</div>
-                    <p className="text-gray-700 font-medium">2095 Landwehr Rd</p>
-                    <p className="text-gray-500 text-sm">Northbrook, IL 60062</p>
+                    <p className="text-gray-700 font-medium">Chabad of California</p>
+                    <p className="text-gray-500 text-sm">Beverly Hills, CA 90210</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-sm">
@@ -575,17 +575,17 @@ export default function HomeTemplate() {
                   </div>
                   <div>
                     <div className="font-bold text-primary-dark">Additional Contact</div>
-                    <p className="text-gray-600 text-sm">info@chicagojewishteens.com</p>
+                    <p className="text-gray-600 text-sm">info@chabadmammoth.com</p>
                     <p className="text-gray-500 text-xs">Dovid Goldshmidt: (312) 972-1816</p>
                   </div>
                 </div>
               </div>
               <div className="flex gap-4">
-                <a href="https://www.facebook.com/ChicAgoJewishTeens/" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.facebook.com/californiajewishteens/" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-xl font-semibold text-sm hover:bg-blue-700 transition-colors">
                   Facebook
                 </a>
-                <a href="https://www.instagram.com/chicagojewishteens" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.instagram.com/californiajewishteens" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-5 py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity">
                   Instagram
                 </a>
@@ -611,11 +611,11 @@ export default function HomeTemplate() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="rounded-3xl overflow-hidden shadow-xl h-80">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2959.5!2d-87.8389!3d42.1294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s2095+Landwehr+Rd%2C+Northbrook%2C+IL+60062!5e0!3m2!1sen!2sus!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2959.5!2d-87.8389!3d42.1294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s2095+Landwehr+Rd%2C+Beverly Hills%2C+IL+60062!5e0!3m2!1sen!2sus!4v1"
               width="100%" height="100%" style={{ border: 0 }}
               allowFullScreen loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Chicago Jewish Teens Camp Location"
+              title="California Jewish Teens Camp Location"
             />
           </div>
         </div>
@@ -714,22 +714,22 @@ const programs = [
 ];
 
 const staff = [
-  { name: "R' Schneur Scheiman", title: 'Camp Gan Israel Chicago Director', phone: '+1 (847) 485-9770', email: null, image: staffScheiman },
-  { name: "R' Zalman Notik", title: 'Chicago Jewish Teens Director', phone: '+1 (847) 452-4609', email: 'zalman@chicagojewishteens.com', image: staffNotik },
-  { name: 'Dovid Goldshmidt', title: 'Camp Executive Coordinator', phone: '+1 (312) 972-1816', email: 'info@chicagojewishteens.com', image: staffGoldshmidt },
+  { name: "R' Schneur Scheiman", title: 'Camp Gan Israel California Director', phone: '+1 (847) 485-9770', email: null, image: staffScheiman },
+  { name: "R' Zalman Notik", title: 'California Jewish Teens Director', phone: '+1 (847) 452-4609', email: 'RabbiZalman@chabadmammoth.com', image: staffNotik },
+  { name: 'Dovid Goldshmidt', title: 'Camp Executive Coordinator', phone: '+1 (312) 972-1816', email: 'info@chabadmammoth.com', image: staffGoldshmidt },
 ];
 
 const testimonials = [
-  { quote: "My son came home from Teen Camp a completely different person - more confident, more Jewishly aware, and with friends he still talks to every day. Best investment we ever made.", name: 'Rachel K.', location: 'Northbrook, IL' },
-  { quote: "The combination of exciting adventures and authentic Jewish values is unmatched. My teen couldn't stop talking about the Indiana Dunes hike and the Shabbaton experience.", name: 'David M.', location: 'Chicago, IL' },
+  { quote: "My son came home from Teen Camp a completely different person - more confident, more Jewishly aware, and with friends he still talks to every day. Best investment we ever made.", name: 'Rachel K.', location: 'Beverly Hills, CA' },
+  { quote: "The combination of exciting adventures and authentic Jewish values is unmatched. My teen couldn't stop talking about the Indiana Dunes hike and the Shabbaton experience.", name: 'David M.', location: 'California, IL' },
   { quote: "Rabbi Notik and the entire staff are incredible. They truly care about each child as an individual. My son went back summer after summer and begged to go again.", name: 'Sarah L.', location: 'Glenview, IL' },
 ];
 
 
 
 const faqs = [
-  { q: 'What ages does Chicago Jewish Teens serve?', a: 'Our programs are designed for Jewish teens ages 12–17. We have separate programs and activities tailored to different age groups and interests.' },
-  { q: 'Where is the camp located?', a: 'Our campsite is located at 2095 Landwehr Road in Northbrook, IL 60062 - right in the heart of Northbrook with excellent indoor and outdoor facilities.' },
+  { q: 'What ages does California Jewish Teens serve?', a: 'Our programs are designed for Jewish teens ages 12–17. We have separate programs and activities tailored to different age groups and interests.' },
+  { q: 'Where is the camp located?', a: 'Our campsite is located at Chabad of California in Beverly Hills, CA 90210 - right in the heart of Beverly Hills with excellent indoor and outdoor facilities.' },
   { q: 'Is transportation provided?', a: 'Yes, we offer transportation options. Please contact us at (847) 452-4609 to discuss your specific needs and our available transportation routes.' },
   { q: 'Is the food kosher?', a: 'Absolutely. We serve nutritious and delicious kosher snacks, lunches, and drinks daily. During extended trips, we also provide dinner. Teens even enjoy meals at local Kosher restaurants.' },
   { q: 'What is the camper-to-staff ratio?', a: 'We maintain a low camper-to-staff ratio to ensure each child receives the highest quality supervision, caring guidance, and individual attention from our experienced counselors.' },

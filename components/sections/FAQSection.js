@@ -37,8 +37,8 @@ export default function FAQSection() {
 }
 
 const faqs = [
-  { q: 'What ages does Chicago Jewish Teens serve?', a: 'Our programs are designed for Jewish teens ages 12–17. We have separate programs and activities tailored to different age groups and interests.' },
-  { q: 'Where is the camp located?', a: 'Our campsite is located at 2095 Landwehr Road in Northbrook, IL 60062 - right in the heart of Northbrook with excellent indoor and outdoor facilities.' },
+  { q: 'What ages does California Jewish Teens serve?', a: 'Our programs are designed for Jewish teens ages 12–17. We have separate programs and activities tailored to different age groups and interests.' },
+  { q: 'Where is the camp located?', a: 'Our campsite is located at Chabad of California in Beverly Hills, CA 90210 - right in the heart of Beverly Hills with excellent indoor and outdoor facilities.' },
   { q: 'Is transportation provided?', a: 'Yes, we offer transportation options. Please contact us at (847) 452-4609 to discuss your specific needs and our available transportation routes.' },
   { q: 'Is the food kosher?', a: 'Absolutely. We serve nutritious and delicious kosher snacks, lunches, and drinks daily. During extended trips, we also provide dinner. Teens even enjoy meals at local Kosher restaurants.' },
   { q: 'What is the camper-to-staff ratio?', a: 'We maintain a low camper-to-staff ratio to ensure each child receives the highest quality supervision, caring guidance, and individual attention from our experienced counselors.' },

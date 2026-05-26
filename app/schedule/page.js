@@ -4,9 +4,9 @@ import { PaletteIcon, TentIcon, MountainIcon } from '../../components/Icons';
 import { featuredPhoto, img } from '../../lib/photos';
 
 export const metadata = {
-  title: 'Schedule & Pricing | Chicago Jewish Teens',
+  title: 'Schedule & Pricing | California Jewish Teens',
   description:
-    'View the summer schedule, program dates, and pricing for Chicago Jewish Teens. Boys Teen Camp, Girls Art & Adventure, and Pacific Northwest Adventure programs available.',
+    'View the summer schedule, program dates, and pricing for California Jewish Teens. Boys Teen Camp, Girls Art & Adventure, and Pacific Northwest Adventure programs available.',
 };
 
 export default function SchedulePage() {
@@ -110,7 +110,7 @@ export default function SchedulePage() {
               Financial Assistance Available
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto mb-6">
-              We believe every teen deserves the Chicago Jewish Teens experience. Financial aid and payment plans are available. Don&apos;t let budget be a barrier - reach out and we&apos;ll work something out.
+              We believe every teen deserves the California Jewish Teens experience. Financial aid and payment plans are available. Don&apos;t let budget be a barrier - reach out and we&apos;ll work something out.
             </p>
             <a href="tel:+18474524609" className="btn-secondary">
               Call to Discuss Options: (847) 452-4609
