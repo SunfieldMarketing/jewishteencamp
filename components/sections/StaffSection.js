@@ -57,14 +57,14 @@ const staffDetails = [
 const staffDirectory = [
   {
     name: "R' Schneur Scheiman",
-    role: 'CGI California Director',
+    role: 'CGI Chicago Director',
     phone: '+1 (847) 485-9770',
     email: null,
     image: staffScheiman,
   },
   {
     name: "R' Zalman Notik",
-    role: 'California Jewish Teens Director',
+    role: 'Chicago Jewish Teens Director',
     phone: '+1 (847) 452-4609',
     email: 'RabbiZalman@chabadmammoth.com',
     image: staffNotik,

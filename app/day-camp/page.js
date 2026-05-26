@@ -8,9 +8,9 @@ import {
 import { featuredPhoto, adventurePhotos, img, thumb } from '../../lib/photos';
 
 export const metadata = {
-  title: 'Day Camp Programs | California Jewish Teens',
+  title: 'Day Camp Programs | Chicago Jewish Teens',
   description:
-    'Explore all programs at California Jewish Teens day camp - sports, adventures, trips, Jewish culture, overnight experiences, and more for teens ages 12–17 in Beverly Hills, CA.',
+    'Explore all programs at Chicago Jewish Teens day camp - sports, adventures, trips, Jewish culture, overnight experiences, and more for teens ages 12–17 in Beverly Hills, CA.',
 };
 
 export default function DayCampPage() {
@@ -51,7 +51,7 @@ export default function DayCampPage() {
               Every Day is a New <span className="text-gold">Adventure</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              At California Jewish Teens, we combine the best elements of overnight camp with the convenience of a day camp. Extended hours, bi-weekly full-day trips, and special weekend Shabbatons create an immersive summer experience.
+              At Chicago Jewish Teens, we combine the best elements of overnight camp with the convenience of a day camp. Extended hours, bi-weekly full-day trips, and special weekend Shabbatons create an immersive summer experience.
             </p>
           </div>
 

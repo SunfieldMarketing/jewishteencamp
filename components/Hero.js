@@ -12,7 +12,7 @@ const heroTrust = [
 
 export default function Hero({ 
   tagline = "Now Enrolling for 2026", 
-  title = "California Jewish Teens", 
+  title = "Chicago Jewish Teens", 
   subtitle = "The ultimate summer adventure for Jewish teens.",
   ctaText = "Enroll Now",
   ctaLink = "/contact",

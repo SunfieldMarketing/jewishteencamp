@@ -130,7 +130,7 @@ export default function HomeTemplate() {
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                 <img
                   src={img(aboutPhoto, 900)}
-                  alt="California Jewish Teens campers at camp"
+                  alt="Chicago Jewish Teens campers at camp"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -151,7 +151,7 @@ export default function HomeTemplate() {
 
             {/* Right: Text */}
             <div>
-              <p className="section-subheading">About California Jewish Teens</p>
+              <p className="section-subheading">About Chicago Jewish Teens</p>
               <h2 className="section-heading mb-6">
                 More Than a Camp - <span className="text-gold">A Life Experience</span>
               </h2>
@@ -202,7 +202,7 @@ export default function HomeTemplate() {
               What We <span className="text-gold">Do Best</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Every day at California Jewish Teens is more than just a schedule - it&apos;s a curated journey of discovery, growth, and unapologetic fun.
+              Every day at Chicago Jewish Teens is more than just a schedule - it&apos;s a curated journey of discovery, growth, and unapologetic fun.
             </p>
           </div>
 
@@ -258,7 +258,7 @@ export default function HomeTemplate() {
           <div className="text-center mb-16">
             <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-3">Why Families Choose Us</p>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-              The California Jewish Teens Difference
+              The Chicago Jewish Teens Difference
             </h2>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
               Built on 50 years of CGI camping excellence - we&apos;re not just a day camp, we&apos;re a life-changing experience.
@@ -436,7 +436,7 @@ export default function HomeTemplate() {
               See the Fun in Action
             </h2>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-              A glimpse into life at California Jewish Teens - where every day is an adventure.
+              A glimpse into life at Chicago Jewish Teens - where every day is an adventure.
             </p>
           </div>
 
@@ -448,7 +448,7 @@ export default function HomeTemplate() {
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="rounded-2xl overflow-hidden" style={{ height: '320px' }}>
-              <img src={thumb(featuredPhoto)} alt="California Jewish Teens campers"
+              <img src={thumb(featuredPhoto)} alt="Chicago Jewish Teens campers"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
             </div>
             {/* Row 2: 3 Cloudinary photos */}
@@ -581,11 +581,11 @@ export default function HomeTemplate() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <a href="https://www.facebook.com/californiajewishteens/" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.facebook.com/chicagojewishteens/" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-xl font-semibold text-sm hover:bg-blue-700 transition-colors">
                   Facebook
                 </a>
-                <a href="https://www.instagram.com/californiajewishteens" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.instagram.com/chicagojewishteens" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-5 py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity">
                   Instagram
                 </a>
@@ -615,7 +615,7 @@ export default function HomeTemplate() {
               width="100%" height="100%" style={{ border: 0 }}
               allowFullScreen loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="California Jewish Teens Camp Location"
+              title="Chicago Jewish Teens Camp Location"
             />
           </div>
         </div>
@@ -678,6 +678,7 @@ const activities = [
   { icon: <FishingIcon className="w-full h-full" />, title: 'Fishing & Biking', desc: 'Relaxing fishing excursions and scenic biking trips that connect teens with nature.', bg: '#d1fae5', color: '#059669' },
   { icon: <MountainIcon className="w-full h-full" />, title: 'Indiana Dunes Hiking', desc: 'Full-day hiking trips to Indiana Dunes and Michigan adventures building endurance and teamwork.', bg: '#fef9c3', color: '#ca8a04' },
   { icon: <BookOpenIcon className="w-full h-full" />, title: 'Bar Mitzvah Prep', desc: 'Dynamic Judaic tutoring and personalized Bar Mitzvah preparation and celebration available at camp.', bg: '#e0e7ff', color: '#4338ca' },
+  { icon: <UsersIcon className="w-full h-full" />, title: 'Social Events', desc: 'Dynamic year-round teen mixers, holiday parties, and volunteering to foster lasting friendships and Jewish community.', bg: '#ffedd5', color: '#c2410c' },
 ];
 
 const whyUs = [
@@ -711,11 +712,18 @@ const programs = [
     price: '$4,695',
     features: ['Multi-day adventure', 'Pacific Northwest exploration', 'Nature & wilderness', 'Team building', 'All meals included'],
   },
+  {
+    icon: <UsersIcon className="w-full h-full" />,
+    name: 'Social Events',
+    dates: 'Year-Round',
+    price: 'Varies',
+    features: ['Teen Mixers & Networking', 'Holiday Parties', 'Community Volunteering', 'Jewish Culture', 'Make Lifelong Friends'],
+  },
 ];
 
 const staff = [
-  { name: "R' Schneur Scheiman", title: 'Camp Gan Israel California Director', phone: '+1 (847) 485-9770', email: null, image: staffScheiman },
-  { name: "R' Zalman Notik", title: 'California Jewish Teens Director', phone: '+1 (847) 452-4609', email: 'RabbiZalman@chabadmammoth.com', image: staffNotik },
+  { name: "R' Schneur Scheiman", title: 'Camp Gan Israel Chicago Director', phone: '+1 (847) 485-9770', email: null, image: staffScheiman },
+  { name: "R' Zalman Notik", title: 'Chicago Jewish Teens Director', phone: '+1 (847) 452-4609', email: 'RabbiZalman@chabadmammoth.com', image: staffNotik },
   { name: 'Dovid Goldshmidt', title: 'Camp Executive Coordinator', phone: '+1 (312) 972-1816', email: 'info@chabadmammoth.com', image: staffGoldshmidt },
 ];
 
@@ -728,7 +736,7 @@ const testimonials = [
 
 
 const faqs = [
-  { q: 'What ages does California Jewish Teens serve?', a: 'Our programs are designed for Jewish teens ages 12–17. We have separate programs and activities tailored to different age groups and interests.' },
+  { q: 'What ages does Chicago Jewish Teens serve?', a: 'Our programs are designed for Jewish teens ages 12–17. We have separate programs and activities tailored to different age groups and interests.' },
   { q: 'Where is the camp located?', a: 'Our campsite is located at Chabad of California in Beverly Hills, CA 90210 - right in the heart of Beverly Hills with excellent indoor and outdoor facilities.' },
   { q: 'Is transportation provided?', a: 'Yes, we offer transportation options. Please contact us at (847) 452-4609 to discuss your specific needs and our available transportation routes.' },
   { q: 'Is the food kosher?', a: 'Absolutely. We serve nutritious and delicious kosher snacks, lunches, and drinks daily. During extended trips, we also provide dinner. Teens even enjoy meals at local Kosher restaurants.' },

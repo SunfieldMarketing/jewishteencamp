@@ -4,9 +4,9 @@ import ContactForm from '../../components/ContactForm';
 import { featuredPhoto, staffScheiman, staffNotik, staffGoldshmidt, img } from '../../lib/photos';
 
 export const metadata = {
-  title: 'Contact Us | California Jewish Teens',
+  title: 'Contact Us | Chicago Jewish Teens',
   description:
-    'Contact California Jewish Teens to enroll your teen, ask questions, or get more information. Call (847) 452-4609, email RabbiZalman@chabadmammoth.com, or fill out our contact form.',
+    'Contact Chicago Jewish Teens to enroll your teen, ask questions, or get more information. Call (847) 452-4609, email RabbiZalman@chabadmammoth.com, or fill out our contact form.',
 };
 
 export default function ContactPage() {
@@ -162,15 +162,15 @@ export default function ContactPage() {
               <div className="bg-white rounded-2xl p-6 shadow-sm">
                 <h3 className="font-bold text-primary-dark mb-4">Follow Us</h3>
                 <div className="space-y-3">
-                  <a href="https://www.facebook.com/californiajewishteens/" target="_blank" rel="noopener noreferrer"
+                  <a href="https://www.facebook.com/chicagojewishteens/" target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors">
                     <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm">f</div>
-                    <span className="text-blue-800 font-medium text-sm">@californiajewishteens</span>
+                    <span className="text-blue-800 font-medium text-sm">@chicagojewishteens</span>
                   </a>
-                  <a href="https://www.instagram.com/californiajewishteens" target="_blank" rel="noopener noreferrer"
+                  <a href="https://www.instagram.com/chicagojewishteens" target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 bg-pink-50 rounded-xl hover:bg-pink-100 transition-colors">
                     <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white text-xs">ig</div>
-                    <span className="text-pink-800 font-medium text-sm">@californiajewishteens</span>
+                    <span className="text-pink-800 font-medium text-sm">@chicagojewishteens</span>
                   </a>
                 </div>
               </div>
@@ -220,7 +220,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="California Jewish Teens Location"
+              title="Chicago Jewish Teens Location"
             />
           </div>
         </div>
@@ -233,7 +233,7 @@ export default function ContactPage() {
             This Summer Make an <span className="text-gold">Extreme Investment</span> in Your Teen!
           </h2>
           <p className="text-blue-200 text-xl mb-10 max-w-2xl mx-auto">
-            Don&apos;t let this summer pass by. Every week your teen isn&apos;t at California Jewish Teens is a week of memories, friendships, and growth they could be having.
+            Don&apos;t let this summer pass by. Every week your teen isn&apos;t at Chicago Jewish Teens is a week of memories, friendships, and growth they could be having.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+18474524609" className="btn-primary">
@@ -244,7 +244,7 @@ export default function ContactPage() {
             </a>
           </div>
           <p className="mt-8 text-blue-300 text-sm">
-            R&apos; Zalman Notik - California Jewish Teens Director
+            R&apos; Zalman Notik - Chicago Jewish Teens Director
             <br />
             9041 Margail Ave, Des Plaines, IL 60015
           </p>
@@ -257,21 +257,21 @@ export default function ContactPage() {
 const staffDirectory = [
   {
     name: "R' Schneur Scheiman",
-    role: 'Camp Gan Israel California Director',
+    role: 'Camp Gan Israel Chicago Director',
     phone: '+1 (847) 485-9770',
     email: null,
     image: staffScheiman,
   },
   {
     name: "R' Zalman Notik",
-    role: 'California Jewish Teens Director',
+    role: 'Chicago Jewish Teens Director',
     phone: '+1 (847) 452-4609',
     email: 'RabbiZalman@chabadmammoth.com',
     image: staffNotik,
   },
   {
     name: 'Dovid Goldshmidt',
-    role: 'California Jewish Teens Executive Coordinator',
+    role: 'Chicago Jewish Teens Executive Coordinator',
     phone: '+1 (312) 972-1816',
     email: 'info@chabadmammoth.com',
     image: staffGoldshmidt,

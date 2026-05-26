@@ -32,7 +32,7 @@ export async function POST(request) {
       program: program || 'General Inquiry',
       message,
       timestamp: new Date().toISOString(),
-      source: 'California Jewish Teens Website',
+      source: 'Chicago Jewish Teens Website',
     });
 
     // To send emails in production, integrate with services like:

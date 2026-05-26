@@ -56,10 +56,10 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-4">
             <span className="text-gray-400">Follow us:</span>
-            <a href="https://www.facebook.com/californiajewishteens/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors" aria-label="Facebook">
+            <a href="https://www.facebook.com/chicagojewishteens/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors" aria-label="Facebook">
               <FacebookIcon />
             </a>
-            <a href="https://www.instagram.com/californiajewishteens" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors" aria-label="Instagram">
+            <a href="https://www.instagram.com/chicagojewishteens" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors" aria-label="Instagram">
               <InstagramIcon />
             </a>
           </div>
@@ -178,8 +178,8 @@ export default function Navbar() {
                 </Link>
               </div>
               <div className="pt-2 flex items-center gap-4 px-4 text-sm text-gray-500">
-                <a href="https://www.facebook.com/californiajewishteens/" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Facebook</a>
-                <a href="https://www.instagram.com/californiajewishteens" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Instagram</a>
+                <a href="https://www.facebook.com/chicagojewishteens/" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Facebook</a>
+                <a href="https://www.instagram.com/chicagojewishteens" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Instagram</a>
                 <a href="mailto:RabbiZalman@chabadmammoth.com" className="hover:text-gold">Email</a>
               </div>
             </div>

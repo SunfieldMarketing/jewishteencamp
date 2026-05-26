@@ -28,7 +28,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               <a
-                href="https://www.facebook.com/californiajewishteens/"
+                href="https://www.facebook.com/chicagojewishteens/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-gold transition-colors duration-300"
@@ -39,7 +39,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/californiajewishteens"
+                href="https://www.instagram.com/chicagojewishteens"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-gold transition-colors duration-300"
@@ -169,7 +169,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm text-center md:text-left">
-            &copy; {new Date().getFullYear()} California Jewish Teens. All rights reserved.
+            &copy; {new Date().getFullYear()} Chicago Jewish Teens. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/contact" className="text-gray-500 hover:text-gold text-sm transition-colors">

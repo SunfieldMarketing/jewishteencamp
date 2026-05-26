@@ -9,9 +9,9 @@ import {
 import { featuredPhoto, aboutPhoto, campLifePhotos, img, thumb, staffScheiman, staffNotik, staffGoldshmidt } from '../../lib/photos';
 
 export const metadata = {
-  title: 'About Our Camp | California Jewish Teens',
+  title: 'About Our Camp | Chicago Jewish Teens',
   description:
-    'Learn about California Jewish Teens - our history, mission, facilities, staff, and the CGI camp network. A bold new concept in Jewish camping for teens ages 12–17 in Beverly Hills, CA.',
+    'Learn about Chicago Jewish Teens - our history, mission, facilities, staff, and the CGI camp network. A bold new concept in Jewish camping for teens ages 12–17 in Beverly Hills, CA.',
 };
 
 export default function AboutPage() {
@@ -70,7 +70,7 @@ export default function AboutPage() {
               <div className="rounded-3xl overflow-hidden shadow-xl mb-6" style={{ height: '260px' }}>
                 <img
                   src={img(aboutPhoto, 900)}
-                  alt="California Jewish Teens campers"
+                  alt="Chicago Jewish Teens campers"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -196,14 +196,14 @@ export default function AboutPage() {
             {[
               {
                 name: "R' Schneur Scheiman",
-                role: 'CGI California Director',
+                role: 'CGI Chicago Director',
                 phone: '+1 (847) 485-9770',
                 email: null,
                 image: staffScheiman,
               },
               {
                 name: "R' Zalman Notik",
-                role: 'California Jewish Teens Director',
+                role: 'Chicago Jewish Teens Director',
                 phone: '+1 (847) 452-4609',
                 email: 'RabbiZalman@chabadmammoth.com',
                 image: staffNotik,
@@ -258,7 +258,7 @@ export default function AboutPage() {
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
             <div className="bg-gradient-to-r from-primary to-primary-light p-8 text-center text-white">
               <h2 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
-                Ready to Join the California Jewish Teens Family?
+                Ready to Join the Chicago Jewish Teens Family?
               </h2>
               <p className="text-blue-200">Request your free information pack today</p>
             </div>
@@ -282,7 +282,7 @@ const missionPoints = [
 const origins = [
   { icon: <TrophyIcon className="w-full h-full" />, title: 'CGI Camp Network', desc: 'Teen Camp is proudly founded on 50 years of successful camping principles and is affiliated with CGI camping - the largest worldwide network of Jewish camping.' },
   { icon: <StarOfDavidIcon className="w-full h-full" />, title: 'Trendsetting Programs', desc: "CGI camps enjoy a well-earned reputation as a trendsetter with adventurous trips, creative programs, and sports instruction that teens look forward to all year." },
-  { icon: <CalendarIcon className="w-full h-full" />, title: 'Est. Since 2000', desc: "California Jewish Teens has served as a haven for children and their families since 2000 - building a legacy of transformative summer experiences." },
+  { icon: <CalendarIcon className="w-full h-full" />, title: 'Est. Since 2000', desc: "Chicago Jewish Teens has served as a haven for children and their families since 2000 - building a legacy of transformative summer experiences." },
 ];
 
 const facilities = [

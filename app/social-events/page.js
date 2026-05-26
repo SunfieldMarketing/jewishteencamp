@@ -1,16 +1,15 @@
 import Link from 'next/link';
 import ContactForm from '../../components/ContactForm';
 import {
-  CalendarIcon, TentIcon, PersonIcon, MountainIcon, WavesIcon,
-  SportsIcon, FishingIcon, MartialArtsIcon, CompassIcon, StarOfDavidIcon,
-  KayakingIcon, BaseballIcon, BasketballIcon, FootballIcon, SoccerIcon, HorseIcon,
+  CalendarIcon, UsersIcon, PersonIcon, StarOfDavidIcon,
+  HeartIcon, GlobeIcon, HandshakeIcon, ChatIcon
 } from '../../components/Icons';
-import { featuredPhoto, adventurePhotos, img, thumb } from '../../lib/photos';
+import { featuredPhoto, culturePhotos, campLifePhotos, img, thumb } from '../../lib/photos';
 
 export const metadata = {
-  title: 'Social Events | California Jewish Teens',
+  title: 'Social Events | Chicago Jewish Teens',
   description:
-    'Explore social events at California Jewish Teens - connect, have fun, and engage in Jewish culture with other teens ages 12–17 in Beverly Hills, CA.',
+    'Explore social events at Chicago Jewish Teens - connect, have fun, and engage in Jewish culture with other teens ages 12–17 in Beverly Hills, CA.',
 };
 
 export default function SocialEventsPage() {
@@ -28,7 +27,7 @@ export default function SocialEventsPage() {
             <span className="text-gold">Social Gatherings</span>
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-            Connect with friends, enjoy exciting activities, and experience authentic Jewish culture through our dynamic social events.
+            Connect with friends, enjoy exciting activities, and experience authentic Jewish culture through our dynamic year-round social events.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact?program=social-events" className="btn-primary">Join the Fun</Link>
@@ -46,18 +45,18 @@ export default function SocialEventsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="section-subheading">Camp Overview</p>
+            <p className="section-subheading">Event Overview</p>
             <h2 className="section-heading mb-4">
-              Every Day is a New <span className="text-gold">Adventure</span>
+              Building a <span className="text-gold">Strong Community</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              At California Jewish Teens, we combine the best elements of overnight camp with the convenience of a day camp. Extended hours, bi-weekly full-day trips, and special weekend Shabbatons create an immersive summer experience.
+              Our social events are specifically tailored to help Jewish teens from across the community connect, network, and form lasting friendships in a safe and welcoming environment.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
             {quickStats.map((stat) => (
-              <div key={stat.label} className="text-center p-6 bg-accent rounded-2xl">
+              <div key={stat.label} className="text-center p-6 bg-accent rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-10 h-10 mx-auto mb-3 text-primary">{stat.icon}</div>
                 <div className="text-3xl font-bold text-primary mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>{stat.value}</div>
                 <div className="text-gray-500 text-sm">{stat.label}</div>
@@ -67,37 +66,34 @@ export default function SocialEventsPage() {
         </div>
       </section>
 
-      {/* Adventure Trips */}
+      {/* Teen Mixers */}
       <section className="py-20 bg-accent">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="section-subheading">Adventure Trips</p>
+              <p className="section-subheading">Teen Mixers & Networking</p>
               <h2 className="section-heading mb-6">
-                Beyond the <span className="text-gold">Campgrounds</span>
+                Make Friends <span className="text-gold">For Life</span>
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Teen Camp specializes in adventurous camping and field trips designed to boost the self-confidence and sense of responsibility in our teens. On a daily basis our campers leave our camp grounds to go on specially designed field trips.
+                We host monthly teen mixers designed to break the ice and bring teens together. Whether it's a casual lounge night, a game tournament, or an interactive workshop, these events are perfect for meeting new people and staying connected with camp friends.
               </p>
               <div className="space-y-4">
-                {adventureTrips.map((trip) => (
-                  <div key={trip.name} className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm">
-                    <div className="w-8 h-8 text-primary flex-shrink-0 mt-0.5">{trip.icon}</div>
+                {mixerEvents.map((event) => (
+                  <div key={event.name} className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-50">
+                    <div className="w-8 h-8 text-primary flex-shrink-0 mt-0.5">{event.icon}</div>
                     <div>
-                      <h4 className="font-bold text-primary-dark">{trip.name}</h4>
-                      <p className="text-gray-500 text-sm">{trip.desc}</p>
+                      <h4 className="font-bold text-primary-dark">{event.name}</h4>
+                      <p className="text-gray-500 text-sm">{event.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
-              <p className="text-gray-500 text-sm mt-4">
-                * Campers are provided with all food they&apos;ll need every day, including dinner and snacks on full-day trips.
-              </p>
             </div>
-            {/* Real adventure photos */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {adventurePhotos.slice(0, 6).map((photo, i) => (
-                <div key={i} className={`rounded-2xl overflow-hidden ${i === 0 ? 'md:col-span-2 md:row-span-2 h-[450px]' : 'h-[218px]'}`}>
+            {/* Real photos */}
+            <div className="grid grid-cols-2 gap-4">
+              {campLifePhotos.slice(0, 4).map((photo, i) => (
+                <div key={i} className={`rounded-2xl overflow-hidden ${i === 0 ? 'col-span-2 h-64' : 'h-48'}`}>
                   <img src={thumb(photo.id)} alt={photo.alt}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
@@ -107,158 +103,90 @@ export default function SocialEventsPage() {
         </div>
       </section>
 
-      {/* Sports & Athletics */}
+      {/* Holiday Parties */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="section-subheading">Sports & Athletics</p>
+            <p className="section-subheading">Celebrations</p>
             <h2 className="section-heading mb-4">
-              Champions in <span className="text-gold">the Making</span>
+              Holiday <span className="text-gold">Parties</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              At Teen Camp campers participate in various sports activities, receive expert coaching, and enjoy a wide array of recreational activities. Professional PE instructors teach with patience, guidance, and encouragement.
+              Celebrate Jewish heritage with a modern twist! We throw the most exciting holiday parties of the year, combining tradition with incredible entertainment and themes.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            {sports.map((sport) => (
-              <div key={sport.name} className="text-center p-6 border-2 border-gray-100 rounded-2xl hover:border-gold hover:shadow-lg transition-all duration-300">
-                <div className="w-10 h-10 mx-auto mb-3 text-primary">{sport.icon}</div>
-                <h3 className="font-bold text-primary-dark text-sm">{sport.name}</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {holidays.map((holiday) => (
+              <div key={holiday.name} className="bg-primary-dark rounded-3xl p-8 text-white relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full blur-2xl -mr-10 -mt-10 transition-transform group-hover:scale-150" />
+                <div className="w-12 h-12 mb-6 text-gold relative z-10">{holiday.icon}</div>
+                <h3 className="text-2xl font-bold mb-3 relative z-10" style={{ fontFamily: 'Playfair Display, serif' }}>{holiday.name}</h3>
+                <p className="text-blue-200 text-sm leading-relaxed mb-6 relative z-10">{holiday.desc}</p>
+                <div className="space-y-2 relative z-10">
+                  {holiday.features.map(f => (
+                    <div key={f} className="flex items-center gap-2 text-sm text-blue-100">
+                      <span className="text-gold">✓</span> {f}
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
-
-          <div className="bg-primary-dark rounded-3xl p-8 md:p-12 text-white">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-3xl font-bold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-                  Expert Athletic Direction
-                </h3>
-                <p className="text-blue-200 leading-relaxed mb-6">
-                  We have an experienced athletic director to ensure that the finest instruction is given on a daily basis. We stress good sportsmanship above all else while ensuring no teen will be a benchwarmer - full participation is guaranteed.
-                </p>
-                <Link href="/contact" className="btn-primary">Join the Team</Link>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                {sportsFeatures.map((f) => (
-                  <div key={f} className="flex items-center gap-2 text-sm text-blue-200">
-                    <span className="text-gold">✓</span>
-                    {f}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Overnight & Shabbatons */}
+      {/* Community Volunteering */}
       <section className="py-20 bg-accent">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <p className="section-subheading">Special Experiences</p>
-            <h2 className="section-heading mb-4">
-              Overnight Trips & <span className="text-gold">Shabbatons</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-3xl overflow-hidden shadow-xl">
-              <div className="bg-gradient-to-br from-primary to-primary-light p-8 text-white">
-                <div className="w-14 h-14 mb-4 text-white/80 mx-auto"><TentIcon className="w-full h-full" /></div>
-                <h3 className="text-2xl font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>Overnight Trips</h3>
-              </div>
-              <div className="p-8">
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  Throughout the summer Teen Camp will embark on several overnight trips. Our overnights are geared toward teaching our teens good communication and survival skills. Typically held at a Boy Scouts camping site where teens are supervised by skilled Boy Scout staff.
-                </p>
-                <ul className="space-y-2">
-                  {overnightFeatures.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
-                      <span className="text-gold">✦</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-3xl overflow-hidden shadow-xl">
-              <div className="bg-gradient-to-br from-gold to-gold-light p-8 text-white">
-                <div className="w-14 h-14 mb-4 text-white/80 mx-auto"><StarOfDavidIcon className="w-full h-full" /></div>
-                <h3 className="text-2xl font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>Shabbatons</h3>
-              </div>
-              <div className="p-8">
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  Weekend trips to a nearby Jewish community where teens are comfortably housed and get to experience the finer meaning of the traditional Shabbat. Great camaraderie and friendships are nourished during this special supervised environment.
-                </p>
-                <ul className="space-y-2">
-                  {shabbatonFeatures.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
-                      <span className="text-gold">✦</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Meals Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="section-subheading">Food & Nutrition</p>
+            <div className="order-2 lg:order-1 grid grid-cols-2 gap-4">
+              {culturePhotos.slice(0, 4).map((photo, i) => (
+                <div key={i} className={`rounded-2xl overflow-hidden shadow-lg ${i % 2 === 0 ? 'mt-8' : ''} h-56`}>
+                  <img src={thumb(photo.id)} alt={photo.alt}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+              ))}
+            </div>
+            <div className="order-1 lg:order-2">
+              <p className="section-subheading">Social Action</p>
               <h2 className="section-heading mb-6">
-                Delicious <span className="text-gold">Kosher Meals</span>
+                Community <span className="text-gold">Volunteering</span>
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Nutritious and delicious kosher snacks, lunches, and drinks are served daily to all Teen Campers. You can be assured your child will be well provided for throughout the entire camp experience.
+                Giving back is a core Jewish value. Our volunteering events offer teens the chance to make a real difference in the local community while earning community service hours for school.
               </p>
-              <div className="space-y-3 mb-8">
-                {mealsInfo.map((item) => (
-                  <div key={item} className="flex items-center gap-3 p-3 bg-accent rounded-lg text-sm text-gray-700">
-                    <svg className="w-4 h-4 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    {item}
+              <div className="space-y-4 mb-8">
+                {volunteeringFeatures.map((f) => (
+                  <div key={f.title} className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold flex-shrink-0">
+                      <HeartIcon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-primary-dark">{f.title}</h4>
+                      <p className="text-gray-500 text-sm">{f.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
-              <Link href="/contact?program=day-camp" className="btn-secondary">Ask About Our Menu</Link>
-            </div>
-            <div className="bg-gradient-to-br from-primary-dark to-primary rounded-3xl p-10 text-white text-center">
-              <div className="w-20 h-20 mx-auto mb-6 text-gold/60"><StarOfDavidIcon className="w-full h-full" /></div>
-              <h3 className="text-3xl font-bold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>100% Kosher</h3>
-              <p className="text-blue-200 leading-relaxed">
-                All meals and snacks follow strict kosher guidelines. During our overnight and Shabbaton programming, we serve nutritious and appetizing meals throughout.
-              </p>
-              <div className="mt-8 grid grid-cols-3 gap-4">
-                {['Breakfast', 'Lunch', 'Snacks'].map((meal) => (
-                  <div key={meal} className="bg-white/10 rounded-xl py-3 text-sm font-medium">
-                    {meal}
-                  </div>
-                ))}
-              </div>
+              <Link href="/contact?program=social-events" className="btn-primary">Join the Next Project</Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA + Form */}
-      <section className="py-20 bg-accent">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="section-heading mb-4">
-              Ready to Join <span className="text-gold">the Adventure?</span>
+              Never Miss <span className="text-gold">An Event</span>
             </h2>
             <p className="text-gray-600 text-lg">
-              Contact us today to secure your teen&apos;s spot. Enrollment fills up fast!
+              Sign up to receive invites to our exclusive social gatherings and community events.
             </p>
           </div>
-          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+          <div className="bg-accent rounded-3xl shadow-sm border border-gray-100 p-8 md:p-12">
             <ContactForm />
           </div>
         </div>
@@ -268,67 +196,41 @@ export default function SocialEventsPage() {
 }
 
 const quickStats = [
-  { icon: <CalendarIcon className="w-full h-full" />, value: '8', label: 'Weeks of Summer Fun' },
-  { icon: <MountainIcon className="w-full h-full" />, value: '2x', label: 'Full-Day Trips Weekly' },
-  { icon: <TentIcon className="w-full h-full" />, value: '3+', label: 'Overnight Experiences' },
-  { icon: <PersonIcon className="w-full h-full" />, value: '5:1', label: 'Camper to Staff Ratio' },
+  { icon: <CalendarIcon className="w-full h-full" />, value: '12+', label: 'Events Per Year' },
+  { icon: <UsersIcon className="w-full h-full" />, value: '150+', label: 'Active Teens' },
+  { icon: <HeartIcon className="w-full h-full" />, value: '500+', label: 'Volunteer Hours' },
+  { icon: <ChatIcon className="w-full h-full" />, value: '100%', label: 'Fun & Engaging' },
 ];
 
-const adventureTrips = [
-  { icon: <MountainIcon className="w-full h-full" />, name: 'Indiana Dunes Hiking', desc: 'Twice weekly full-day hikes at Indiana Dunes National Park' },
-  { icon: <WavesIcon className="w-full h-full" />, name: 'White Water Rafting', desc: "Rafting on Illinois's Vermillion River with certified guides" },
-  { icon: <SportsIcon className="w-full h-full" />, name: 'Ice Skating', desc: 'Daily excursion including ice skating at local rinks' },
-  { icon: <CompassIcon className="w-full h-full" />, name: 'Gymnastics', desc: 'Professional gymnastics instruction and sessions' },
-  { icon: <FishingIcon className="w-full h-full" />, name: 'Canoeing', desc: 'Canoeing excursions on local waterways' },
-  { icon: <MartialArtsIcon className="w-full h-full" />, name: 'Paintballing & Go-Karting', desc: 'High-energy paintball and go-kart racing experiences' },
+const mixerEvents = [
+  { icon: <ChatIcon className="w-full h-full" />, name: 'Teen Lounges', desc: 'Relaxed evenings with food, music, and great conversations.' },
+  { icon: <HandshakeIcon className="w-full h-full" />, name: 'Game & Trivia Nights', desc: 'Friendly competitions with awesome prizes.' },
+  { icon: <GlobeIcon className="w-full h-full" />, name: 'Cultural Outings', desc: 'Group trips to local attractions, museums, and entertainment venues.' },
 ];
 
-
-
-const sports = [
-  { icon: <BaseballIcon className="w-full h-full" />, name: 'Baseball' },
-  { icon: <BasketballIcon className="w-full h-full" />, name: 'Basketball' },
-  { icon: <FootballIcon className="w-full h-full" />, name: 'Football' },
-  { icon: <SoccerIcon className="w-full h-full" />, name: 'Soccer' },
-  { icon: <KayakingIcon className="w-full h-full" />, name: 'Kayaking' },
-  { icon: <MartialArtsIcon className="w-full h-full" />, name: 'Martial Arts' },
-  { icon: <FishingIcon className="w-full h-full" />, name: 'Fishing' },
-  { icon: <HorseIcon className="w-full h-full" />, name: 'Horseback Riding' },
+const holidays = [
+  {
+    icon: <StarOfDavidIcon className="w-full h-full" />,
+    name: 'Chanukah Bash',
+    desc: 'The ultimate festival of lights celebration featuring live music, menorah lighting, and traditional treats.',
+    features: ['Live DJ & Entertainment', 'Latkes & Sufganiyot', 'Gift Exchanges']
+  },
+  {
+    icon: <UsersIcon className="w-full h-full" />,
+    name: 'Purim Masquerade',
+    desc: 'Our biggest party of the year! Dress up, enjoy incredible food, and celebrate Purim in style.',
+    features: ['Costume Contests', 'Megillah Reading', 'Carnival Games']
+  },
+  {
+    icon: <PersonIcon className="w-full h-full" />,
+    name: 'Sukkot Under the Stars',
+    desc: 'A beautiful evening spent in the Sukkah with great food, friends, and meaningful discussions.',
+    features: ['Gourmet BBQ', 'Acoustic Music', 'Lulav & Etrog']
+  }
 ];
 
-const sportsFeatures = [
-  'Professional PE instructors',
-  'Individual & group training',
-  'Sports league competitions',
-  'Sportsmanship focus',
-  'Full participation guaranteed',
-  'Athletic director on staff',
-  'Skill development',
-  'Team building',
-];
-
-const overnightFeatures = [
-  'Boy Scout camping sites',
-  'Survival skills training',
-  'Communication workshops',
-  'Campfire experiences',
-  'Team bonding activities',
-  'All meals included',
-];
-
-const shabbatonFeatures = [
-  'Weekend in Jewish community',
-  'Traditional Shabbat experience',
-  'Comfortable housing provided',
-  'Meaningful Jewish programming',
-  'Lifelong friendships formed',
-  'All meals included',
-];
-
-const mealsInfo = [
-  'Daily kosher snacks and lunches for all campers',
-  'Dinner provided on all full-day "Late Night" trips',
-  'Meals at local Kosher restaurants several times per summer',
-  'Pizza-making sessions and diner menu choices',
-  'All overnight and Shabbaton meals fully catered',
+const volunteeringFeatures = [
+  { title: 'Food Bank Drives', desc: 'Packing and organizing meals for those in need.' },
+  { title: 'Senior Center Visits', desc: 'Bringing joy and companionship to the elderly.' },
+  { title: 'Environmental Cleanups', desc: 'Taking care of our local parks and beaches.' },
 ];

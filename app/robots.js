@@ -7,7 +7,7 @@ export default function robots() {
         disallow: ['/api/'],
       },
     ],
-    sitemap: 'https://www.californiajewishteens.com/sitemap.xml',
-    host: 'https://www.californiajewishteens.com',
+    sitemap: 'https://www.chicagojewishteens.com/sitemap.xml',
+    host: 'https://www.chicagojewishteens.com',
   };
 }

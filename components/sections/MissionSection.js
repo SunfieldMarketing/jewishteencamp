@@ -36,7 +36,7 @@ export default function MissionSection() {
             <div className="rounded-3xl overflow-hidden shadow-xl mb-6" style={{ height: '260px' }}>
               <img
                 src={img(aboutPhoto, 900)}
-                alt="California Jewish Teens campers"
+                alt="Chicago Jewish Teens campers"
                 className="w-full h-full object-cover"
               />
             </div>
