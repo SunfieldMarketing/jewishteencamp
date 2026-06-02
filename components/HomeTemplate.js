@@ -275,18 +275,20 @@ export default function HomeTemplate() {
                     <span className="text-gold">Teen Gatherings</span>
                   </h2>
                   <p className="text-blue-200 text-lg leading-relaxed mb-8 max-w-md">
-                    Beyond the summer, Chicago Jewish Teen Camp brings teens together year-round — exciting socials, community volunteering, and get-togethers that keep the friendships alive.
+                    Beyond the summer, Chicago Jewish Teen Camp brings teens together year-round for exciting socials, community volunteering, and get-togethers that keep the friendships alive.
                   </p>
 
                   {/* mini feature list */}
-                  <ul className="space-y-3 mb-10">
+                  <ul className="space-y-4 mb-10">
                     {socialEventHighlights.map((item) => (
-                      <li key={item.title} className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-gold/20 flex items-center justify-center text-gold flex-shrink-0">
+                      <li key={item.title} className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-gold/20 flex items-center justify-center text-gold flex-shrink-0 mt-0.5">
                           <div className="w-4 h-4">{item.icon}</div>
                         </div>
-                        <span className="text-blue-100 text-sm font-medium">{item.title}</span>
-                        <span className="text-blue-400 text-sm hidden sm:inline">— {item.desc}</span>
+                        <div>
+                          <div className="text-blue-100 text-sm font-semibold leading-snug">{item.title}</div>
+                          <div className="text-blue-400 text-xs leading-relaxed mt-0.5">{item.desc}</div>
+                        </div>
                       </li>
                     ))}
                   </ul>
@@ -337,7 +339,7 @@ export default function HomeTemplate() {
                         <CalendarIcon className="w-6 h-6" />
                       </div>
                       <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Seasonal Gatherings</h3>
-                      <p className="text-blue-300 text-xs leading-relaxed">Special events tied to the Jewish calendar — always memorable, always fun.</p>
+                      <p className="text-blue-300 text-xs leading-relaxed">Special events tied to the Jewish calendar, always memorable, always fun.</p>
                     </div>
                   </div>
                 </div>
