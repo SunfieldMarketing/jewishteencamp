@@ -76,17 +76,17 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-md group-hover:bg-gold transition-colors duration-300 p-2.5">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="miter" strokeMiterlimit="10" className="w-full h-full">
                 <path d="M12 2.5l7.5 13H4.5z" />
                 <path d="M12 21.5l-7.5-13h15z" />
               </svg>
             </div>
             <div>
-              <div className="font-bold text-primary text-lg leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
-                California Jewish
+              <div className="font-bold text-primary text-base leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
+                Chicago Jewish
               </div>
               <div className="text-gold font-semibold text-sm uppercase tracking-widest leading-tight">
-                Teens
+                Teen Camp
               </div>
             </div>
           </Link>

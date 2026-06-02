@@ -64,7 +64,7 @@ const staffDirectory = [
   },
   {
     name: "R' Zalman Notik",
-    role: 'Chicago Jewish Teens Director',
+    role: 'Chicago Jewish Teen Camp Director',
     phone: '+1 (847) 452-4609',
     email: 'RabbiZalman@chabadmammoth.com',
     image: staffNotik,

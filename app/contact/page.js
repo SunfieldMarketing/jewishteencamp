@@ -4,9 +4,9 @@ import ContactForm from '../../components/ContactForm';
 import { featuredPhoto, staffScheiman, staffNotik, staffGoldshmidt, img } from '../../lib/photos';
 
 export const metadata = {
-  title: 'Contact Us | Chicago Jewish Teens',
+  title: 'Contact Us | Chicago Jewish Teen Camp',
   description:
-    'Contact Chicago Jewish Teens to enroll your teen, ask questions, or get more information. Call (847) 452-4609, email RabbiZalman@chabadmammoth.com, or fill out our contact form.',
+    'Contact Chicago Jewish Teen Camp to enroll your teen, ask questions, or get more information. Call (847) 452-4609, email RabbiZalman@chabadmammoth.com, or fill out our contact form.',
 };
 
 export default function ContactPage() {
@@ -220,7 +220,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Chicago Jewish Teens Location"
+              title="Chicago Jewish Teen Camp Location"
             />
           </div>
         </div>
@@ -233,7 +233,7 @@ export default function ContactPage() {
             This Summer Make an <span className="text-gold">Extreme Investment</span> in Your Teen!
           </h2>
           <p className="text-blue-200 text-xl mb-10 max-w-2xl mx-auto">
-            Don&apos;t let this summer pass by. Every week your teen isn&apos;t at Chicago Jewish Teens is a week of memories, friendships, and growth they could be having.
+            Don&apos;t let this summer pass by. Every week your teen isn&apos;t at Chicago Jewish Teen Camp is a week of memories, friendships, and growth they could be having.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+18474524609" className="btn-primary">
@@ -244,7 +244,7 @@ export default function ContactPage() {
             </a>
           </div>
           <p className="mt-8 text-blue-300 text-sm">
-            R&apos; Zalman Notik - Chicago Jewish Teens Director
+            R&apos; Zalman Notik - Chicago Jewish Teen Camp Director
             <br />
             9041 Margail Ave, Des Plaines, IL 60015
           </p>
@@ -264,14 +264,14 @@ const staffDirectory = [
   },
   {
     name: "R' Zalman Notik",
-    role: 'Chicago Jewish Teens Director',
+    role: 'Chicago Jewish Teen Camp Director',
     phone: '+1 (847) 452-4609',
     email: 'RabbiZalman@chabadmammoth.com',
     image: staffNotik,
   },
   {
     name: 'Dovid Goldshmidt',
-    role: 'Chicago Jewish Teens Executive Coordinator',
+    role: 'Chicago Jewish Teen Camp Executive Coordinator',
     phone: '+1 (312) 972-1816',
     email: 'info@chabadmammoth.com',
     image: staffGoldshmidt,

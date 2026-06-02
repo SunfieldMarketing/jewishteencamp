@@ -3,9 +3,9 @@ import PhotoGallery from '../../components/PhotoGallery';
 import { allPhotos, featuredPhoto, img } from '../../lib/photos';
 
 export const metadata = {
-  title: 'Photo Gallery | Chicago Jewish Teens',
+  title: 'Photo Gallery | Chicago Jewish Teen Camp',
   description:
-    'Browse 75+ photos from Chicago Jewish Teens summer camp - adventures, sports, trips, Shabbatons, and life-changing moments at our Beverly Hills, CA Jewish teen camp.',
+    'Browse 75+ photos from Chicago Jewish Teen Camp summer camp - adventures, sports, trips, Shabbatons, and life-changing moments at our Beverly Hills, CA Jewish teen camp.',
 };
 
 export default function PhotosPage() {
@@ -25,7 +25,7 @@ export default function PhotosPage() {
             Our <span className="text-gold">Photo Gallery</span>
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-4">
-            {allPhotos.length}+ unforgettable memories from every summer at Chicago Jewish Teens.
+            {allPhotos.length}+ unforgettable memories from every summer at Chicago Jewish Teen Camp.
           </p>
           <nav className="mt-6 flex items-center justify-center gap-2 text-sm text-blue-300">
             <Link href="/" className="hover:text-gold">Home</Link>
@@ -88,7 +88,7 @@ export default function PhotosPage() {
             Want Your Teen in These Photos?
           </h2>
           <p className="text-white/90 text-xl mb-8">
-            Enroll today and make your teen part of the Chicago Jewish Teens story.
+            Enroll today and make your teen part of the Chicago Jewish Teen Camp story.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="bg-white text-gold font-bold px-8 py-4 rounded-full hover:shadow-xl transition-all">

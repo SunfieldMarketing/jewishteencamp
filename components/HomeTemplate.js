@@ -5,7 +5,7 @@ import {
   WavesIcon, SportsIcon, PaletteIcon, TentIcon, StarOfDavidIcon,
   MartialArtsIcon, FishingIcon, MountainIcon, BookOpenIcon,
   TrophyIcon, UsersIcon, GlobeIcon, LockIcon, HandshakeIcon, PersonIcon,
-  ChatIcon, MapPinIcon, PhoneIcon, MailIcon,
+  ChatIcon, MapPinIcon, PhoneIcon, MailIcon, HeartIcon, CalendarIcon,
 } from './Icons';
 import ShimmerButton from './ui/shimmer-button';
 import NumberTicker from './ui/number-ticker';
@@ -130,7 +130,7 @@ export default function HomeTemplate() {
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                 <img
                   src={img(aboutPhoto, 900)}
-                  alt="Chicago Jewish Teens campers at camp"
+                  alt="Chicago Jewish Teen Campers at camp"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -151,7 +151,7 @@ export default function HomeTemplate() {
 
             {/* Right: Text */}
             <div>
-              <p className="section-subheading">About Chicago Jewish Teens</p>
+              <p className="section-subheading">About Chicago Jewish Teen Camp</p>
               <h2 className="section-heading mb-6">
                 More Than a Camp - <span className="text-gold">A Life Experience</span>
               </h2>
@@ -202,7 +202,7 @@ export default function HomeTemplate() {
               What We <span className="text-gold">Do Best</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Every day at Chicago Jewish Teens is more than just a schedule - it&apos;s a curated journey of discovery, growth, and unapologetic fun.
+              Every day at Chicago Jewish Teen Camp is more than just a schedule - it&apos;s a curated journey of discovery, growth, and unapologetic fun.
             </p>
           </div>
 
@@ -231,7 +231,7 @@ export default function HomeTemplate() {
                       {activity.desc}
                     </p>
 
-                    <Link href="/day-camp" className="pt-6 border-t border-gray-100 flex items-center justify-between text-sm font-semibold text-primary/60 group-hover:text-primary transition-colors cursor-pointer">
+                    <Link href={activity.href || '/day-camp'} className="pt-6 border-t border-gray-100 flex items-center justify-between text-sm font-semibold text-primary/60 group-hover:text-primary transition-colors cursor-pointer">
                       <span>Explore Program</span>
                       <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -245,9 +245,63 @@ export default function HomeTemplate() {
 
           <div className="text-center mt-20">
             <Link href="/day-camp" className="inline-flex items-center gap-3 bg-primary-dark text-white font-bold px-10 py-5 rounded-full text-lg hover:shadow-2xl hover:bg-primary transition-all duration-300">
-              <span>Explore All Activities</span>
+              <span>Explore Day Camp</span>
               <UsersIcon className="w-5 h-5" />
             </Link>
+          </div>
+        </BlurFade>
+      </section>
+
+      {/* ===== SOCIAL EVENTS SECTION ===== */}
+      <section className="py-24 bg-primary-dark text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl -mr-40 -mt-40" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl -ml-40 -mb-40" />
+
+        <BlurFade delay={0.1} className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Content */}
+            <div>
+              <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-4">Year-Round Community</p>
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
+                Social Events &amp; <span className="text-gold">Teen Gatherings</span>
+              </h2>
+              <p className="text-blue-200 text-lg leading-relaxed mb-8">
+                Beyond the summer, Chicago Jewish Teen Camp brings teens together year-round for exciting social events, community volunteering, and memorable get-togethers that keep the friendships alive.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                {socialEventHighlights.map((item) => (
+                  <div key={item.title} className="flex items-start gap-3 bg-white/5 rounded-2xl p-4 border border-white/10 hover:bg-white/10 transition-colors">
+                    <div className="w-10 h-10 bg-gold/20 rounded-xl flex items-center justify-center text-gold flex-shrink-0">
+                      <div className="w-5 h-5">{item.icon}</div>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-white text-sm mb-1">{item.title}</div>
+                      <div className="text-blue-300 text-xs leading-relaxed">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <Link href="/social-events" className="inline-flex items-center gap-3 bg-gold text-white font-bold px-8 py-4 rounded-full hover:bg-gold-dark transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
+                <span>Explore Social Events</span>
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </Link>
+            </div>
+
+            {/* Right: Event cards */}
+            <div className="grid grid-cols-2 gap-4">
+              {socialEventCards.map((card, i) => (
+                <div key={card.title} className={`rounded-3xl p-6 flex flex-col gap-3 border border-white/10 hover:border-gold/50 transition-all duration-300 hover:-translate-y-1 ${
+                  i === 0 ? 'col-span-2 bg-gradient-to-r from-gold/20 to-gold/5' : 'bg-white/5'
+                }`}>
+                  <div className="w-10 h-10 bg-gold/20 rounded-xl flex items-center justify-center text-gold">
+                    <div className="w-5 h-5">{card.icon}</div>
+                  </div>
+                  <h3 className="font-bold text-white text-lg" style={{ fontFamily: 'Playfair Display, serif' }}>{card.title}</h3>
+                  <p className="text-blue-300 text-sm leading-relaxed">{card.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </BlurFade>
       </section>
@@ -258,7 +312,7 @@ export default function HomeTemplate() {
           <div className="text-center mb-16">
             <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-3">Why Families Choose Us</p>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-              The Chicago Jewish Teens Difference
+              The Chicago Jewish Teen Camp Difference
             </h2>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
               Built on 50 years of CGI camping excellence - we&apos;re not just a day camp, we&apos;re a life-changing experience.
@@ -436,7 +490,7 @@ export default function HomeTemplate() {
               See the Fun in Action
             </h2>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-              A glimpse into life at Chicago Jewish Teens - where every day is an adventure.
+              A glimpse into life at Chicago Jewish Teen Camp - where every day is an adventure.
             </p>
           </div>
 
@@ -448,7 +502,7 @@ export default function HomeTemplate() {
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="rounded-2xl overflow-hidden" style={{ height: '320px' }}>
-              <img src={thumb(featuredPhoto)} alt="Chicago Jewish Teens campers"
+              <img src={thumb(featuredPhoto)} alt="Chicago Jewish Teen Campers"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
             </div>
             {/* Row 2: 3 Cloudinary photos */}
@@ -615,7 +669,7 @@ export default function HomeTemplate() {
               width="100%" height="100%" style={{ border: 0 }}
               allowFullScreen loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Chicago Jewish Teens Camp Location"
+              title="Chicago Jewish Teen Camp Location"
             />
           </div>
         </div>
@@ -677,8 +731,7 @@ const activities = [
   { icon: <MartialArtsIcon className="w-full h-full" />, title: 'Martial Arts', desc: 'Professional martial arts instruction building discipline, confidence, and self-defense skills.', bg: '#fee2e2', color: '#dc2626' },
   { icon: <FishingIcon className="w-full h-full" />, title: 'Fishing & Biking', desc: 'Relaxing fishing excursions and scenic biking trips that connect teens with nature.', bg: '#d1fae5', color: '#059669' },
   { icon: <MountainIcon className="w-full h-full" />, title: 'Indiana Dunes Hiking', desc: 'Full-day hiking trips to Indiana Dunes and Michigan adventures building endurance and teamwork.', bg: '#fef9c3', color: '#ca8a04' },
-  { icon: <BookOpenIcon className="w-full h-full" />, title: 'Bar Mitzvah Prep', desc: 'Dynamic Judaic tutoring and personalized Bar Mitzvah preparation and celebration available at camp.', bg: '#e0e7ff', color: '#4338ca' },
-  { icon: <UsersIcon className="w-full h-full" />, title: 'Social Events', desc: 'Dynamic year-round teen mixers, holiday parties, and volunteering to foster lasting friendships and Jewish community.', bg: '#ffedd5', color: '#c2410c' },
+  { icon: <BookOpenIcon className="w-full h-full" />, title: 'Bar Mitzvah Prep', desc: 'Dynamic Judaic tutoring and personalized Bar Mitzvah preparation and celebration available at camp.', bg: '#e0e7ff', color: '#4338ca', href: '/day-camp' },
 ];
 
 const whyUs = [
@@ -712,18 +765,11 @@ const programs = [
     price: '$4,695',
     features: ['Multi-day adventure', 'Pacific Northwest exploration', 'Nature & wilderness', 'Team building', 'All meals included'],
   },
-  {
-    icon: <UsersIcon className="w-full h-full" />,
-    name: 'Social Events',
-    dates: 'Year-Round',
-    price: 'Varies',
-    features: ['Teen Mixers & Networking', 'Holiday Parties', 'Community Volunteering', 'Jewish Culture', 'Make Lifelong Friends'],
-  },
 ];
 
 const staff = [
   { name: "R' Schneur Scheiman", title: 'Camp Gan Israel Chicago Director', phone: '+1 (847) 485-9770', email: null, image: staffScheiman },
-  { name: "R' Zalman Notik", title: 'Chicago Jewish Teens Director', phone: '+1 (847) 452-4609', email: 'RabbiZalman@chabadmammoth.com', image: staffNotik },
+  { name: "R' Zalman Notik", title: 'Chicago Jewish Teen Camp Director', phone: '+1 (847) 452-4609', email: 'RabbiZalman@chabadmammoth.com', image: staffNotik },
   { name: 'Dovid Goldshmidt', title: 'Camp Executive Coordinator', phone: '+1 (312) 972-1816', email: 'info@chabadmammoth.com', image: staffGoldshmidt },
 ];
 
@@ -736,7 +782,7 @@ const testimonials = [
 
 
 const faqs = [
-  { q: 'What ages does Chicago Jewish Teens serve?', a: 'Our programs are designed for Jewish teens ages 12–17. We have separate programs and activities tailored to different age groups and interests.' },
+  { q: 'What ages does Chicago Jewish Teen Camp serve?', a: 'Our programs are designed for Jewish teens ages 12–17. We have separate programs and activities tailored to different age groups and interests.' },
   { q: 'Where is the camp located?', a: 'Our campsite is located at Chabad of California in Beverly Hills, CA 90210 - right in the heart of Beverly Hills with excellent indoor and outdoor facilities.' },
   { q: 'Is transportation provided?', a: 'Yes, we offer transportation options. Please contact us at (847) 452-4609 to discuss your specific needs and our available transportation routes.' },
   { q: 'Is the food kosher?', a: 'Absolutely. We serve nutritious and delicious kosher snacks, lunches, and drinks daily. During extended trips, we also provide dinner. Teens even enjoy meals at local Kosher restaurants.' },
@@ -746,3 +792,15 @@ const faqs = [
   { q: 'Is financial assistance available?', a: 'We are committed to making our program accessible. Please contact us directly to discuss financial assistance options. We want every teen who wants to attend to have the opportunity.' },
 ];
 
+const socialEventHighlights = [
+  { icon: <UsersIcon className="w-full h-full" />, title: 'Teen Mixers', desc: 'Monthly gatherings to connect and make new friends in a fun, relaxed setting.' },
+  { icon: <CalendarIcon className="w-full h-full" />, title: 'Year-Round Events', desc: 'Regular programming that keeps friendships alive long after summer ends.' },
+  { icon: <HeartIcon className="w-full h-full" />, title: 'Community Service', desc: 'Volunteer initiatives that build character and give back to the local community.' },
+  { icon: <StarOfDavidIcon className="w-full h-full" />, title: 'Jewish Culture', desc: 'Culturally enriching gatherings that celebrate Jewish identity and heritage.' },
+];
+
+const socialEventCards = [
+  { icon: <UsersIcon className="w-full h-full" />, title: 'Teen Mixers & Socials', desc: 'Casual hangouts, game nights, and group outings that keep the camp spirit going all year long.' },
+  { icon: <HeartIcon className="w-full h-full" />, title: 'Volunteering', desc: 'Meaningful community service projects that teach teens the value of giving back.' },
+  { icon: <CalendarIcon className="w-full h-full" />, title: 'Seasonal Gatherings', desc: 'Special events tied to the Jewish calendar - always memorable, always fun.' },
+];

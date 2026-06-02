@@ -7,9 +7,9 @@ import {
 import { featuredPhoto, staffScheiman, staffNotik, staffGoldshmidt, img } from '../../lib/photos';
 
 export const metadata = {
-  title: 'Parents Area | Chicago Jewish Teens',
+  title: 'Parents Area | Chicago Jewish Teen Camp',
   description:
-    "Resources for Chicago Jewish Teens parents - director's letter, forms, FAQs, safety information, and more. Everything you need to prepare your teen for an incredible summer.",
+    "Resources for Chicago Jewish Teen Camp parents - director's letter, forms, FAQs, safety information, and more. Everything you need to prepare your teen for an incredible summer.",
 };
 
 export default function ParentsPage() {
@@ -76,7 +76,7 @@ export default function ParentsPage() {
               <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white p-3"><PersonIcon className="w-full h-full" /></div>
               <div>
                 <div className="font-bold text-primary-dark text-lg">Zalman Notik</div>
-                <div className="text-gold font-medium text-sm">Chicago Jewish Teens Director</div>
+                <div className="text-gold font-medium text-sm">Chicago Jewish Teen Camp Director</div>
                 <a href="tel:+18474524609" className="text-gray-500 text-xs hover:text-gold">+1 (847) 452-4609</a>
               </div>
             </div>
@@ -353,7 +353,7 @@ const contactStaff = [
   },
   {
     name: "R' Zalman Notik",
-    role: 'Chicago Jewish Teens Director',
+    role: 'Chicago Jewish Teen Camp Director',
     phone: '+1 (847) 452-4609',
     email: 'RabbiZalman@chabadmammoth.com',
     image: staffNotik,

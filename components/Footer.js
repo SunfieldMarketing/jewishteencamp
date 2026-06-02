@@ -11,16 +11,16 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5 group">
               <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-white shadow-lg p-2.5">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="miter" strokeMiterlimit="10" className="w-full h-full">
                   <path d="M12 2.5l7.5 13H4.5z" />
                   <path d="M12 21.5l-7.5-13h15z" />
                 </svg>
               </div>
               <div>
                 <div className="font-bold text-xl leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
-                  California Jewish
+                  Chicago Jewish
                 </div>
-                <div className="text-gold text-sm font-semibold uppercase tracking-widest">Teens</div>
+                <div className="text-gold text-sm font-semibold uppercase tracking-widest">Teen Camp</div>
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -169,7 +169,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm text-center md:text-left">
-            &copy; {new Date().getFullYear()} Chicago Jewish Teens. All rights reserved.
+            &copy; {new Date().getFullYear()} Chicago Jewish Teen Camp. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/contact" className="text-gray-500 hover:text-gold text-sm transition-colors">
