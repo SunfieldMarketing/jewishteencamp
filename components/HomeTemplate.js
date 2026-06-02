@@ -243,64 +243,105 @@ export default function HomeTemplate() {
             ))}
           </div>
 
-          <div className="text-center mt-20">
+          <div className="text-center mt-14 mb-24">
             <Link href="/day-camp" className="inline-flex items-center gap-3 bg-primary-dark text-white font-bold px-10 py-5 rounded-full text-lg hover:shadow-2xl hover:bg-primary transition-all duration-300">
               <span>Explore Day Camp</span>
               <UsersIcon className="w-5 h-5" />
             </Link>
           </div>
-        </BlurFade>
-      </section>
 
-      {/* ===== SOCIAL EVENTS SECTION ===== */}
-      <section className="py-24 bg-primary-dark text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl -mr-40 -mt-40" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl -ml-40 -mb-40" />
+          {/* ─── SOCIAL EVENTS BENTO ─── */}
+          <div className="relative rounded-[2.5rem] overflow-hidden bg-primary-dark p-px">
+            {/* animated border shimmer */}
+            <div className="absolute inset-0 bg-gradient-to-r from-gold via-primary-light to-gold opacity-30 animate-[spin_6s_linear_infinite] scale-150 blur-sm" />
 
-        <BlurFade delay={0.1} className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left: Content */}
-            <div>
-              <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-4">Year-Round Community</p>
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
-                Social Events &amp; <span className="text-gold">Teen Gatherings</span>
-              </h2>
-              <p className="text-blue-200 text-lg leading-relaxed mb-8">
-                Beyond the summer, Chicago Jewish Teen Camp brings teens together year-round for exciting social events, community volunteering, and memorable get-togethers that keep the friendships alive.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                {socialEventHighlights.map((item) => (
-                  <div key={item.title} className="flex items-start gap-3 bg-white/5 rounded-2xl p-4 border border-white/10 hover:bg-white/10 transition-colors">
-                    <div className="w-10 h-10 bg-gold/20 rounded-xl flex items-center justify-center text-gold flex-shrink-0">
-                      <div className="w-5 h-5">{item.icon}</div>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-white text-sm mb-1">{item.title}</div>
-                      <div className="text-blue-300 text-xs leading-relaxed">{item.desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <Link href="/social-events" className="inline-flex items-center gap-3 bg-gold text-white font-bold px-8 py-4 rounded-full hover:bg-gold-dark transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
-                <span>Explore Social Events</span>
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </Link>
-            </div>
+            <div className="relative rounded-[2.5rem] overflow-hidden bg-primary-dark px-8 py-12 md:px-14 md:py-16">
+              {/* subtle dot pattern */}
+              <div className="absolute inset-0 opacity-[0.04]"
+                style={{ backgroundImage: `radial-gradient(circle, #ffffff 1px, transparent 1px)`, backgroundSize: '28px 28px' }} />
+              {/* glow blobs */}
+              <div className="absolute top-0 right-0 w-72 h-72 bg-gold/15 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
+              <div className="absolute bottom-0 left-10 w-56 h-56 bg-primary-light/10 rounded-full blur-3xl pointer-events-none" />
 
-            {/* Right: Event cards */}
-            <div className="grid grid-cols-2 gap-4">
-              {socialEventCards.map((card, i) => (
-                <div key={card.title} className={`rounded-3xl p-6 flex flex-col gap-3 border border-white/10 hover:border-gold/50 transition-all duration-300 hover:-translate-y-1 ${
-                  i === 0 ? 'col-span-2 bg-gradient-to-r from-gold/20 to-gold/5' : 'bg-white/5'
-                }`}>
-                  <div className="w-10 h-10 bg-gold/20 rounded-xl flex items-center justify-center text-gold">
-                    <div className="w-5 h-5">{card.icon}</div>
-                  </div>
-                  <h3 className="font-bold text-white text-lg" style={{ fontFamily: 'Playfair Display, serif' }}>{card.title}</h3>
-                  <p className="text-blue-300 text-sm leading-relaxed">{card.desc}</p>
+              <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-start">
+                {/* Left — label + heading + copy + CTA */}
+                <div>
+                  <span className="inline-flex items-center gap-2 bg-gold/20 text-gold text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
+                    <span className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse" />
+                    Year-Round Community
+                  </span>
+                  <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-5" style={{ fontFamily: 'Playfair Display, serif' }}>
+                    Social Events &amp;<br />
+                    <span className="text-gold">Teen Gatherings</span>
+                  </h2>
+                  <p className="text-blue-200 text-lg leading-relaxed mb-8 max-w-md">
+                    Beyond the summer, Chicago Jewish Teen Camp brings teens together year-round — exciting socials, community volunteering, and get-togethers that keep the friendships alive.
+                  </p>
+
+                  {/* mini feature list */}
+                  <ul className="space-y-3 mb-10">
+                    {socialEventHighlights.map((item) => (
+                      <li key={item.title} className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-gold/20 flex items-center justify-center text-gold flex-shrink-0">
+                          <div className="w-4 h-4">{item.icon}</div>
+                        </div>
+                        <span className="text-blue-100 text-sm font-medium">{item.title}</span>
+                        <span className="text-blue-400 text-sm hidden sm:inline">— {item.desc}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link href="/social-events" className="inline-flex items-center gap-3 bg-gold text-white font-bold px-8 py-4 rounded-full hover:bg-gold-dark transition-all duration-300 hover:shadow-[0_0_30px_rgba(200,146,42,0.4)] hover:-translate-y-0.5">
+                    <span>Explore Social Events</span>
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </Link>
                 </div>
-              ))}
+
+                {/* Right — bento grid */}
+                <div className="grid grid-cols-2 gap-4">
+                  {/* Card 1 — wide featured */}
+                  <div className="col-span-2 group relative rounded-2xl overflow-hidden p-6 bg-gradient-to-br from-gold/25 via-gold/10 to-transparent border border-gold/20 hover:border-gold/50 transition-all duration-400 hover:-translate-y-1 cursor-pointer">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                    <div className="relative z-10 flex gap-5 items-start">
+                      <div className="w-14 h-14 rounded-2xl bg-gold/20 flex items-center justify-center text-gold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <UsersIcon className="w-7 h-7" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Teen Mixers &amp; Socials</h3>
+                        <p className="text-blue-200 text-sm leading-relaxed">Casual hangouts, game nights, and group outings that keep the camp spirit going all year long. Something new every month.</p>
+                      </div>
+                    </div>
+                    <div className="relative z-10 mt-5 flex items-center gap-2 text-gold text-sm font-semibold">
+                      <span>Learn more</span>
+                      <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </div>
+                  </div>
+
+                  {/* Card 2 */}
+                  <div className="group relative rounded-2xl overflow-hidden p-6 bg-white/5 border border-white/10 hover:border-primary-light/40 hover:bg-white/8 transition-all duration-400 hover:-translate-y-1 cursor-pointer">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-primary-light/10 rounded-full blur-2xl -mr-8 -mt-8" />
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 rounded-xl bg-primary-light/20 flex items-center justify-center text-primary-light mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <HeartIcon className="w-6 h-6" />
+                      </div>
+                      <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Volunteering</h3>
+                      <p className="text-blue-300 text-xs leading-relaxed">Meaningful community projects that teach teens the value of giving back.</p>
+                    </div>
+                  </div>
+
+                  {/* Card 3 */}
+                  <div className="group relative rounded-2xl overflow-hidden p-6 bg-white/5 border border-white/10 hover:border-gold/30 hover:bg-white/8 transition-all duration-400 hover:-translate-y-1 cursor-pointer">
+                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-gold/10 rounded-full blur-2xl -ml-8 -mb-8" />
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 rounded-xl bg-gold/15 flex items-center justify-center text-gold mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <CalendarIcon className="w-6 h-6" />
+                      </div>
+                      <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Seasonal Gatherings</h3>
+                      <p className="text-blue-300 text-xs leading-relaxed">Special events tied to the Jewish calendar — always memorable, always fun.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </BlurFade>
