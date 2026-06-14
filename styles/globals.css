@@ -85,48 +85,6 @@
   width: 100%;
 }
 
-/* Sticky mobile buttons */
-.sticky-call-btn {
-  position: fixed;
-  bottom: 20px;
-  left: 16px;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #16a34a;
-  color: white;
-  font-weight: 700;
-  padding: 14px 20px;
-  border-radius: 50px;
-  box-shadow: 0 4px 20px rgba(22, 163, 74, 0.5);
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.2s ease;
-}
-
-.sticky-text-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 16px;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #1B3A6B;
-  color: white;
-  font-weight: 700;
-  padding: 14px 20px;
-  border-radius: 50px;
-  box-shadow: 0 4px 20px rgba(27, 58, 107, 0.5);
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.2s ease;
-}
-
-.sticky-call-btn:active, .sticky-text-btn:active {
-  transform: scale(0.97);
-}
 
 /* Activity card icon */
 .activity-icon {
