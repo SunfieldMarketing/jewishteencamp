@@ -302,7 +302,7 @@ export default function HomeTemplate() {
                 {/* Right — bento grid */}
                 <div className="grid grid-cols-2 gap-4 lg:pt-20">
                   {/* Card 1 — wide featured */}
-                  <div className="col-span-2 group relative rounded-2xl overflow-hidden p-6 bg-gradient-to-br from-gold/25 via-gold/10 to-transparent border border-gold/20 hover:border-gold/50 transition-all duration-400 hover:-translate-y-1 cursor-pointer">
+                  <Link href="/social-events" className="col-span-2 group relative rounded-2xl overflow-hidden p-6 bg-gradient-to-br from-gold/25 via-gold/10 to-transparent border border-gold/20 hover:border-gold/50 transition-all duration-400 hover:-translate-y-1 cursor-pointer block">
                     <div className="absolute inset-0 bg-gradient-to-br from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
                     <div className="relative z-10 flex gap-5 items-start">
                       <div className="w-14 h-14 rounded-2xl bg-gold/20 flex items-center justify-center text-gold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
@@ -317,10 +317,10 @@ export default function HomeTemplate() {
                       <span>Learn more</span>
                       <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                     </div>
-                  </div>
+                  </Link>
 
                   {/* Card 2 */}
-                  <div className="group relative rounded-2xl overflow-hidden p-6 bg-white/5 border border-white/10 hover:border-primary-light/40 hover:bg-white/8 transition-all duration-400 hover:-translate-y-1 cursor-pointer">
+                  <Link href="/social-events" className="group relative rounded-2xl overflow-hidden p-6 bg-white/5 border border-white/10 hover:border-primary-light/40 hover:bg-white/8 transition-all duration-400 hover:-translate-y-1 cursor-pointer block">
                     <div className="absolute top-0 right-0 w-24 h-24 bg-primary-light/10 rounded-full blur-2xl -mr-8 -mt-8" />
                     <div className="relative z-10">
                       <div className="w-12 h-12 rounded-xl bg-primary-light/20 flex items-center justify-center text-primary-light mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -329,10 +329,10 @@ export default function HomeTemplate() {
                       <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Volunteering</h3>
                       <p className="text-blue-300 text-xs leading-relaxed">Meaningful community projects that teach teens the value of giving back.</p>
                     </div>
-                  </div>
+                  </Link>
 
                   {/* Card 3 */}
-                  <div className="group relative rounded-2xl overflow-hidden p-6 bg-white/5 border border-white/10 hover:border-gold/30 hover:bg-white/8 transition-all duration-400 hover:-translate-y-1 cursor-pointer">
+                  <Link href="/social-events" className="group relative rounded-2xl overflow-hidden p-6 bg-white/5 border border-white/10 hover:border-gold/30 hover:bg-white/8 transition-all duration-400 hover:-translate-y-1 cursor-pointer block">
                     <div className="absolute bottom-0 left-0 w-24 h-24 bg-gold/10 rounded-full blur-2xl -ml-8 -mb-8" />
                     <div className="relative z-10">
                       <div className="w-12 h-12 rounded-xl bg-gold/15 flex items-center justify-center text-gold mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -341,7 +341,7 @@ export default function HomeTemplate() {
                       <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Seasonal Gatherings</h3>
                       <p className="text-blue-300 text-xs leading-relaxed">Special events tied to the Jewish calendar, always memorable, always fun.</p>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
