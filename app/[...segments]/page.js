@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import dynamic from "next/dynamic";
+import { notFound } from "next/navigation";
 import { PLASMIC } from "../../plasmic-init";
 
 /**
@@ -32,13 +33,18 @@ export default function PlasmicPage({ params }) {
       
       // 2. Fetch Data
       const data = await PLASMIC.maybeFetchComponentData(path);
-      setPlasmicData(data);
+      
+      if (!data || !data.entryCompMetas?.length) {
+        notFound();
+      } else {
+        setPlasmicData(data);
+      }
     };
     
     load();
   }, [params]);
 
-  if (!plasmicData || !plasmicData.entryCompMetas?.length) {
+  if (!plasmicData) {
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', background: 'white' }}>
         <div className="spinner" style={{ width: '40px', height: '40px', border: '4px solid #f3f3f3', borderTop: '4px solid #C8922A', borderRadius: '50%' }}></div>

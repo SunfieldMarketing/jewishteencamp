@@ -51,7 +51,7 @@ export default function HomeTemplate() {
           <div className="flex flex-col items-center">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white text-sm font-medium mb-6 hero-animate">
               <span className="w-2 h-2 bg-gold rounded-full animate-pulse" />
-              Now Enrolling for Summer 2026
+              Now Enrolling
             </div>
 
             <h1
