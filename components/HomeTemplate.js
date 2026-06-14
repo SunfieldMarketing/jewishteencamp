@@ -176,7 +176,7 @@ export default function HomeTemplate() {
                 ))}
               </div>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap justify-center md:justify-start gap-4">
                 <Link href="/about" className="btn-secondary">
                   Read Our Full Story
                 </Link>
