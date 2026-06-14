@@ -8,10 +8,10 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/day-camp', label: 'Day Camp' },
   { href: '/social-events', label: 'Social Events' },
-  { href: '/about', label: 'About Us' },
-  { href: '/schedule', label: 'Schedule & Pricing' },
+  { href: '/about', label: 'About' },
+  { href: '/schedule', label: 'Schedule' },
   { href: '/photos', label: 'Photos' },
-  { href: '/parents', label: 'Parents Area' },
+  { href: '/parents', label: 'Parents' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -92,12 +92,12 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${
+                className={`px-3 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-all duration-200 ${
                   pathname === link.href
                     ? 'bg-primary text-white'
                     : 'text-gray-700 hover:text-primary hover:bg-blue-50'

@@ -300,7 +300,7 @@ export default function HomeTemplate() {
                 </div>
 
                 {/* Right — bento grid */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4 lg:pt-20">
                   {/* Card 1 — wide featured */}
                   <div className="col-span-2 group relative rounded-2xl overflow-hidden p-6 bg-gradient-to-br from-gold/25 via-gold/10 to-transparent border border-gold/20 hover:border-gold/50 transition-all duration-400 hover:-translate-y-1 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-br from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
