@@ -172,10 +172,10 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Chicago Jewish Teen Camp. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/contact" className="text-gray-500 hover:text-gold text-sm transition-colors">
+            <Link href="/privacy-policy" className="text-gray-500 hover:text-gold text-sm transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/contact" className="text-gray-500 hover:text-gold text-sm transition-colors">
+            <Link href="/terms-of-service" className="text-gray-500 hover:text-gold text-sm transition-colors">
               Terms of Service
             </Link>
             <span className="text-gray-600 text-sm">

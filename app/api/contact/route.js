@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 
+const RECIPIENT_EMAIL = 'RabbiZalman@chabadmammoth.com';
+
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -22,54 +24,72 @@ export async function POST(request) {
       );
     }
 
-    // Log the submission (in production, integrate with email service or CRM)
-    console.log('New contact form submission:', {
-      name,
-      email,
-      phone: phone || 'Not provided',
-      childAge: childAge || 'Not specified',
-      subject,
-      program: program || 'General Inquiry',
-      message,
-      timestamp: new Date().toISOString(),
-      source: 'Chicago Jewish Teen Camp Website',
-    });
+    // Build a clean HTML message body for the email
+    const htmlMessage = `
+      <h2 style="color:#1B3A6B;font-family:sans-serif;">New Inquiry – Chicago Jewish Teen Camp</h2>
+      <table style="font-family:sans-serif;font-size:14px;border-collapse:collapse;width:100%">
+        <tr><td style="padding:8px;font-weight:bold;background:#f5f5f5;border:1px solid #ddd;width:140px;">Name</td><td style="padding:8px;border:1px solid #ddd;">${name}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold;background:#f5f5f5;border:1px solid #ddd;">Email</td><td style="padding:8px;border:1px solid #ddd;"><a href="mailto:${email}">${email}</a></td></tr>
+        <tr><td style="padding:8px;font-weight:bold;background:#f5f5f5;border:1px solid #ddd;">Phone</td><td style="padding:8px;border:1px solid #ddd;">${phone || 'Not provided'}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold;background:#f5f5f5;border:1px solid #ddd;">Teen Age</td><td style="padding:8px;border:1px solid #ddd;">${childAge || 'Not specified'}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold;background:#f5f5f5;border:1px solid #ddd;">Subject</td><td style="padding:8px;border:1px solid #ddd;">${subject}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold;background:#f5f5f5;border:1px solid #ddd;">Program</td><td style="padding:8px;border:1px solid #ddd;">${program || 'General Inquiry'}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold;background:#f5f5f5;border:1px solid #ddd;">Message</td><td style="padding:8px;border:1px solid #ddd;">${message.replace(/\n/g, '<br/>')}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold;background:#f5f5f5;border:1px solid #ddd;">Submitted</td><td style="padding:8px;border:1px solid #ddd;">${new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })} (CT)</td></tr>
+      </table>
+    `;
 
-    // To send emails in production, integrate with services like:
-    // - Resend (resend.com) - free tier, no credit card needed
-    // - SendGrid
-    // - Nodemailer with Gmail
-    // Example with Resend (add RESEND_API_KEY to environment variables):
-    //
-    // const { Resend } = await import('resend');
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: 'website@chabadmammoth.com',
-    //   to: 'RabbiZalman@chabadmammoth.com',
-    //   subject: `New Inquiry: ${subject} - ${name}`,
-    //   html: `
-    //     <h2>New Contact Form Submission</h2>
-    //     <p><strong>Name:</strong> ${name}</p>
-    //     <p><strong>Email:</strong> ${email}</p>
-    //     <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-    //     <p><strong>Teen Age:</strong> ${childAge || 'Not specified'}</p>
-    //     <p><strong>Subject:</strong> ${subject}</p>
-    //     <p><strong>Program:</strong> ${program || 'General Inquiry'}</p>
-    //     <p><strong>Message:</strong> ${message}</p>
-    //   `,
-    // });
+    // Send via FormSubmit AJAX endpoint — no API key required.
+    // NOTE: The very first submission will trigger a one-time activation email
+    // to ${RECIPIENT_EMAIL}. Click "Activate Form" in that email, then all
+    // future submissions will deliver instantly.
+    const formSubmitRes = await fetch(
+      `https://formsubmit.co/ajax/${RECIPIENT_EMAIL}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          _subject: `New Inquiry: ${subject} – ${name}`,
+          _template: 'table',
+          _captcha: 'false',
+          _replyto: email,
+          // FormSubmit treats 'message' as the body; we pass our HTML table
+          message: htmlMessage,
+          // Extra fields shown in FormSubmit's own table format as backup
+          Phone: phone || 'Not provided',
+          'Teen Age': childAge || 'Not specified',
+          Program: program || 'General Inquiry',
+        }),
+      }
+    );
+
+    const result = await formSubmitRes.json();
+
+    if (!formSubmitRes.ok || result.success === 'false') {
+      console.error('FormSubmit error:', result);
+      return NextResponse.json(
+        { error: 'Failed to send email. Please call or email us directly.' },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json(
       {
         success: true,
-        message: 'Your message has been received. We will contact you within 24 hours.',
+        message:
+          'Your message has been received. We will contact you within 24 hours.',
       },
       { status: 200 }
     );
   } catch (error) {
     console.error('Contact form error:', error);
     return NextResponse.json(
-      { error: 'Internal server error. Please try again.' },
+      { error: 'Internal server error. Please try again or call us directly.' },
       { status: 500 }
     );
   }
