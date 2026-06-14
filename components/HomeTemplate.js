@@ -243,15 +243,9 @@ export default function HomeTemplate() {
             ))}
           </div>
 
-          <div className="text-center mt-14 mb-24">
-            <Link href="/day-camp" className="inline-flex items-center gap-3 bg-primary-dark text-white font-bold px-10 py-5 rounded-full text-lg hover:shadow-2xl hover:bg-primary transition-all duration-300">
-              <span>Explore Day Camp</span>
-              <UsersIcon className="w-5 h-5" />
-            </Link>
-          </div>
 
           {/* ─── SOCIAL EVENTS BENTO ─── */}
-          <div className="relative rounded-[2.5rem] overflow-hidden bg-primary-dark p-px">
+          <div className="relative rounded-[2.5rem] overflow-hidden bg-primary-dark p-px mt-24">
             {/* animated border shimmer */}
             <div className="absolute inset-0 bg-gradient-to-r from-gold via-primary-light to-gold opacity-30 animate-[spin_6s_linear_infinite] scale-150 blur-sm" />
 
