@@ -45,8 +45,7 @@ export function TentIcon({ className = 'w-8 h-8' }) {
 export function StarOfDavidIcon({ className = 'w-8 h-8' }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinejoin="miter" strokeMiterlimit="10">
-      <path d="M12 2.5l7.5 13H4.5z" />
-      <path d="M12 21.5l-7.5-13h15z" />
+      <path d="M12 2l3 5h6l-3 5 3 5h-6l-3 5-3-5H3l3-5-3-5h6z" fill="currentColor" stroke="none" />
     </svg>
   );
 }
@@ -226,8 +225,7 @@ export function HandshakeIcon({ className = 'w-8 h-8' }) {
 export function StarIcon({ className = 'w-8 h-8' }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 2.5l7.5 13H4.5z" />
-      <path d="M12 21.5l-7.5-13h15z" />
+      <path d="M12 2l3 5h6l-3 5 3 5h-6l-3 5-3-5H3l3-5-3-5h6z" fill="currentColor" stroke="none" />
     </svg>
   );
 }

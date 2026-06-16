@@ -12,8 +12,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-5 group">
               <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-white shadow-lg p-2.5">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="miter" strokeMiterlimit="10" className="w-full h-full">
-                  <path d="M12 2.5l7.5 13H4.5z" />
-                  <path d="M12 21.5l-7.5-13h15z" />
+                  <path d="M12 2l3 5h6l-3 5 3 5h-6l-3 5-3-5H3l3-5-3-5h6z" fill="currentColor" stroke="none" />
                 </svg>
               </div>
               <div>
