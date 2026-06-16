@@ -25,7 +25,13 @@ export default function StickyMobileButtons() {
         href="/contact"
         className="flex items-center justify-center w-full bg-gold text-white font-bold py-4 rounded-2xl text-lg shadow-[0_8px_30px_rgba(200,146,42,0.4)] active:scale-95 transition-all"
       >
-        Enroll Now
+        <span className="flex items-center gap-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="miter" className="w-5 h-5">
+            <path d="M12 2.5l7.5 13H4.5z" />
+            <path d="M12 21.5l-7.5-13h15z" />
+          </svg>
+          Enroll Now
+        </span>
       </Link>
     </div>
   );
