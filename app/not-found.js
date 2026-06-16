@@ -33,7 +33,8 @@ export default function NotFound() {
             strokeMiterlimit="10"
             className="w-10 h-10 text-gold"
           >
-            <path d="M12 2l3 5h6l-3 5 3 5h-6l-3 5-3-5H3l3-5-3-5h6z" fill="currentColor" stroke="none" />
+            <path d="M12 2.5l7.5 13H4.5z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="miter" />
+                <path d="M12 21.5l-7.5-13h15z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="miter" />
           </svg>
         </div>
 
