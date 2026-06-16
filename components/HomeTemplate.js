@@ -35,12 +35,14 @@ export default function HomeTemplate() {
         {/* Decorative geometric star - SVG, not emoji */}
         <div className="absolute top-16 right-8 opacity-5 hidden lg:block">
           <svg width="280" height="280" viewBox="0 0 24 24" fill="white">
-            <path fillRule="evenodd" clipRule="evenodd" d="M12 1.5L15 7H21L18 12L21 17H15L12 22.5L9 17H3L6 12L3 7H9Z M12 4.5L10 8H5.5L8 12L5.5 16H10L12 19.5L14 16H18.5L16 12L18.5 8H14Z" fill="currentColor" stroke="none" />
+            <path d="M12 2l8.66 15H3.34z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="miter" />
+                <path d="M12 22l8.66-15H3.34z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="miter" />
           </svg>
         </div>
         <div className="absolute bottom-8 left-8 opacity-5 hidden lg:block">
           <svg width="180" height="180" viewBox="0 0 24 24" fill="white">
-            <path fillRule="evenodd" clipRule="evenodd" d="M12 1.5L15 7H21L18 12L21 17H15L12 22.5L9 17H3L6 12L3 7H9Z M12 4.5L10 8H5.5L8 12L5.5 16H10L12 19.5L14 16H18.5L16 12L18.5 8H14Z" fill="currentColor" stroke="none" />
+            <path d="M12 2l8.66 15H3.34z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="miter" />
+                <path d="M12 22l8.66-15H3.34z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="miter" />
           </svg>
         </div>
 

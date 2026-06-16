@@ -75,7 +75,8 @@ function NotFoundPage() {
         {/* Star of David */}
         <div style={{ width: '72px', height: '72px', background: 'rgba(200,146,42,0.15)', border: '1px solid rgba(200,146,42,0.3)', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2rem' }}>
           <svg viewBox="0 0 24 24" fill="none" stroke="#C8922A" strokeWidth="1.5" strokeLinejoin="miter" strokeMiterlimit="10" style={{ width: '40px', height: '40px' }}>
-            <path fillRule="evenodd" clipRule="evenodd" d="M12 1.5L15 7H21L18 12L21 17H15L12 22.5L9 17H3L6 12L3 7H9Z M12 4.5L10 8H5.5L8 12L5.5 16H10L12 19.5L14 16H18.5L16 12L18.5 8H14Z" fill="currentColor" stroke="none" />
+            <path d="M12 2l8.66 15H3.34z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="miter" />
+                <path d="M12 22l8.66-15H3.34z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="miter" />
           </svg>
         </div>
 
